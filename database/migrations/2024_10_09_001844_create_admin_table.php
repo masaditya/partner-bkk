@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('password');
             $table->string('name');
             $table->string('phone');
-            $table->boolean('is_partner');
-            $table->string('company_name');
-            $table->uuid('major_id')->constrained('majors')->onDelete('cascade');
-            $table->string('company_city');
-            $table->boolean('is_verified');
+            $table->boolean('is_partner')->default(false);
+            $table->string('company_name')->nullable();
+            $table->uuid('company_industry_id')->nullable()->constrained('company_industries');
+            $table->string('company_city')->nullable();
+            $table->boolean('is_verified')->default(false);
             $table->timestamps(); 
         });
     }
