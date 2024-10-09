@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -12,11 +13,26 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('NIS')->nullable();
+            $table->string('graduation_year')->nullable();
+            $table->uuid('major_id')->nullable()->constrained('majors');
+            $table->uuid('status_id')->nullable()->constrained('employement_statuses');
+            $table->string('company')->nullable();
+            $table->uuid('company_industry_id')->nullable()->constrained('company_industries');
+            $table->string('position')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('latest_degree')->nullable();
+            $table->string('university')->nullable();
+            $table->string('faculty')->nullable();
+            $table->string('photo')->nullable();
+            $table->string('gender')->nullable();
+            $table->boolean('is_alumni')->default(false);
+            $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
