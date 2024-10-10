@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyIndustryController;
 use App\Http\Controllers\EmploymentStatusesController;
 use App\Http\Controllers\MajorController;
@@ -51,4 +52,11 @@ Route::get('/master/status', [EmploymentStatusesController::class, 'index'])->na
 Route::post('/master/status/store', [EmploymentStatusesController::class, 'store'])->name('master.status.store');
 Route::put('master/status/{id}', [EmploymentStatusesController::class, 'update'])->name('master.status.update');
 Route::delete('/master/status/{id}', [EmploymentStatusesController::class, 'destroy'])->name('master.status.destroy');
+//
+
+// 
+Route::get('/master/category', [CategoryController::class, 'index'])->name('master.category.index');
+Route::post('/master/category/store', [CategoryController::class, 'store'])->name('master.category.store');
+Route::put('master/category/{id}', [CategoryController::class, 'update'])->name('master.category.update');
+Route::delete('/master/category/{id}', [CategoryController::class, 'destroy'])->name('master.category.destroy');
 //
