@@ -49,7 +49,7 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan admin: ' . $e->getMessage());
         }
 
-        return redirect()->route('admins.index')->with('error', 'Admin berhasil ditambahkan!');
+        return redirect()->route('admin.index')->with('error', 'Admin berhasil ditambahkan!');
     }
 
     public function update(Request $request, $id)

@@ -7,7 +7,7 @@ return [
         'string' => 'Kolom :attribute tidak boleh lebih dari :max karakter.',
     ],
     'email' => 'Kolom :attribute harus merupakan alamat email yang valid.',
-    'unique' => 'Alamat email :attribute sudah terdaftar.',
+    'unique' => 'attribute sudah terdaftar.',
     'min' => [
         'string' => 'Kolom :attribute harus terdiri dari minimal :min karakter.',
     ],

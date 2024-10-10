@@ -18,7 +18,7 @@
     </div>
     <!-- SIDEBAR HEADER -->
 
-    <div class="no-scrollbar flex flex-col overflow-y-auto duration-300 ease-linear">
+    <div class="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
         <!-- Sidebar Menu -->
         <nav class="px-4 py-4 lg:px-6" x-data="{selected: $persist('Dashboard')}">
             <!-- Menu Group -->
@@ -142,7 +142,7 @@
 
                             Data Master
 
-                            <svg class="absolute right-4 top-1/2 -translate-y-1/2 fill-current"
+                            <svg class="absolute -translate-y-1/2 fill-current right-4 top-1/2"
                                 :class="{ 'rotate-180': (selected === 'DataMaster') }" width="20" height="20"
                                 viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -152,9 +152,9 @@
                         </a>
 
                         <!-- Dropdown Menu Start -->
-                        <div class="translate transform overflow-hidden"
+                        <div class="overflow-hidden transform translate"
                             :class="(selected === 'DataMaster') ? 'block' :'hidden'">
-                            <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
+                            <ul class="flex flex-col gap-2 pl-6 mt-4 mb-3">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
                                         href="/" :class="page === 'major' && '!text-white'">Data Jurusan</a>
@@ -165,7 +165,7 @@
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="/" :class="page === 'companyIndustry' && '!text-white'">Data Jenis Perusahaan</a>
+                                        href="{{ route('master.industry.index') }}" :class="page === 'companyIndustry' && '!text-white'">Data Industri Perusahaan</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
