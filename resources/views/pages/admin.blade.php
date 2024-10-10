@@ -5,6 +5,10 @@
 
 <main>
 
+    {{-- toast success or failed Start --}}
+    @include('includes.toast')
+    {{-- toast success or failed End --}}
+
     <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
         <!-- Breadcrumb Start -->
         <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -26,27 +30,28 @@
         {{-- Button add start --}}
         <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <span></span>
-            <button
-            type="button"
-            @click="open = true"
-            class="inline-flex items-center justify-center gap-1 rounded-md bg-meta-3 px-4 py-3 text-center font-medium text-white hover:bg-opacity-90 text-sm"
-        >
-            <span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="18" height="18">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-                </svg>
-            </span>
-            Tambah Admin
-        </button>
+            <button type="button"
+                class="inline-flex items-center justify-center gap-1 rounded-md bg-meta-3 px-4 py-3 text-center font-medium text-white hover:bg-opacity-90 text-sm"
+                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-admin-modal"
+                data-hs-overlay="#hs-add-data-admin-modal">
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" width="18" height="18">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
+                    </svg>
+                </span>
+                Tambah Admin
+            </button>
 
         </div>
         {{-- Button add end --}}
 
         <div class="mb-4 w-full px-2">
-                <!-- Gunakan margin dan lebar penuh langsung di sini -->
-                <input type="text" id="customSearchInput" placeholder="Cari data..."
-                    class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
-            </div>
+            <!-- Gunakan margin dan lebar penuh langsung di sini -->
+            <input type="text" id="customSearchInput" placeholder="Cari data..."
+                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
+        </div>
 
         <!-- ====== Table Section Start -->
         <div class="flex flex-col gap-10">
@@ -76,29 +81,35 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($admins as $admin)
                             <tr>
                                 <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
-                                    <h5 class="font-medium text-black dark:text-white">1</h5>
+                                    <h5 class="font-medium text-black dark:text-white">{{ $loop->iteration }}</h5>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">Wijaya Saputra</p>
+                                    <p class="text-black dark:text-white">{{ $admin->name }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">wijaya@bkk.com</p>
+                                    <p class="text-black dark:text-white">{{ $admin->email }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">082*********</p>
+                                    <p class="text-black dark:text-white">{{ $admin->phone }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button class="hover:text-primary">
+                                        <button class="hover:text-primary"
+                                        aria-haspopup="dialog"
+                                            aria-expanded="false" aria-controls="hs-update-password-data-{{ $admin->id }}"
+                                            data-hs-overlay="#hs-update-password-data-{{ $admin->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
                                             </svg>
                                         </button>
-                                        <button class="hover:text-primary">
+                                        <button type="button" class="hover:text-primary" aria-haspopup="dialog"
+                                            aria-expanded="false" aria-controls="hs-delete-data-{{ $admin->id }}"
+                                            data-hs-overlay="#hs-delete-data-{{ $admin->id }}">
                                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -115,18 +126,23 @@
                                                     fill="" />
                                             </svg>
                                         </button>
-                                        <button class="hover:text-primary">
+                                        <button class="hover:text-primary"
+                                        aria-haspopup="dialog"
+                                            aria-expanded="false" aria-controls="hs-edit-data-{{ $admin->id }}"
+                                            data-hs-overlay="#hs-edit-data-{{ $admin->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                                             </svg>
-
                                         </button>
                                     </div>
                                 </td>
                             </tr>
-
+                            @include('components.modal.admin.delete')
+                            @include('components.modal.admin.edit')
+                            @include('components.modal.admin.update-password')
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -136,58 +152,9 @@
         </div>
         <!-- ====== Table Section End -->
     </div>
-
-    <!-- Modal -->
-<div x-data="{ open: false }" x-show="open" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50" @keydown.escape="open = false">
-    <div class="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">
-        <div class="flex justify-between items-center">
-            <h3 class="font-medium text-black dark:text-white">Contact Form</h3>
-            <button @click="open = false" class="text-gray-500 hover:text-gray-700">&times;</button>
-        </div>
-        <form action="#">
-            <div class="flex flex-col gap-6 mt-4">
-                <div class="flex flex-col gap-6 xl:flex-row">
-                    <div class="w-full xl:w-1/2">
-                        <label class="mb-3 block text-sm font-medium text-black dark:text-white">First name</label>
-                        <input type="text" placeholder="Enter your first name" class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                    </div>
-                    <div class="w-full xl:w-1/2">
-                        <label class="mb-3 block text-sm font-medium text-black dark:text-white">Last name</label>
-                        <input type="text" placeholder="Enter your last name" class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                    </div>
-                </div>
-
-                <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Email <span class="text-meta-1">*</span></label>
-                    <input type="email" placeholder="Enter your email address" class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                </div>
-
-                <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Subject</label>
-                    <input type="text" placeholder="Select subject" class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                </div>
-
-                <div class="mb-4.5">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Type your subject</label>
-                    <select class="w-full rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary">
-                        <option value="" class="text-body">Select option</option>
-                        <option value="USA" class="text-body">USA</option>
-                        <option value="UK" class="text-body">UK</option>
-                        <option value="Canada" class="text-body">Canada</option>
-                    </select>
-                </div>
-
-                <div class="mb-6">
-                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">Message</label>
-                    <textarea rows="6" placeholder="Type your message" class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
-                </div>
-
-                <button class="flex w-full justify-center rounded bg-primary p-3 font-medium text-gray hover:bg-opacity-90">Send Message</button>
-            </div>
-        </form>
-    </div>
-</div>
 </main>
 @endsection
 
 @include('components.datatables')
+@include('components.modal.admin.add')
+

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->uuid('company_industry_id')->nullable()->constrained('company_industries');
             $table->string('company_city')->nullable();
             $table->boolean('is_verified')->default(false);
+            $table->rememberToken();
             $table->timestamps(); 
         });
     }
