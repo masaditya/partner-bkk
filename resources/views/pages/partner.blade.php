@@ -165,7 +165,6 @@
         <!-- ====== Table Section End -->
     </div>
 </main>
-@endsection
-
 @include('components.datatables')
 @include('components.modal.partner.add')
+@endsection

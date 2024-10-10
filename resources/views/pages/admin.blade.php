@@ -9,10 +9,10 @@
     @include('includes.toast')
     {{-- toast success or failed End --}}
 
-    <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+    <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
         <!-- Breadcrumb Start -->
-        <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="text-title-md2 font-bold text-black dark:text-white">
+        <div class="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="font-bold text-black text-title-md2 dark:text-white">
                 Daftar Admin
             </h2>
 
@@ -28,10 +28,10 @@
         <!-- Breadcrumb End -->
 
         {{-- Button add start --}}
-        <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between">
             <span></span>
             <button type="button"
-                class="inline-flex items-center justify-center gap-1 rounded-md bg-meta-3 px-4 py-3 text-center font-medium text-white hover:bg-opacity-90 text-sm"
+                class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-meta-3 hover:bg-opacity-90"
                 aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-admin-modal"
                 data-hs-overlay="#hs-add-data-admin-modal">
                 <span>
@@ -47,7 +47,7 @@
         </div>
         {{-- Button add end --}}
 
-        <div class="mb-4 w-full px-2">
+        <div class="w-full px-2 mb-4">
             <!-- Gunakan margin dan lebar penuh langsung di sini -->
             <input type="text" id="customSearchInput" placeholder="Cari data..."
                 class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
@@ -62,7 +62,7 @@
                 <div class="max-w-full overflow-x-auto">
                     <table id="dataTableBkk" class="w-full table-auto">
                         <thead>
-                            <tr class="bg-gray-2 text-left dark:bg-meta-4">
+                            <tr class="text-left bg-gray-2 dark:bg-meta-4">
                                 <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
                                     No.
                                 </th>
@@ -153,8 +153,7 @@
         <!-- ====== Table Section End -->
     </div>
 </main>
-@endsection
-
 @include('components.datatables')
 @include('components.modal.admin.add')
+@endsection
 

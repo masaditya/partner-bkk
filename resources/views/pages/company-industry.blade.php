@@ -132,8 +132,7 @@
         <!-- ====== Table Section End -->
     </div>
 </main>
-@endsection
-
 @include('components.datatables')
 @include('components.modal.industry.add')
+@endsection
 
