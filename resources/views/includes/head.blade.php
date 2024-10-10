@@ -2,7 +2,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>
-    @yield('title') | BKK SMK 1 Bojonegoro
+    @yield('title') | BKK SIGMA SMKN 1 BOJONEGORO
 </title>
 <link href="{{ asset('tail-admin/style.css') }}" rel="stylesheet">
 

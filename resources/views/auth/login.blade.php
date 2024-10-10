@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        Dashboard | BKK SMK 1 Bojonegoro
+        Login | BKK SIGMA SMKN 1 BOJONEGORO
     </title>
     <link href="{{ asset('tail-admin/style.css') }}" rel="stylesheet">
 
@@ -32,27 +32,26 @@
 <body>
 
     <main>
-        <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-            <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+        <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
+            <div class="bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark">
                 <div class="flex flex-wrap items-center">
                     <div class="hidden w-full xl:block xl:w-1/2">
                         <div class="px-26 py-17.5 text-center">
-                           
-
+                        
                             <p class="font-medium 2xl:px-20">
                                 
                             </p>
 
-                            <span class="mt-15 inline-block">
+                            <span class="inline-block mt-15">
                                 <img class="" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}" alt="Logo" />
                             </span>
                         </div>
                     </div>
                     <div class="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
                         <div class="w-full p-4 sm:p-12.5 xl:p-17.5">
-                            <span class="mb-1.5 block font-medium">SMKN 1 Bojonegoro</span>
-                            <h2 class="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
-                                Masuk ke Aplikasi BKK
+                            <span class="mb-1.5 block font-medium">SMKN 1 BOJONEGORO</span>
+                            <h2 class="text-2xl font-bold text-black mb-9 dark:text-white sm:text-title-xl2">
+                                Masuk ke Aplikasi BKK SIGMA
                             </h2>
 
                             <form>
@@ -60,7 +59,7 @@
                                     <label class="mb-2.5 block font-medium text-black dark:text-white">Email</label>
                                     <div class="relative">
                                         <input type="email" placeholder="Masukkan email"
-                                            class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary" />
+                                            class="w-full py-4 pl-6 pr-10 bg-transparent border rounded-lg outline-none border-stroke focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary" />
 
                                         <span class="absolute right-4 top-4">
                                             <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
@@ -79,7 +78,7 @@
                                     <label class="mb-2.5 block font-medium text-black dark:text-white">Kata Sandi</label>
                                     <div class="relative">
                                         <input type="password" placeholder="Masukkan kata sandi"
-                                            class="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary" />
+                                            class="w-full py-4 pl-6 pr-10 bg-transparent border rounded-lg outline-none border-stroke focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary" />
 
                                         <span class="absolute right-4 top-4">
                                             <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22"
@@ -99,7 +98,7 @@
 
                                 <div class="mb-5">
                                     <input type="submit" value="Masuk"
-                                        class="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 font-medium text-white transition hover:bg-opacity-90" />
+                                        class="w-full p-4 font-medium text-white transition border rounded-lg cursor-pointer border-primary bg-primary hover:bg-opacity-90" />
                                 </div>
 
                 

@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyIndustryController;
+use App\Http\Controllers\EmploymentStatusesController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\PartnerController;
+use App\Models\EmploymentStatuses;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -42,4 +44,11 @@ Route::get('/master/major', [MajorController::class, 'index'])->name('master.maj
 Route::post('/master/major/store', [MajorController::class, 'store'])->name('master.major.store');
 Route::put('master/major/{id}', [MajorController::class, 'update'])->name('master.major.update');
 Route::delete('/master/major/{id}', [MajorController::class, 'destroy'])->name('master.major.destroy');
+//
+
+// 
+Route::get('/master/status', [EmploymentStatusesController::class, 'index'])->name('master.status.index');
+Route::post('/master/status/store', [EmploymentStatusesController::class, 'store'])->name('master.status.store');
+Route::put('master/status/{id}', [EmploymentStatusesController::class, 'update'])->name('master.status.update');
+Route::delete('/master/status/{id}', [EmploymentStatusesController::class, 'destroy'])->name('master.status.destroy');
 //
