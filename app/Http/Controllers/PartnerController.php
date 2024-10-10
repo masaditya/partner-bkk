@@ -3,19 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\CompanyIndustry;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
-class AdminController extends Controller
+class PartnerController extends Controller
 {
     public function index()
     {
-        $admins = Admin::where('is_partner', '0')->get();
+        $partners = Admin::where('is_partner', '1')->get();
+        $industries = CompanyIndustry::all();
 
-        return view('pages.admin', compact('admins'));
+        return view('pages.partner', compact('partners', 'industries'));
     }
 
     public function store(Request $request)
@@ -25,25 +27,32 @@ class AdminController extends Controller
             'email' => 'required|string|email|max:255|unique:admins',
             'phone' => 'required|string|max:15',
             'password' => 'required|string|min:8|confirmed',
+            'company_name' => 'required|string|max:255',
+            'company_industry_id' => 'required|exists:company_industries,id',
+            'company_city' => 'required|string|max:255',
         ]);
 
         if ($validator->fails()) {
-        return redirect()->back()
-            ->withErrors($validator)
-            ->withInput();
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
         }
 
         try {
-            // Buat admin baru
             Admin::create([
                 'id' => (string) Str::uuid(),
                 'name' => $request->name,
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
+                'is_partner' => 1,
+                'company_name' => $request->company_name,
+                'company_industry_id' => $request->company_industry_id,
+                'company_city' => $request->company_city,
+                'is_verified' => 1,
             ]);
 
-            return redirect()->route('admin.index')->with('success', 'Admin berhasil ditambahkan.');
+            return redirect()->route('partner.index')->with('success', 'Admin berhasil ditambahkan.');
             
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan admin: ' . $e->getMessage());
@@ -58,17 +67,23 @@ class AdminController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins,email,' . $id,
             'phone' => 'required|string|max:15',
+            'company_name' => 'required|string|max:255',
+            'company_industry_id' => 'required|exists:company_industries,id',
+            'company_city' => 'required|string|max:255',
         ]);
 
         try {
-            $admin = Admin::findOrFail($id); // Mencari admin berdasarkan ID
+            $admin = Admin::findOrFail($id);
             $admin->name = $request->name;
             $admin->email = $request->email;
             $admin->phone = $request->phone;
+            $admin->company_name = $request->company_name;
+            $admin->company_industry_id = $request->company_industry_id;
+            $admin->company_city = $request->company_city;
 
             $admin->save();
 
-            return redirect()->route('admin.index')->with('success', 'Admin berhasil diperbarui.');
+            return redirect()->route('partner.index')->with('success', 'Admin berhasil diperbarui.');
         } catch (\Exception $e) {
             // Menangani kesalahan dan menampilkan pesan error
             return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat memperbarui admin: ' . $e->getMessage()]);
@@ -82,14 +97,14 @@ class AdminController extends Controller
         ]);
 
         try {
-            $admin = Admin::findOrFail($id); // Mencari admin berdasarkan ID
+            $admin = Admin::findOrFail($id);
             $admin->password = bcrypt($request->password);
 
             $admin->save();
 
-            return redirect()->route('admin.index')->with('success', 'Kata sandi berhasil diperbarui.');
+            return redirect()->route('partner.index')->with('success', 'Kata sandi berhasil diperbarui.');
         } catch (\Exception $e) {
-            // Menangani kesalahan dan menampilkan pesan error
+
             return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat memperbarui kata sandi: ' . $e->getMessage()]);
         }
     }
@@ -97,15 +112,15 @@ class AdminController extends Controller
      public function destroy($id)
     {
         try {
-            $admin = Admin::where('is_partner', '0')->findOrFail($id);
+            $admin = Admin::where('is_partner', '1')->findOrFail($id);
 
             // Hapus admin
             $admin->delete();
 
-            return redirect()->route('admin.index')->with('success', 'Admin berhasil dihapus.');
+            return redirect()->route('partner.index')->with('success', 'Admin berhasil dihapus.');
         } catch (Exception $e) {
             // Tangani error jika admin tidak dapat dihapus atau tidak ditemukan
-            return redirect()->route('admin.index')->with('error', 'Gagal menghapus admin. ' . $e->getMessage());
+            return redirect()->route('partner.index')->with('error', 'Gagal menghapus partner. ' . $e->getMessage());
         }
     }
 }

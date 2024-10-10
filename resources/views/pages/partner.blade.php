@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Admin')
+@section('title', 'Mitra')
 
 @section('content')
 
@@ -9,11 +9,11 @@
     @include('includes.toast')
     {{-- toast success or failed End --}}
 
-    <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+    <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
         <!-- Breadcrumb Start -->
-        <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="text-title-md2 font-bold text-black dark:text-white">
-                Daftar Admin
+        <div class="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="font-bold text-black text-title-md2 dark:text-white">
+                Daftar Mitra
             </h2>
 
             <nav>
@@ -21,19 +21,19 @@
                     <li>
                         <a class="font-medium" href="/">Dasbor /</a>
                     </li>
-                    <li class="font-medium text-meta-3">Admin</li>
+                    <li class="font-medium text-meta-3">Mitra</li>
                 </ol>
             </nav>
         </div>
         <!-- Breadcrumb End -->
 
         {{-- Button add start --}}
-        <div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between">
             <span></span>
             <button type="button"
-                class="inline-flex items-center justify-center gap-1 rounded-md bg-meta-3 px-4 py-3 text-center font-medium text-white hover:bg-opacity-90 text-sm"
-                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-admin-modal"
-                data-hs-overlay="#hs-add-data-admin-modal">
+                class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-meta-3 hover:bg-opacity-90"
+                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-partner-modal"
+                data-hs-overlay="#hs-add-data-partner-modal">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" width="18" height="18">
@@ -41,13 +41,13 @@
                             d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
                     </svg>
                 </span>
-                Tambah Admin
+                Tambah Mitra
             </button>
 
         </div>
         {{-- Button add end --}}
 
-        <div class="mb-4 w-full px-2">
+        <div class="w-full px-2 mb-4">
             <!-- Gunakan margin dan lebar penuh langsung di sini -->
             <input type="text" id="customSearchInput" placeholder="Cari data..."
                 class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
@@ -62,18 +62,24 @@
                 <div class="max-w-full overflow-x-auto">
                     <table id="dataTableBkk" class="w-full table-auto">
                         <thead>
-                            <tr class="bg-gray-2 text-left dark:bg-meta-4">
+                            <tr class="text-left bg-gray-2 dark:bg-meta-4">
                                 <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
                                     No.
                                 </th>
-                                <th class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
+                                <th class="px-4 py-4 font-medium text-black dark:text-white">
                                     Nama
                                 </th>
-                                <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
-                                    Email
+                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
+                                    Nama Perushaan
                                 </th>
-                                <th class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                    No. Telepon
+                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
+                                    Kota
+                                </th>
+                                <th class="px-4 py-4 font-medium text-black dark:text-white">
+                                    Bidang
+                                </th>
+                                <th class="px-4 py-4 font-medium text-black dark:text-white">
+                                    Verifikasi
                                 </th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white">
                                     Aksi
@@ -81,26 +87,33 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($admins as $admin)
+                            @foreach($partners as $partner)
                             <tr>
                                 <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
                                     <h5 class="font-medium text-black dark:text-white">{{ $loop->iteration }}</h5>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $admin->name }}</p>
+                                    <p class="text-black dark:text-white">{{ $partner->name }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $admin->email }}</p>
+                                    <p class="text-black dark:text-white">{{ $partner->company_name }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $admin->phone }}</p>
+                                    <p class="text-black dark:text-white">{{ $partner->company_city }}</p>
+                                </td>
+                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                    <p class="text-black dark:text-white">{{ $partner->companyIndustry->name }}</p>
+                                </td>
+                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                    <p class="font-semibold {{ $partner->is_verified ? 'text-green-500' : 'text-red-500' }}">
+                                        {{ $partner->is_verified ? 'Terverifikasi' : 'Belum Terverifikasi' }}
+                                    </p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button class="hover:text-primary"
-                                        aria-haspopup="dialog"
-                                            aria-expanded="false" aria-controls="hs-update-password-data-{{ $admin->id }}"
-                                            data-hs-overlay="#hs-update-password-data-{{ $admin->id }}">
+                                        <button class="hover:text-primary" aria-haspopup="dialog" aria-expanded="false"
+                                            aria-controls="hs-update-password-data-{{ $partner->id }}"
+                                            data-hs-overlay="#hs-update-password-data-{{ $partner->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -108,8 +121,8 @@
                                             </svg>
                                         </button>
                                         <button type="button" class="hover:text-primary" aria-haspopup="dialog"
-                                            aria-expanded="false" aria-controls="hs-delete-data-{{ $admin->id }}"
-                                            data-hs-overlay="#hs-delete-data-{{ $admin->id }}">
+                                            aria-expanded="false" aria-controls="hs-delete-data-{{ $partner->id }}"
+                                            data-hs-overlay="#hs-delete-data-{{ $partner->id }}">
                                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -126,10 +139,9 @@
                                                     fill="" />
                                             </svg>
                                         </button>
-                                        <button class="hover:text-primary"
-                                        aria-haspopup="dialog"
-                                            aria-expanded="false" aria-controls="hs-edit-data-{{ $admin->id }}"
-                                            data-hs-overlay="#hs-edit-data-{{ $admin->id }}">
+                                        <button class="hover:text-primary" aria-haspopup="dialog" aria-expanded="false"
+                                            aria-controls="hs-edit-data-{{ $partner->id }}"
+                                            data-hs-overlay="#hs-edit-data-{{ $partner->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -139,9 +151,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            @include('components.modal.admin.delete')
-                            @include('components.modal.admin.edit')
-                            @include('components.modal.admin.update-password')
+                            @include('components.modal.partner.delete')
+                            @include('components.modal.partner.edit')
+                            @include('components.modal.partner.update-password')
                             @endforeach
                         </tbody>
                     </table>
@@ -156,5 +168,4 @@
 @endsection
 
 @include('components.datatables')
-@include('components.modal.admin.add')
-
+@include('components.modal.partner.add')

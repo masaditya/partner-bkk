@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -38,6 +39,11 @@ class Admin extends Authenticatable
     protected $casts = [
         'id' => 'string',
     ];
+
+    public function companyIndustry(): BelongsTo
+    {
+        return $this->belongsTo(CompanyIndustry::class, 'company_industry_id');
+    }
 
     
 }
