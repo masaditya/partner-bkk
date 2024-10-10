@@ -7,7 +7,7 @@
             class="flex flex-col w-full bg-white border shadow-sm pointer-events-auto rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
                 <h1 id="hs-update-password-data-{{ $partner->id }}-label" class="text-xl font-bold text-gray-800 dark:text-white">
-                    Tambah Data Admin
+                    Ubah Kata Sandi
                 </h1>
                 <button type="button"
                     class="inline-flex items-center justify-center text-gray-800 bg-gray-100 border border-transparent rounded-full size-8 gap-x-2 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"

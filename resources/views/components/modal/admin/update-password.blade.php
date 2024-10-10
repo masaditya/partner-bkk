@@ -4,13 +4,13 @@
     <div
         class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
         <div
-            class="w-full flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
-            <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
-                <h1 id="hs-update-password-data-{{ $admin->id }}-label" class="font-bold text-gray-800 text-xl dark:text-white">
-                    Tambah Data Admin
+            class="flex flex-col w-full bg-white border shadow-sm pointer-events-auto rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
+                <h1 id="hs-update-password-data-{{ $admin->id }}-label" class="text-xl font-bold text-gray-800 dark:text-white">
+                    Ubah Kata Sandi
                 </h1>
                 <button type="button"
-                    class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                    class="inline-flex items-center justify-center text-gray-800 bg-gray-100 border border-transparent rounded-full size-8 gap-x-2 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
                     aria-label="Close" data-hs-overlay="#hs-update-password-data-{{ $admin->id }}">
                     <span class="sr-only">Close</span>
                     <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -30,7 +30,7 @@
                     <div class="p-2">
                         <!-- Password Field -->
                         <div class="mb-4.5">
-                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
                                 Kata Sandi
                             </label>
                             <input type="password" name="password" placeholder="Masukkan kata sandi" required
@@ -39,7 +39,7 @@
                         </div>
 
                         <div>
-                            <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
                                 Ketik Ulang Kata Sandi
                             </label>
                             <input type="password" name="password_confirmation"
@@ -49,14 +49,14 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <div class="flex justify-end items-center gap-x-2 py-3 px-4">
+                    <div class="flex items-center justify-end px-4 py-3 gap-x-2">
                         <button type="button"
-                            class="py-2 px-3 inline-flex items-center gap-x-2 text-base font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            class="inline-flex items-center px-3 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
                             data-hs-overlay="#hs-update-password-data-{{ $admin->id }}">
                             Tutup
                         </button>
                         <button type="submit"
-                            class="py-2 px-3 inline-flex items-center gap-x-2 text-base font-medium rounded-lg border border-transparent bg-meta-3 text-white hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
+                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-meta-3 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
                             Simpan
                         </button>
                     </div>

@@ -5,13 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\CompanyIndustry;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 
 class CompanyIndustryController extends Controller
 {
-        public function index()
+    public function index()
     {
         $industries = CompanyIndustry::get();
 
@@ -31,7 +30,6 @@ class CompanyIndustryController extends Controller
         }
 
         try {
-            // Buat admin baru
             CompanyIndustry::create([
                 'id' => (string) Str::uuid(),
                 'name' => $request->name,
@@ -53,14 +51,13 @@ class CompanyIndustryController extends Controller
         ]);
 
         try {
-            $admin = CompanyIndustry::findOrFail($id); // Mencari admin berdasarkan ID
-            $admin->name = $request->name;
+            $industry = CompanyIndustry::findOrFail($id);
+            $industry->name = $request->name;
 
-            $admin->save();
+            $industry->save();
 
             return redirect()->route('master.industry.index')->with('success', 'Industri perusahan berhasil diperbarui.');
         } catch (\Exception $e) {
-            // Menangani kesalahan dan menampilkan pesan error
             return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat memperbarui industri perusahan: ' . $e->getMessage()]);
         }
     }
@@ -68,14 +65,12 @@ class CompanyIndustryController extends Controller
      public function destroy($id)
     {
         try {
-            $admin = CompanyIndustry::findOrFail($id);
+            $industry = CompanyIndustry::findOrFail($id);
 
-            // Hapus admin
-            $admin->delete();
+            $industry->delete();
 
             return redirect()->route('master.industry.index')->with('success', 'Industri perusahan berhasil dihapus.');
         } catch (Exception $e) {
-            // Tangani error jika admin tidak dapat dihapus atau tidak ditemukan
             return redirect()->route('master.industry.index')->with('error', 'Gagal menghapus industri perusahan. ' . $e->getMessage());
         }
     }

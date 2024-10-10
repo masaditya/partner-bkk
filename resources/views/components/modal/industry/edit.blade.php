@@ -7,7 +7,7 @@
             class="flex flex-col w-full bg-white border shadow-sm pointer-events-auto rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
                 <h1 id="hs-edit-data-{{ $industry->id }}-label" class="text-xl font-bold text-gray-800 dark:text-white">
-                    Tambah Data Admin
+                    Ubah Data Perusahaan Industri
                 </h1>
                 <button type="button"
                     class="inline-flex items-center justify-center text-gray-800 bg-gray-100 border border-transparent rounded-full size-8 gap-x-2 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
@@ -31,14 +31,15 @@
                         <!-- Name Field -->
                         <div class="mb-4.5">
                             <label class="block mb-3 text-sm font-medium text-black dark:text-white">
-                                Name
+                                Nama Industri
                             </label>
                             <input type="text" name="name" value="{{ old('name', $industry->name) }}"
-                                placeholder="Masukkan nama lengkap"
+                                placeholder="Masukkan nama industri"
                                 class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
                     </div>
 
+                    <!-- Submit Button -->
                     <div class="flex items-center justify-end px-4 py-3 gap-x-2">
                         <button type="button"
                             class="inline-flex items-center px-3 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -51,6 +52,7 @@
                         </button>
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

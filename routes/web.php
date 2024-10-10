@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CompanyIndustryController;
+use App\Http\Controllers\MajorController;
 use App\Http\Controllers\PartnerController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,4 +35,11 @@ Route::get('/master/industry', [CompanyIndustryController::class, 'index'])->nam
 Route::post('/master/industry/store', [CompanyIndustryController::class, 'store'])->name('master.industry.store');
 Route::put('master/industry/{id}', [CompanyIndustryController::class, 'update'])->name('master.industry.update');
 Route::delete('/master/industry/{id}', [CompanyIndustryController::class, 'destroy'])->name('master.industry.destroy');
+//
+
 // 
+Route::get('/master/major', [MajorController::class, 'index'])->name('master.major.index');
+Route::post('/master/major/store', [MajorController::class, 'store'])->name('master.major.store');
+Route::put('master/major/{id}', [MajorController::class, 'update'])->name('master.major.update');
+Route::delete('/master/major/{id}', [MajorController::class, 'destroy'])->name('master.major.destroy');
+//

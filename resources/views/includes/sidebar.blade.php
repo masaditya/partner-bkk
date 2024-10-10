@@ -157,7 +157,7 @@
                             <ul class="flex flex-col gap-2 pl-6 mt-4 mb-3">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="/" :class="page === 'major' && '!text-white'">Data Jurusan</a>
+                                        href="{{ route('master.major.index') }}" :class="page === 'Jurusan' && '!text-white'">Data Jurusan</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
@@ -165,7 +165,7 @@
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('master.industry.index') }}" :class="page === 'companyIndustry' && '!text-white'">Data Industri Perusahaan</a>
+                                        href="{{ route('master.industry.index') }}" :class="page === 'Perusahaan-Industri' && '!text-white'">Data Industri Perusahaan</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"

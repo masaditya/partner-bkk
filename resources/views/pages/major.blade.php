@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Mitra')
+@section('title', 'Jurusan')
 
 @section('content')
 
@@ -13,7 +13,7 @@
         <!-- Breadcrumb Start -->
         <div class="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
             <h2 class="font-bold text-black text-title-md2 dark:text-white">
-                Daftar Mitra Industri
+                Daftar Jurusan
             </h2>
 
             <nav>
@@ -21,7 +21,7 @@
                     <li>
                         <a class="font-medium" href="/">Dasbor /</a>
                     </li>
-                    <li class="font-medium text-meta-3">Mitra Industri</li>
+                    <li class="font-medium text-meta-3">Jurusan</li>
                 </ol>
             </nav>
         </div>
@@ -32,8 +32,8 @@
             <span></span>
             <button type="button"
                 class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-meta-3 hover:bg-opacity-90"
-                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-partner-modal"
-                data-hs-overlay="#hs-add-data-partner-modal">
+                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-major-modal"
+                data-hs-overlay="#hs-add-data-major-modal">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" width="18" height="18">
@@ -41,7 +41,7 @@
                             d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
                     </svg>
                 </span>
-                Tambah Mitra
+                Tambah Jurusan
             </button>
 
         </div>
@@ -66,20 +66,8 @@
                                 <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
                                     No.
                                 </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white">
+                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
                                     Nama
-                                </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
-                                    Nama Perushaan
-                                </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
-                                    Kota
-                                </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white">
-                                    Bidang
-                                </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white">
-                                    Verifikasi
                                 </th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white">
                                     Aksi
@@ -87,42 +75,21 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($partners as $partner)
+                            @foreach($majors as $major)
                             <tr>
                                 <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
                                     <h5 class="font-medium text-black dark:text-white">{{ $loop->iteration }}</h5>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $partner->name }}</p>
+                                    <p class="text-black dark:text-white">{{ $major->name }}</p>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $partner->company_name }}</p>
-                                </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $partner->company_city }}</p>
-                                </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $partner->companyIndustry->name }}</p>
-                                </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="font-semibold {{ $partner->is_verified ? 'text-green-500' : 'text-red-500' }}">
-                                        {{ $partner->is_verified ? 'Terverifikasi' : 'Belum Terverifikasi' }}
-                                    </p>
-                                </td>
+                                
+                               
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button class="hover:text-primary" aria-haspopup="dialog" aria-expanded="false"
-                                            aria-controls="hs-update-password-data-{{ $partner->id }}"
-                                            data-hs-overlay="#hs-update-password-data-{{ $partner->id }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColor" width="18" height="18">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
-                                            </svg>
-                                        </button>
                                         <button type="button" class="hover:text-primary" aria-haspopup="dialog"
-                                            aria-expanded="false" aria-controls="hs-delete-data-{{ $partner->id }}"
-                                            data-hs-overlay="#hs-delete-data-{{ $partner->id }}">
+                                            aria-expanded="false" aria-controls="hs-delete-data-{{ $major->id }}"
+                                            data-hs-overlay="#hs-delete-data-{{ $major->id }}">
                                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
                                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -139,9 +106,10 @@
                                                     fill="" />
                                             </svg>
                                         </button>
-                                        <button class="hover:text-primary" aria-haspopup="dialog" aria-expanded="false"
-                                            aria-controls="hs-edit-data-{{ $partner->id }}"
-                                            data-hs-overlay="#hs-edit-data-{{ $partner->id }}">
+                                        <button class="hover:text-primary"
+                                        aria-haspopup="dialog"
+                                            aria-expanded="false" aria-controls="hs-edit-data-{{ $major->id }}"
+                                            data-hs-overlay="#hs-edit-data-{{ $major->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -151,9 +119,8 @@
                                     </div>
                                 </td>
                             </tr>
-                            @include('components.modal.partner.delete')
-                            @include('components.modal.partner.edit')
-                            @include('components.modal.partner.update-password')
+                            @include('components.modal.major.edit')
+                            @include('components.modal.major.delete')
                             @endforeach
                         </tbody>
                     </table>
@@ -166,5 +133,6 @@
     </div>
 </main>
 @include('components.datatables')
-@include('components.modal.partner.add')
+@include('components.modal.major.add')
 @endsection
+
