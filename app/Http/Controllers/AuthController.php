@@ -27,9 +27,7 @@ class AuthController extends Controller
 
             // Coba login menggunakan guard admin
             if (Auth::guard('admin')->attempt($credentials)) {
-                // Periksa apakah admin memiliki `is_partner = 0`
                 if (Auth::guard('admin')->user()->is_partner == 0) {
-                    // Jika is_partner = 0, redirect ke dashboard
                     return redirect()->intended('/dashboard')->with('success', 'Login berhasil!');
                 } else {
                     // Jika is_partner bukan 0, logout dan kirimkan pesan error

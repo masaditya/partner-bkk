@@ -49,7 +49,7 @@
                             </p>
 
                             <span class="inline-block mt-15">
-                                <img class="" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}" alt="Logo" />
+                                <img class="size-80" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}" alt="Logo" />
                             </span>
                         </div>
                     </div>

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyIndustryController;
+use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\EmploymentStatusesController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\PartnerController;
@@ -17,9 +19,19 @@ use Illuminate\Support\Facades\Route;
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
     Route::middleware('auth')->group(function () {
+
+        Route::get('/', [DefaultController::class, 'index']);
+
         Route::get('/dashboard', function () {
             return view('pages.index');
         })->name('dashboard');
+
+         Route::get('/profile', function () {
+            return view('pages.profile');
+        })->name('profile');
+
+        Route::post('/profile/update', [AdminProfileController::class, 'update'])->name('profile.update');
+        Route::post('/profile/update-password', [AdminProfileController::class, 'updatePassword'])->name('update.password');
 
         // 
         Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');

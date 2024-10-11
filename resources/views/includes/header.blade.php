@@ -1,12 +1,12 @@
-<header class="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
-    <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
+<header class="sticky top-0 flex w-full bg-white z-999 drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
+    <div class="flex items-center justify-between flex-grow px-4 py-4 shadow-2 md:px-6 2xl:px-11">
         <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
             <!-- Hamburger Toggle BTN -->
             <button
                 class="z-99999 block rounded-sm border border-stroke bg-white p-1.5 shadow-sm dark:border-strokedark dark:bg-boxdark lg:hidden"
                 @click.stop="sidebarToggle = !sidebarToggle">
                 <span class="relative block h-5.5 w-5.5 cursor-pointer">
-                    <span class="du-block absolute right-0 h-full w-full">
+                    <span class="absolute right-0 w-full h-full du-block">
                         <span
                             class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-[0] duration-200 ease-in-out dark:bg-white"
                             :class="{ '!w-full delay-300': !sidebarToggle }"></span>
@@ -17,7 +17,7 @@
                             class="relative left-0 top-0 my-1 block h-0.5 w-0 rounded-sm bg-black delay-200 duration-200 ease-in-out dark:bg-white"
                             :class="{ '!w-full delay-500': !sidebarToggle }"></span>
                     </span>
-                    <span class="du-block absolute right-0 h-full w-full rotate-45">
+                    <span class="absolute right-0 w-full h-full rotate-45 du-block">
                         <span
                             class="absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-black delay-300 duration-200 ease-in-out dark:bg-white"
                             :class="{ '!h-0 delay-[0]': !sidebarToggle }"></span>
@@ -28,7 +28,7 @@
                 </span>
             </button>
             <!-- Hamburger Toggle BTN -->
-            <a class="block flex-shrink-0 lg:hidden" href="index.html">
+            <a class="flex-shrink-0 block lg:hidden" href="index.html">
                 <img class="object-cover w-8 h-8" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}"
                     alt="Logo BKK SMKN 1 Bojonegoro" />
             </a>
@@ -36,7 +36,7 @@
         <div class="hidden sm:block">
             <form action="https://formbold.com/s/unique_form_id" method="POST">
                 <div class="relative">
-                    <button class="absolute left-0 top-1/2 -translate-y-1/2">
+                    <button class="absolute left-0 -translate-y-1/2 top-1/2">
                         <svg class="fill-body hover:fill-primary dark:fill-bodydark dark:hover:fill-primary" width="20"
                             height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -49,7 +49,7 @@
                     </button>
 
                     <input type="text" placeholder="Type to search..."
-                        class="w-full bg-transparent pl-9 pr-4 focus:outline-none xl:w-125" />
+                        class="w-full pr-4 bg-transparent pl-9 focus:outline-none xl:w-125" />
                 </div>
             </form>
         </div>
@@ -61,9 +61,9 @@
                     <label :class="darkMode ? 'bg-primary' : 'bg-stroke'"
                         class="relative m-0 block h-7.5 w-14 rounded-full">
                         <input type="checkbox" :value="darkMode" @change="darkMode = !darkMode"
-                            class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0" />
+                            class="absolute top-0 z-50 w-full h-full m-0 opacity-0 cursor-pointer" />
                         <span :class="darkMode && '!right-1 !translate-x-full'"
-                            class="absolute left-1 top-1/2 flex h-6 w-6 -translate-y-1/2 translate-x-0 items-center justify-center rounded-full bg-white shadow-switcher duration-75 ease-linear">
+                            class="absolute flex items-center justify-center w-6 h-6 duration-75 ease-linear translate-x-0 -translate-y-1/2 bg-white rounded-full left-1 top-1/2 shadow-switcher">
                             <span class="dark:hidden">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -96,10 +96,10 @@
                         <span :class="!notifying && 'hidden'"
                             class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1">
                             <span
-                                class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
+                                class="absolute inline-flex w-full h-full rounded-full opacity-75 -z-1 animate-ping bg-meta-1"></span>
                         </span>
 
-                        <svg class="fill-current duration-300 ease-in-out" width="18" height="18" viewBox="0 0 18 18"
+                        <svg class="duration-300 ease-in-out fill-current" width="18" height="18" viewBox="0 0 18 18"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M16.1999 14.9343L15.6374 14.0624C15.5249 13.8937 15.4687 13.7249 15.4687 13.528V7.67803C15.4687 6.01865 14.7655 4.47178 13.4718 3.31865C12.4312 2.39053 11.0812 1.7999 9.64678 1.6874V1.1249C9.64678 0.787402 9.36553 0.478027 8.9999 0.478027C8.6624 0.478027 8.35303 0.759277 8.35303 1.1249V1.65928C8.29678 1.65928 8.24053 1.65928 8.18428 1.6874C4.92178 2.05303 2.4749 4.66865 2.4749 7.79053V13.528C2.44678 13.8093 2.39053 13.9499 2.33428 14.0343L1.7999 14.9343C1.63115 15.2155 1.63115 15.553 1.7999 15.8343C1.96865 16.0874 2.2499 16.2562 2.55928 16.2562H8.38115V16.8749C8.38115 17.2124 8.6624 17.5218 9.02803 17.5218C9.36553 17.5218 9.6749 17.2405 9.6749 16.8749V16.2562H15.4687C15.778 16.2562 16.0593 16.0874 16.228 15.8343C16.3968 15.553 16.3968 15.2155 16.1999 14.9343ZM3.23428 14.9905L3.43115 14.653C3.5999 14.3718 3.68428 14.0343 3.74053 13.6405V7.79053C3.74053 5.31553 5.70928 3.23428 8.3249 2.95303C9.92803 2.78428 11.503 3.2624 12.6562 4.2749C13.6687 5.1749 14.2312 6.38428 14.2312 7.67803V13.528C14.2312 13.9499 14.3437 14.3437 14.5968 14.7374L14.7655 14.9905H3.23428Z"
@@ -114,7 +114,7 @@
                             <h5 class="text-sm font-medium text-bodydark2">Notification</h5>
                         </div>
 
-                        <ul class="flex h-auto flex-col overflow-y-auto">
+                        <ul class="flex flex-col h-auto overflow-y-auto">
                             <li>
                                 <a class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
                                     href="#">
@@ -191,7 +191,7 @@
                     </span>
 
                     <span
-                        class="h-12 w-12 rounded-full flex items-center justify-center bg-gray-500 text-white font-bold">
+                        class="flex items-center justify-center w-12 h-12 font-bold text-white bg-gray-500 rounded-full">
                         {{ $initials }}
                     </span>
 
@@ -208,7 +208,7 @@
                     class="absolute right-0 mt-4 flex w-62.5 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                     <ul class="flex flex-col gap-5 border-b border-stroke px-6 py-7.5 dark:border-strokedark">
                         <li>
-                            <a href="profile.html"
+                            <a href="{{ route('profile') }}"
                                 class="flex items-center gap-3.5 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
                                 <svg class="fill-current" width="22" height="22" viewBox="0 0 22 22" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -252,11 +252,11 @@
     class="hs-overlay hidden size-full fixed top-0 start-0 overflow-x-hidden overflow-y-auto z-[5000]" role="dialog"
     tabindex="-1" aria-labelledby="hs-sign-out-alert-label">
     <div
-        class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-xs sm:w-full m-3 sm:mx-auto">
+        class="m-3 mt-0 transition-all ease-out opacity-0 hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 sm:max-w-xs sm:w-full sm:mx-auto">
         <div class="relative flex flex-col bg-white shadow-lg rounded-xl dark:bg-neutral-900">
             <div class="absolute top-2 end-2">
                 <button type="button"
-                    class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                    class="inline-flex items-center justify-center text-gray-800 bg-gray-100 border border-transparent rounded-full size-8 gap-x-2 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
                     aria-label="Close" data-hs-overlay="#hs-sign-out-alert">
                     <span class="sr-only">Close</span>
                     <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -267,7 +267,7 @@
                 </button>
             </div>
 
-            <div class="p-4 sm:p-10 text-center overflow-y-auto">
+            <div class="p-4 overflow-y-auto text-center sm:p-10">
                 <!-- Icon -->
                 <span
                     class="mb-4 inline-flex justify-center items-center size-[62px] rounded-full border-4 border-yellow-50 bg-yellow-100 text-yellow-500 dark:bg-yellow-700 dark:border-yellow-600 dark:text-yellow-100">
@@ -286,7 +286,7 @@
                     Apakah Anda yakin ingin keluar dari akun BKK SIGMA Anda?
                 </p>
 
-                <div class="mt-6 grid gap-y-2">
+                <div class="grid mt-6 gap-y-2">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit"
