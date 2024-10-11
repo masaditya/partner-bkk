@@ -4,7 +4,8 @@
     <!-- SIDEBAR HEADER -->
     <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
         <a href="/">
-            <img class="object-cover w-20 h-20" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}" alt="Logo BKK SMKN 1 Bojonegoro" />
+            <img class="object-cover w-20 h-20" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}"
+                alt="Logo BKK SMKN 1 Bojonegoro" />
         </a>
 
         <button class="block lg:hidden" @click.stop="sidebarToggle = !sidebarToggle">
@@ -26,14 +27,16 @@
                 <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MENU</h3>
 
                 <ul class="mb-6 flex flex-col gap-1.5">
-                     <!-- Menu Item Dashboard -->
+                    <!-- Menu Item Dashboard -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
                             href="/" @click="selected = (selected === 'dashboard' ? '':'dashboard')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'dashboard') && (page === 'dashboard') }">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="20" height="20">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" width="20" height="20">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
                             </svg>
 
                             Dasbor
@@ -47,8 +50,10 @@
                             href="/" @click="selected = (selected === 'Occupations' ? '':'Occupations')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Occupations') && (page === 'occupations') }">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"  width="18" height="19">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" width="18" height="19">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
                             </svg>
                             Lowongan Pekerjaan
                         </a>
@@ -61,9 +66,11 @@
                             href="/" @click="selected = (selected === 'Applicant ' ? '':'Applicant ')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Applicant ') && (page === 'applicant ') }">
 
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="18" height="18">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-                                </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" width="18" height="18">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                            </svg>
 
 
                             Daftar Pelamar
@@ -71,7 +78,7 @@
                     </li>
                     <!-- Menu Item Daftar Pelamar -->
 
-                    
+
                 </ul>
             </div>
 
@@ -80,6 +87,26 @@
                 <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MASTER</h3>
 
                 <ul class="mb-6 flex flex-col gap-1.5">
+
+                    <!-- Menu Item Article -->
+                    <li>
+                        <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
+                            href="/" @click="selected = (selected === 'Berita' ? '':'Berita')"
+                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Berita') && (page === 'Berita') }"
+                            :class="page === 'Berita' && 'bg-graydark'">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" width="18" height="18">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z" />
+                            </svg>
+
+
+                            Berita
+                        </a>
+                    </li>
+                    <!-- Menu Item aricle -->
+
+
                     <!-- Menu Item User -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
@@ -107,8 +134,10 @@
                             href="{{ route('partner.index') }}" @click="selected = (selected === 'Mitra' ? '':'Mitra')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Mitra') && (page === 'Mitra') }"
                             :class="page === 'Mitra' && 'bg-graydark'">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="18" height="18">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" width="18" height="18">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
                             </svg>
                             Mitra Industri
                         </a>
@@ -121,8 +150,10 @@
                             href="{{ route('admin.index') }}" @click="selected = (selected === 'Admin' ? '':'Admin')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Admin') && (page === 'Admin') }"
                             :class="page === 'Admin' && 'bg-graydark'">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4.5">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="18" height="18"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4.5">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
                             </svg>
                             Admin
                         </a>
@@ -135,8 +166,10 @@
                             href="#" @click.prevent="selected = (selected === 'DataMaster' ? '':'DataMaster')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'DataMaster') || (page === 'major' || page === 'employementStatus' || page === 'companyIndustry' || page === 'category') }">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" width="18" height="18">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+                                stroke="currentColor" width="18" height="18">
+                                <path strokeLinecap="round" strokeLinejoin="round"
+                                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
                             </svg>
 
 
@@ -157,19 +190,24 @@
                             <ul class="flex flex-col gap-2 pl-6 mt-4 mb-3">
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('master.major.index') }}" :class="page === 'Jurusan' && '!text-white'">Data Jurusan</a>
+                                        href="{{ route('master.major.index') }}"
+                                        :class="page === 'Jurusan' && '!text-white'">Data Jurusan</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('master.status.index') }}" :class="page === 'Status-Pekerjaan' && '!text-white'">Data Status Pekerjaan</a>
+                                        href="{{ route('master.status.index') }}"
+                                        :class="page === 'Status-Pekerjaan' && '!text-white'">Data Status Pekerjaan</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('master.industry.index') }}" :class="page === 'Perusahaan-Industri' && '!text-white'">Data Industri Perusahaan</a>
+                                        href="{{ route('master.industry.index') }}"
+                                        :class="page === 'Perusahaan-Industri' && '!text-white'">Data Industri
+                                        Perusahaan</a>
                                 </li>
                                 <li>
                                     <a class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                                        href="{{ route('master.category.index') }}" :class="page === 'Kategori' && '!text-white'">Data Kategori Artikel</a>
+                                        href="{{ route('master.category.index') }}"
+                                        :class="page === 'Kategori' && '!text-white'">Data Kategori Artikel</a>
                                 </li>
                             </ul>
                         </div>
@@ -180,7 +218,8 @@
                     <!-- Menu Item Settings -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ route('setting.index') }}" @click="selected = (selected === 'Pengaturan' ? '':'Pengaturan')"
+                            href="{{ route('setting.index') }}"
+                            @click="selected = (selected === 'Pengaturan' ? '':'Pengaturan')"
                             :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Pengaturan') && (page === 'Pengaturan') }"
                             :class="page === 'Pengaturan' && 'bg-graydark'">
                             <svg class="fill-current" width="18" height="19" viewBox="0 0 18 19" fill="none"

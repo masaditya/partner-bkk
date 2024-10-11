@@ -23,13 +23,11 @@
             </div>
             <div class="p-4 overflow-y-auto">
 
-                <form action="{{ route('partner.update', $partner->id) }}" method="POST">
+                <form action="{{ route('partner.update', $partner->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <!-- Menggunakan PUT atau PATCH untuk form edit -->
                     <div class="p-2">
                         <div class="grid grid-cols-1 gap-2 p-2 sm:grid-cols-2">
-                            <!-- Name Field -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-black dark:text-white">
                                     Nama
@@ -321,21 +319,92 @@
                                 </select>
                             </div>
 
-                        </div>
-                    </div>
+                            <div class="mb-4.5 flex items-center justify-start gap-3 px-4">
+                                <div class="block">
+                                    @if($partner->logo)
+                                    <img src="{{ $partner->logo }}" alt="Logo {{ $partner->name }}"
+                                        class="object-cover w-20 h-20 rounded">
+                                    @else
+                                    <div
+                                        class="flex items-center justify-center w-20 h-20 bg-gray-200 rounded dark:bg-gray-700">
+                                        <span class="font-medium text-gray-700 dark:text-gray-300">
+                                            {{ Str::upper(Str::substr($partner->name, 0, 1)) }}
+                                        </span>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div>
+                                    <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                                        Logo Perusahaan (Kosongkan jika tidak diganti, max
+                                        1mb)
+                                    </label>
+                                    <label class="block">
+                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max
+                                            1mb)</span>
+                                        <input type="file" accept="image/*" name="logo" class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-emerald-600 file:text-white hover:file:bg-emerald-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-emerald-500 dark:hover:file:bg-emerald-400">
+                                    </label>
+                                </div>
+                            </div>
 
-                    <!-- Submit Button -->
-                    <div class="flex items-center justify-end px-4 py-3 gap-x-2">
-                        <button type="button"
-                            class="inline-flex items-center px-3 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
-                            data-hs-overlay="#hs-add-data-partner-modal">
-                            Tutup
-                        </button>
-                        <button type="submit"
-                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-meta-3 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
-                            Perbarui
-                        </button>
-                    </div>
+                            <div class="mb-4.5">
+                                <div class="mb-4.5">
+                                    <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                                        Status Verifikasi Akun
+                                    </label>
+                                    <div class="flex items-center">
+                                        <label for="is_verified"
+                                            class="text-xs text-gray-500 me-3 dark:text-neutral-400">Belum
+                                            Verifikasi</label>
+                                        <input type="hidden" name="is_verified" value="0">
+                                        <!-- Hidden input for unchecked state -->
+                                        <input type="checkbox" id="is_verified" name="is_verified" value="1"
+                                            class="relative w-[3.25rem] h-7 p-px bg-gray-100 border-transparent text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-blue-600 disabled:opacity-50 disabled:pointer-events-none checked:bg-none checked:text-blue-600 checked:border-blue-600 focus:checked:border-blue-600 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-600 before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-neutral-400 dark:checked:before:bg-blue-200"
+                                            {{ $partner->is_verified ? 'checked' : '' }}>
+                                        <label for="is_verified"
+                                            class="text-xs text-gray-500 ms-3 dark:text-neutral-400">Sudah
+                                            Verifikasi</label>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                                        Tampilkan Logo di halaman utama
+                                    </label>
+                                    <div class="flex items-center">
+                                        <label for="is_show"
+                                            class="text-xs text-gray-500 me-3 dark:text-neutral-400">Belum
+                                            Tampilkan</label>
+                                        <input type="hidden" name="is_show" value="0">
+                                        <!-- Hidden input for unchecked state -->
+                                        <input type="checkbox" id="is_show" name="is_show" value="1"
+                                            class="relative w-[3.25rem] h-7 p-px bg-gray-100 border-transparent text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-blue-600 disabled:opacity-50 disabled:pointer-events-none checked:bg-none checked:text-blue-600 checked:border-blue-600 focus:checked:border-blue-600 dark:bg-neutral-800 dark:border-neutral-700 dark:checked:bg-blue-500 dark:checked:border-blue-500 dark:focus:ring-offset-gray-600 before:inline-block before:size-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 dark:before:bg-neutral-400 dark:checked:before:bg-blue-200"
+                                            {{ $partner->is_show ? 'checked' : '' }}>
+                                        <label for="is_show"
+                                            class="text-xs text-gray-500 ms-3 dark:text-neutral-400">Sudah
+                                            Tampilkan</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Submit Button -->
+                        <div class="flex items-center justify-end px-4 py-3 gap-x-2">
+                            <button type="button"
+                                class="inline-flex items-center px-3 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                                data-hs-overlay="#hs-edit-data-{{ $partner->id }}">
+                                Tutup
+                            </button>
+                            <button type="submit"
+                                class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-meta-3 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
+                                Perbarui
+                            </button>
+
+
+
+                        </div>
                 </form>
 
 

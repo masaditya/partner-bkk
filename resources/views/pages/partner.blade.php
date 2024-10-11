@@ -66,8 +66,8 @@
                                 <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
                                     No.
                                 </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white">
-                                    Nama
+                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
+                                    Logo
                                 </th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
                                     Nama Perushaan
@@ -77,6 +77,9 @@
                                 </th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white">
                                     Bidang
+                                </th>
+                                <th class="px-4 py-4 font-medium text-black dark:text-white">
+                                    Tampilkan
                                 </th>
                                 <th class="px-4 py-4 font-medium text-black dark:text-white">
                                     Verifikasi
@@ -92,8 +95,18 @@
                                 <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
                                     <h5 class="font-medium text-black dark:text-white">{{ $loop->iteration }}</h5>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $partner->name }}</p>
+                                <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
+                                    @if($partner->logo)
+                                    <img src="{{ $partner->logo}}" alt="Logo {{ $partner->name }}"
+                                        class="object-cover w-10 h-10">
+                                    @else
+                                    <div
+                                        class="flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-700">
+                                        <span class="font-medium text-gray-700 dark:text-gray-300">
+                                            {{ Str::upper(Str::substr($partner->name, 0, 1)) }}
+                                        </span>
+                                    </div>
+                                    @endif
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <p class="text-black dark:text-white">{{ $partner->company_name }}</p>
@@ -105,9 +118,17 @@
                                     <p class="text-black dark:text-white">{{ $partner->companyIndustry->name }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="font-semibold {{ $partner->is_verified ? 'text-green-500' : 'text-red-500' }}">
+                                    <span
+                                        class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium {{ $partner->is_show ? 'bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500' : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500' }}">
+                                        {{ $partner->is_show ? 'Ditampilkan' : 'Disembunyikan' }}
+                                    </span>
+                                </td>
+                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                    <span
+                                        class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium {{ $partner->is_verified ? 'bg-teal-100 text-teal-800 dark:bg-teal-800/30 dark:text-teal-500' : 'bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500' }}">
                                         {{ $partner->is_verified ? 'Terverifikasi' : 'Belum Terverifikasi' }}
-                                    </p>
+                                    </span>
+
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">

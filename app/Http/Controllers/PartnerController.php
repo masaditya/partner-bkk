@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class PartnerController extends Controller
 {
@@ -30,6 +31,7 @@ class PartnerController extends Controller
             'company_name' => 'required|string|max:255',
             'company_industry_id' => 'required|exists:company_industries,id',
             'company_city' => 'required|string|max:255',
+            'logo' => 'image|mimes:png,jpg,jpeg|max:1024',
         ]);
 
         if ($validator->fails()) {
@@ -39,6 +41,12 @@ class PartnerController extends Controller
         }
 
         try {
+            $logoPath = null;
+            if ($request->hasFile('logo')) {
+                $logoPath = $request->file('logo')->store('logos', 'public');
+                $logoPath = url('storage/' . $logoPath);
+            }
+
             Admin::create([
                 'id' => (string) Str::uuid(),
                 'name' => $request->name,
@@ -50,10 +58,11 @@ class PartnerController extends Controller
                 'company_industry_id' => $request->company_industry_id,
                 'company_city' => $request->company_city,
                 'is_verified' => 1,
+                'logo' => $logoPath,
             ]);
 
             return redirect()->route('partner.index')->with('success', 'Admin berhasil ditambahkan.');
-            
+
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Terjadi kesalahan saat menambahkan admin: ' . $e->getMessage());
         }
@@ -70,22 +79,34 @@ class PartnerController extends Controller
             'company_name' => 'required|string|max:255',
             'company_industry_id' => 'required|exists:company_industries,id',
             'company_city' => 'required|string|max:255',
+            'is_verified' => 'boolean',
+            'is_show' => 'boolean',
+            'logo' => 'image|mimes:png,jpg,jpeg|max:1024',
         ]);
 
         try {
             $admin = Admin::findOrFail($id);
+            
             $admin->name = $request->name;
             $admin->email = $request->email;
             $admin->phone = $request->phone;
             $admin->company_name = $request->company_name;
             $admin->company_industry_id = $request->company_industry_id;
             $admin->company_city = $request->company_city;
+            $admin->is_verified = $request->boolean('is_verified');
+            $admin->is_show = $request->boolean('is_show');
+
+            if ($request->hasFile('logo')) {
+                $filename = time() . '.' . $request->logo->extension();
+                $path = $request->logo->storeAs('logos', $filename, 'public');
+                $admin->logo = '/storage/' . $path;
+            }
 
             $admin->save();
 
             return redirect()->route('partner.index')->with('success', 'Admin berhasil diperbarui.');
         } catch (\Exception $e) {
-            // Menangani kesalahan dan menampilkan pesan error
+            // Handle errors and display an error message
             return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat memperbarui admin: ' . $e->getMessage()]);
         }
     }

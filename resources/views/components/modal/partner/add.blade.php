@@ -23,7 +23,7 @@
             </div>
             <div class="p-4 overflow-y-auto">
 
-                <form action="{{ route('partner.store') }}" method="POST">
+                <form action="{{ route('partner.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="p-2">
                         <div class="grid grid-cols-1 gap-2 p-2 sm:grid-cols-2">
@@ -204,6 +204,16 @@
                                     minlength="8"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                             </div>
+                        </div>
+
+                        <div class="max-w-sm px-4">
+                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                                    Pilih logo Perusahaan (Kosongkan jika tidak perlu, max 1mb)
+                                </label>
+                            <label class="block">
+                            <span class="sr-only">Pilih logo Perusahaan</span>
+                            <input type="file" accept="image/*" name="logo" class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-emerald-600 file:text-white hover:file:bg-emerald-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-emerald-500 dark:hover:file:bg-emerald-400">
+                            </label>
                         </div>
                     </div>
 

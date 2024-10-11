@@ -17,7 +17,7 @@ class Admin extends Authenticatable
     public $incrementing = false;
 
     protected $fillable = [
-        'id', 'name', 'phone', 'password', 'email', 'is_partner', 'company_name', 'company_industry_id', 'company_city', 'is_verified'
+        'id', 'name', 'phone', 'password', 'email', 'is_partner', 'company_name', 'company_industry_id', 'company_city', 'is_verified', 'is_show', 'logo'
     ];
 
     protected $hidden = [
