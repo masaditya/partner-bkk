@@ -132,8 +132,9 @@
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button class="hover:text-primary" aria-haspopup="dialog" aria-expanded="false"
-                                            aria-controls="hs-update-password-data-{{ $partner->id }}"
+                                        <button class="hover:text-primary"
+                                        aria-haspopup="dialog"
+                                            aria-expanded="false" aria-controls="hs-update-password-data-{{ $partner->id }}"
                                             data-hs-overlay="#hs-update-password-data-{{ $partner->id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
@@ -172,6 +173,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            
                             @include('components.modal.partner.delete')
                             @include('components.modal.partner.edit')
                             @include('components.modal.partner.update-password')
