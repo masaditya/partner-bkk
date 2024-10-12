@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CompanyIndustry;
+use App\Models\EmploymentStatuses;
+use App\Models\Major;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -14,8 +17,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::get();
-
-        return view('pages.user.index', compact('users'));
+        $majors = Major::all();
+        return view('pages.user.index', compact('users', 'majors'));
     }
 
     public function store(Request $request)
@@ -75,7 +78,10 @@ class UserController extends Controller
     {
         try {
             $user = User::findOrFail($id);
-            return view('pages.user.edit', compact('user'));
+            $company_industries = CompanyIndustry::all();
+            $majors = Major::all();
+            $status = EmploymentStatuses::all();
+            return view('pages.user.edit', compact('user', 'majors', 'company_industries','status'));
         } catch (\Exception $e) {
             return redirect()->route('user.index')->withErrors(['error' => 'Data admin tidak ditemukan: ' . $e->getMessage()]);
         }

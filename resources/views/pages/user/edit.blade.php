@@ -12,7 +12,7 @@
     <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
         <!-- Breadcrumb Start -->
         <div class="flex flex-col gap-3 mb-2 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="font-bold text-black text-title-md2 dark:text-white">
+            <h2 class="font-bold text-gray-700 text-title-md2 dark:text-white">
                 Detail Data User
             </h2>
 
@@ -27,7 +27,7 @@
         </div>
         <!-- Breadcrumb End -->
 
-        <form action="{{ route('admin.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -47,11 +47,10 @@
             {{-- Button add end --}}
 
             <div class="flex flex-col gap-9 mt-4">
-                <!-- Contact Form -->
                 <div
                     class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-                        <h3 class="font-medium text-black dark:text-white">
+                        <h3 class="font-medium text-gray-700 dark:text-white">
                             Informasi Pribadi
                         </h3>
                     </div>
@@ -60,362 +59,295 @@
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                       
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Nama Lengkap <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="name" name="name" placeholder="Masukkan nomer induk siswa" value="{{ old('name', $user->name) }}" required
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="name" name="name" placeholder="Masukkan nama lengkap" value="{{ old('name', $user->name) }}" required
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         NIS (Hanya untuk alumni)
                                     </label>
-                                    <input type="NIS" name="NIS" placeholder="Masukkan nomer induk siswa" value="{{ old('NIS', $user->NIS) }}" required
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="text" name="NIS" placeholder="Masukkan nomer induk siswa" value="{{ old('NIS', $user->NIS) }}" required
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
                             </div>
 
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                       
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Alamat Email <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="mail" name="mail" placeholder="Masukkan nomer induk siswa" required value="{{ old('mail', $user->mail) }}"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="email" name="mail" placeholder="Masukkan alamat email" required value="{{ old('mail', $user->mail) }}"
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Nomer HP (WA Aktif) <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="phone" name="phone" placeholder="Masukkan nomer induk siswa" value="{{ old('phone', $user->phone) }}" required
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="text" name="phone" placeholder="Masukkan nomer telepon" value="{{ old('phone', $user->phone) }}" required
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
-                            </div>
 
-                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
-                      
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Jenis Kelamin <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="gender" name="gender" placeholder="Masukkan nomer induk siswa" required value="{{ old('gender', $user->gender) }}"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                                </div>
-
-                                <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Nomer HP (WA Aktif) <span class="text-red-500 text-sm">*</span>
-                                    </label>
-                                    <input type="phone" name="phone" placeholder="Masukkan nomer induk siswa" value="{{ old('phone', $user->phone) }}" required
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <select name="gender" required 
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                        <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                        <option value="Laki-laki" {{ old('gender', $user->gender) == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                                        <option value="Perempuan" {{ old('gender', $user->gender) == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
+                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    Pas Foto
                                 </label>
-                                <div x-data="{ isOptionSelected: false }"
-                                    class="relative z-20 bg-transparent dark:bg-form-input">
-                                    <select
-                                        class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                        :class="isOptionSelected && 'text-black dark:text-white'"
-                                        @change="isOptionSelected = true">
-                                        <option value="" class="text-body">
-                                            Type your subject
-                                        </option>
-                                        <option value="" class="text-body">USA</option>
-                                        <option value="" class="text-body">UK</option>
-                                        <option value="" class="text-body">Canada</option>
-                                    </select>
-                                    <span class="absolute right-4 top-1/2 z-30 -translate-y-1/2">
-                                        <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g opacity="0.8">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                    fill=""></path>
-                                            </g>
-                                        </svg>
-                                    </span>
+                                <div class="flex items-center gap-4">
+                                    <div class="block">
+                                    @if($user->photo)
+                                    <div class="w-40 h-40">
+                                        <img src="{{ $user->photo }}" alt="Logo {{ $user->photo }}" class="object-cover w-full h-full rounded">
+                                    </div>
+                                    @else
+                                    <div
+                                        class="flex items-center justify-center w-40 h-40 bg-gray-200 rounded dark:bg-gray-700">
+                                        <span class="font-medium text-gray-700 dark:text-gray-300">
+                                            {{ Str::upper(Str::substr($user->name, 0, 1)) }}
+                                        </span>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div>
+                                    <label class="block">
+                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max
+                                            1mb)</span>
+                                        <input type="file" accept="image/*" name="logo"
+                                            class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
+                                    </label>
+                                </div>
                                 </div>
                             </div>
 
                             <div class="mb-6">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Message
+                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    Alamat<span class="text-red-500 text-sm">*</span>
                                 </label>
-                                <textarea rows="6" placeholder="Type your message"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                                <textarea name="address" rows="3" placeholder="Masukikan alamat"
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ old('mail', $user->address) }}</textarea>
                             </div>
                         </div>
-
                 </div>
             </div>
 
             <div class="flex flex-col gap-9 mt-4">
-                <!-- Contact Form -->
                 <div
                     class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-                        <h3 class="font-medium text-black dark:text-white">
+                        <h3 class="font-medium text-gray-700 dark:text-white">
                             Pendidikan
                         </h3>
                     </div>
-                    <form action="#">
+                  
                         <div class="p-6.5">
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
-                                <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        First name
-                                    </label>
-                                    <input type="text" placeholder="Enter your first name"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                                </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Last name
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Status User <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="text" placeholder="Enter your last name"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                                </div>
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Email <span class="text-meta-1">*</span>
-                                </label>
-                                <input type="email" placeholder="Enter your email address"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
-                                </label>
-                                <input type="text" placeholder="Select subject"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
-                                </label>
-                                <div x-data="{ isOptionSelected: false }"
-                                    class="relative z-20 bg-transparent dark:bg-form-input">
-                                    <select
-                                        class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                        :class="isOptionSelected && 'text-black dark:text-white'"
-                                        @change="isOptionSelected = true">
-                                        <option value="" class="text-body">
-                                            Type your subject
-                                        </option>
-                                        <option value="" class="text-body">USA</option>
-                                        <option value="" class="text-body">UK</option>
-                                        <option value="" class="text-body">Canada</option>
+                                    <select name="is_alumni" required 
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                        <option value="" disabled selected>Pilih Status User</option>
+                                        <option value="1" {{ old('is_alumni', $user->is_alumni) == 1 ? 'selected' : '' }}>Alumni</option>
+                                        <option value="0" {{ old('is_alumni', $user->is_alumni) == 0 ? 'selected' : '' }}>Umum</option>
                                     </select>
-                                    <span class="absolute right-4 top-1/2 z-30 -translate-y-1/2">
-                                        <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g opacity="0.8">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                    fill=""></path>
-                                            </g>
-                                        </svg>
-                                    </span>
+                                </div>
+                      
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Tahun Kelulusan <span class="text-red-500 text-sm">*</span>
+                                    </label>
+                                    <input type="number" name="graduation_year" required placeholder="2024" value="{{ old('graduation_year', $user->graduation_year) }}" required
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                </div>
+
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Jurusan<span class="text-red-500 text-sm">*</span>
+                                    </label>
+                                        <select name="major_id" required 
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                        <option value="">Pilih Jurusan</option>
+                                        @foreach($majors as $majors)
+                                        <option value="{{ $majors->id }}"
+                                            {{ $user->major_id == $majors->id ? 'selected' : '' }}>{{ $majors->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
-                            <div class="mb-6">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Message
-                                </label>
-                                <textarea rows="6" placeholder="Type your message"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Gelar Terakhir<span class="text-red-500 text-sm">*</span>
+                                    </label>
+                                        <select name="latest_degree" required 
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                        <option value="" disabled selected>Pilih Gelar Terakhir</option>
+                                        <option value="SMK" {{ old('latest_degree', $user->latest_degree) == 'SMK' ? 'selected' : '' }}>SMK</option>
+                                        <option value="SMA" {{ old('latest_degree', $user->latest_degree) == 'SMA' ? 'selected' : '' }}>SMA</option>
+                                        <option value="D-1" {{ old('latest_degree', $user->latest_degree) == 'D-1' ? 'selected' : '' }}>D-1</option>
+                                        <option value="D-2" {{ old('latest_degree', $user->latest_degree) == 'D-2' ? 'selected' : '' }}>D-2</option>
+                                        <option value="D-3" {{ old('latest_degree', $user->latest_degree) == 'D-3' ? 'selected' : '' }}>D-3</option>
+                                        <option value="D-4" {{ old('latest_degree', $user->latest_degree) == 'D-4' ? 'selected' : '' }}>D-4</option>
+                                        <option value="S-1" {{ old('latest_degree', $user->latest_degree) == 'S-1' ? 'selected' : '' }}>S-1</option>
+                                        <option value="S-2" {{ old('latest_degree', $user->latest_degree) == 'S-2' ? 'selected' : '' }}>S-2</option>
+                                        <option value="Sarjana III" {{ old('latest_degree', $user->latest_degree) == 'S-3' ? 'selected' : '' }}>S-3</option>
+                                    </select>
+                                </div>
+                      
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Universitas
+                                    </label>
+                                    <input type="text" name="university " placeholder="Masukkan nama universitas" value="{{ old('university ', $user->university ) }}"
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                </div>
+
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Fakultas
+                                    </label>
+                                    <input type="text" name="faculty" placeholder="Masukkan nama fakultas" value="{{ old('faculty', $user->faculty) }}" required
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                </div>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
+            
 
             <div class="flex flex-col gap-9 mt-4">
-                <!-- Contact Form -->
                 <div
                     class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-                        <h3 class="font-medium text-black dark:text-white">
+                        <h3 class="font-medium text-gray-700 dark:text-white">
                             Pekerjaan
                         </h3>
                     </div>
-                    <form action="#">
+                  
                         <div class="p-6.5">
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
-                                <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        First name
-                                    </label>
-                                    <input type="text" placeholder="Enter your first name"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                                </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Last name
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Status Pekerjaan <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="text" placeholder="Enter your last name"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                                </div>
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Email <span class="text-meta-1">*</span>
-                                </label>
-                                <input type="email" placeholder="Enter your email address"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
-                                </label>
-                                <input type="text" placeholder="Select subject"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
-                                </label>
-                                <div x-data="{ isOptionSelected: false }"
-                                    class="relative z-20 bg-transparent dark:bg-form-input">
-                                    <select
-                                        class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                        :class="isOptionSelected && 'text-black dark:text-white'"
-                                        @change="isOptionSelected = true">
-                                        <option value="" class="text-body">
-                                            Type your subject
+                                    <select name="status_id" required 
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                        <option value="" selected disabled>Status Pekerjaan</option>
+                                        @foreach($status as $stat)
+                                        <option value="{{ $stat->id }}"
+                                            {{ $user->status_id == $stat->id ? 'selected' : '' }}>{{ $stat->name }}
                                         </option>
-                                        <option value="" class="text-body">USA</option>
-                                        <option value="" class="text-body">UK</option>
-                                        <option value="" class="text-body">Canada</option>
+                                        @endforeach
                                     </select>
-                                    <span class="absolute right-4 top-1/2 z-30 -translate-y-1/2">
-                                        <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g opacity="0.8">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                    fill=""></path>
-                                            </g>
-                                        </svg>
-                                    </span>
                                 </div>
+                      
+                                 <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Nama Perusahaan
+                                    </label>
+                                    <input type="text" name="company " placeholder="Masukkan nama universitas" value="{{ old('company ', $user->company ) }}"
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                </div>
+                                
                             </div>
 
-                            <div class="mb-6">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Message
-                                </label>
-                                <textarea rows="6" placeholder="Type your message"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
+                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                      
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Perusahaan Industri
+                                    </label>
+                                    <select name="company_industry_id" 
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                        <option disabled selected value="">Perusahaan Industri</option>
+                                        @foreach($company_industries as $industry)
+                                        <option value="{{ $industry->id }}"
+                                            {{ $user->company_industry_id == $industry->id ? 'selected' : '' }}>{{ $industry->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="w-full xl:w-1/2">
+                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                        Posisi
+                                    </label>
+                                    <input type="text" name="position" placeholder="Masukkan nama fakultas" value="{{ old('position', $user->position) }}" required
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                </div>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
 
             <div class="flex flex-col gap-9 mt-4">
-                <!-- Contact Form -->
                 <div
                     class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
-                        <h3 class="font-medium text-black dark:text-white">
-                            Dokumen
+                        <h3 class="font-medium text-gray-700 dark:text-white">
+                            Dokument (CV)
                         </h3>
                     </div>
-                    <form action="#">
+                  
                         <div class="p-6.5">
-                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
-                                <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        First name
+                           
+                            <div class="mb-4.5">
+                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    Pas Foto
+                                </label>
+                                <div class="flex items-center gap-4">
+                                    <div class="block">
+                                    @if($user->photo)
+                                    <div class="w-40 h-40">
+                                        <img src="{{ $user->photo }}" alt="Logo {{ $user->photo }}" class="object-cover w-full h-full rounded">
+                                    </div>
+                                    @else
+                                    <div
+                                        class="flex items-center justify-center w-40 h-40 bg-gray-200 rounded dark:bg-gray-700">
+                                        <span class="font-medium text-gray-700 dark:text-gray-300">
+                                            {{ Str::upper(Str::substr($user->name, 0, 1)) }}
+                                        </span>
+                                    </div>
+                                    @endif
+                                </div>
+                                <div>
+                                    <label class="block">
+                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max
+                                            1mb)</span>
+                                        <input type="file" accept="image/*" name="logo"
+                                            class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
                                     </label>
-                                    <input type="text" placeholder="Enter your first name"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
-
-                                <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                        Last name
-                                    </label>
-                                    <input type="text" placeholder="Enter your last name"
-                                        class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
                             </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Email <span class="text-meta-1">*</span>
-                                </label>
-                                <input type="email" placeholder="Enter your email address"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
-                                </label>
-                                <input type="text" placeholder="Select subject"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
-                            </div>
-
-                            <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Subject
-                                </label>
-                                <div x-data="{ isOptionSelected: false }"
-                                    class="relative z-20 bg-transparent dark:bg-form-input">
-                                    <select
-                                        class="relative z-20 w-full appearance-none rounded border border-stroke bg-transparent px-5 py-3 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                                        :class="isOptionSelected && 'text-black dark:text-white'"
-                                        @change="isOptionSelected = true">
-                                        <option value="" class="text-body">
-                                            Type your subject
-                                        </option>
-                                        <option value="" class="text-body">USA</option>
-                                        <option value="" class="text-body">UK</option>
-                                        <option value="" class="text-body">Canada</option>
-                                    </select>
-                                    <span class="absolute right-4 top-1/2 z-30 -translate-y-1/2">
-                                        <svg class="fill-current" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <g opacity="0.8">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
-                                                    fill=""></path>
-                                            </g>
-                                        </svg>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="mb-6">
-                                <label class="mb-3 block text-sm font-medium text-black dark:text-white">
-                                    Message
-                                </label>
-                                <textarea rows="6" placeholder="Type your message"
-                                    class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"></textarea>
-                            </div>
+                           
                         </div>
-                    </form>
                 </div>
             </div>
+           
         </form>
 
 

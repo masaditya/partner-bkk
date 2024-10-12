@@ -83,6 +83,9 @@
                                     Verifikasi Mitra
                                 </th>
                                 <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                    Lulusan Diterima
+                                </th>
+                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
                                     Aksi
                                 </th>
                             </tr>
@@ -110,6 +113,9 @@
                                         class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium {{ $partner->is_verified ? 'bg-teal-100 text-teal-800 dark:bg-teal-800/30 dark:text-teal-500' : 'bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500' }}">
                                         {{ $partner->is_verified ? 'Terverifikasi' : 'Belum Terverifikasi' }}
                                     </span>
+                                </td>
+                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                    <p class="text-gray-700 dark:text-white"></p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
