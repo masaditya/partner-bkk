@@ -6,7 +6,7 @@
         <div class="relative flex flex-col bg-white shadow-lg rounded-xl dark:bg-neutral-900">
             <div class="absolute top-2 end-2">
                 <button type="button"
-                    class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                    class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gary-700 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
                     aria-label="Close" data-hs-overlay="#hs-delete-data-{{ $admin->id }}">
                     <span class="sr-only">Tutup</span>
                     <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -30,7 +30,7 @@
                 <!-- End Icon -->
 
                 <h3 id="hs-delete-data-{{ $admin->id }}-label"
-                    class="mb-2 text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                    class="mb-2 text-2xl font-bold text-gary-700 dark:text-neutral-200">
                     Hapus Data
                 </h3>
                 <p class="text-gray-500 dark:text-neutral-500">
@@ -48,7 +48,7 @@
                     </form>
 
                     <button type="button"
-                        class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                        class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gary-700 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
                         data-hs-overlay="#hs-delete-data-{{ $admin->id }}">
                         Batal
                     </button>

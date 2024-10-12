@@ -26,3 +26,18 @@
 
  @vite('resources/css/app.css')
  @vite('resources/js/app.js')
+
+ {{-- <link href="{{ asset('build/assets/app-1oZlPBIH.css') }}" rel="stylesheet">
+ <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script> --}}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<style>
+    body{
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+</style>

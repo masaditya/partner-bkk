@@ -28,47 +28,47 @@
                     <div class="p-2">
                         <!-- Name Field -->
                         <div class="mb-4.5">
-                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-gary-700 dark:text-white">
                                 Nama
                             </label>
                             <input type="text" name="name" placeholder="Masukkan nama lengkap"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gary-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <!-- Email Field -->
                         <div class="mb-4.5">
-                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-gary-700 dark:text-white">
                                 Email
                             </label>
                             <input type="email" name="email" placeholder="Masukkan alamat email"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gary-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <!-- Phone Field -->
                         <div class="mb-4.5">
-                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-gary-700 dark:text-white">
                                 No Telp
                             </label>
                             <input name="phone" type="text" placeholder="Masukkan nomor telepon" maxlength="15" minlength="10"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gary-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <!-- Password Field -->
                         <div class="mb-4.5">
-                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-gary-700 dark:text-white">
                                 Kata Sandi
                             </label>
                             <input type="password" name="password" placeholder="Masukkan kata sandi" autocomplete="password" minlength="8"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gary-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <!-- Password Confirmation Field -->
                         <div>
-                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-gary-700 dark:text-white">
                                 Ketik Ulang Kata Sandi
                             </label>
                             <input type="password" name="password_confirmation" placeholder="Masukkan kembali kata sandi" autocomplete="re-enter-password" minlength="8"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gary-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
                     </div>
 
@@ -80,7 +80,7 @@
                             Tutup
                         </button>
                         <button type="submit"
-                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-meta-3 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
+                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-blue-600 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
                             Simpan
                         </button>
                     </div>

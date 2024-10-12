@@ -1,11 +1,13 @@
 <aside :class="sidebarToggle ? 'translate-x-0' : '-translate-x-full'"
-    class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
+    class="absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-gray-800 duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0"
     @click.outside="sidebarToggle = false">
     <!-- SIDEBAR HEADER -->
-    <div class="flex items-center justify-center gap-2 px-6 py-5.5 lg:py-6.5">
-        <a href="/">
-            <img class="object-cover w-20 h-20" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}"
+    <div class="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
+        <a href="{{ route('dashboard') }}">
+            <img class="object-cover w-20" src="{{ asset('images/bkk-sigma.png') }}"
                 alt="Logo BKK SMKN 1 Bojonegoro" />
+                
+            <span class="text-gray-100">SIGMA SMKN 1 BOJONEGORO</span>
         </a>
 
         <button class="block lg:hidden" @click.stop="sidebarToggle = !sidebarToggle">
@@ -110,8 +112,8 @@
                     <!-- Menu Item User -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="/" @click="selected = (selected === 'Pelamar' ? '':'Pelamar')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Pelamar') && (page === 'Pelamar') }"
+                            href="{{ route('user.index') }}" @click="selected = (selected === 'User' ? '':'User')"
+                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'User') && (page === 'User') }"
                             :class="page === 'Pelamar' && 'bg-graydark'">
                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +125,7 @@
                                     fill="" />
                             </svg>
 
-                            Pelamar
+                            User
                         </a>
                     </li>
                     <!-- Menu Item User -->

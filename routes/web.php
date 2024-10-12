@@ -10,6 +10,7 @@ use App\Http\Controllers\EmploymentStatusesController;
 use App\Http\Controllers\MajorController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\UserController;
 use App\Models\EmploymentStatuses;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,15 @@ use Illuminate\Support\Facades\Route;
         Route::put('partner/{id}', [PartnerController::class, 'update'])->name('partner.update');
         Route::put('partner/update-password/{id}', [PartnerController::class, 'updatePassword'])->name('partner.update.password');
         Route::delete('/partner/{id}', [PartnerController::class, 'destroy'])->name('partner.destroy');
+        // 
+
+        // 
+        Route::get('/user', [UserController::class, 'index'])->name('user.index');
+        Route::post('/user/store', [UserController::class, 'store'])->name('user.store');
+        Route::put('user/{id}', [UserController::class, 'update'])->name('user.update');
+        Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
+        Route::put('user/update-password/{id}', [UserController::class, 'updatePassword'])->name('user.update.password');
+        Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
         // 
 
         // 

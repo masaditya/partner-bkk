@@ -30,7 +30,7 @@
                 <!-- End Icon -->
 
                 <h3 id="hs-delete-data-{{ $partner->id }}-label"
-                    class="mb-2 text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                    class="mb-2 text-2xl font-bold text-gray-700 dark:text-neutral-200">
                     Hapus Data
                 </h3>
                 <p class="text-gray-500 dark:text-neutral-500">
@@ -48,7 +48,7 @@
                     </form>
 
                     <button type="button"
-                        class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                        class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-700 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
                         data-hs-overlay="#hs-delete-data-{{ $partner->id }}">
                         Batal
                     </button>

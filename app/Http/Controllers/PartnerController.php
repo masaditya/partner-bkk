@@ -24,7 +24,6 @@ class PartnerController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins',
             'phone' => 'required|string|max:15',
             'password' => 'required|string|min:8|confirmed',
@@ -49,7 +48,7 @@ class PartnerController extends Controller
 
             Admin::create([
                 'id' => (string) Str::uuid(),
-                'name' => $request->name,
+                'name' => 'NULL',
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'password' => Hash::make($request->password),
@@ -73,7 +72,6 @@ class PartnerController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:admins,email,' . $id,
             'phone' => 'required|string|max:15',
             'company_name' => 'required|string|max:255',
@@ -86,8 +84,7 @@ class PartnerController extends Controller
 
         try {
             $admin = Admin::findOrFail($id);
-            
-            $admin->name = $request->name;
+
             $admin->email = $request->email;
             $admin->phone = $request->phone;
             $admin->company_name = $request->company_name;

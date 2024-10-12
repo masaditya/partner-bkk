@@ -16,10 +16,33 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+    protected $table = 'users';
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
+    public $incrementing = false;
+
     protected $fillable = [
+        'id',
         'name',
         'email',
         'password',
+        'NIS',
+        'graduation_year',
+        'major_id',
+        'status_id',
+        'company',
+        'company_industry_id',
+        'position',
+        'address',
+        'phone',
+        'latest_degree',
+        'university',
+        'faculty',
+        'photo',
+        'document',
+        'gender',
+        'is_alumni',
     ];
 
     /**
