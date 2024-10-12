@@ -6,7 +6,7 @@
         <div
             class="flex flex-col w-full bg-white border shadow-sm pointer-events-auto rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
             <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
-                <h1 id="hs-update-password-data-{{ $user->id }}-label" class="text-xl font-bold text-gray-800 dark:text-white">
+                <h1 id="hs-update-password-data-{{ $user->id }}-label" class="text-xl font-bold text-gray-700 dark:text-white">
                     Ubah Kata Sandi
                 </h1>
                 <button type="button"

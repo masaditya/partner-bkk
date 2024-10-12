@@ -30,7 +30,7 @@
                 <!-- End Icon -->
 
                 <h3 id="hs-delete-data-{{ $user->id }}-label"
-                    class="mb-2 text-2xl font-bold text-gray-800 dark:text-neutral-200">
+                    class="mb-2 text-2xl font-bold text-gray-700 dark:text-neutral-200">
                     Hapus Data
                 </h3>
                 <p class="text-gray-500 dark:text-neutral-500">

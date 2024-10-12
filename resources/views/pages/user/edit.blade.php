@@ -19,7 +19,10 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="/">Dasbor /</a>
+                        <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
+                    </li>
+                    <li>
+                        <a class="font-medium" href="{{ route('user.index') }}">User /</a>
                     </li>
                     <li class="font-medium text-blue-500">Ubah User</li>
                 </ol>
@@ -70,7 +73,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         NIS (Hanya untuk alumni)
                                     </label>
-                                    <input type="text" name="NIS" placeholder="Masukkan nomer induk siswa" value="{{ old('NIS', $user->NIS) }}" required
+                                    <input type="text" name="NIS" placeholder="Masukkan nomer induk siswa" value="{{ old('NIS', $user->NIS) }}"
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
                             </div>
@@ -81,7 +84,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Alamat Email <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="email" name="mail" placeholder="Masukkan alamat email" required value="{{ old('mail', $user->mail) }}"
+                                    <input type="email" name="email" placeholder="Masukkan alamat email" required value="{{ old('email', $user->email) }}"
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 
@@ -108,7 +111,7 @@
 
                             <div class="mb-4.5">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Pas Foto
+                                    Pas Foto (jpg, png, max 1mb)
                                 </label>
                                 <div class="flex items-center gap-4">
                                     <div class="block">
@@ -127,9 +130,8 @@
                                 </div>
                                 <div>
                                     <label class="block">
-                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max
-                                            1mb)</span>
-                                        <input type="file" accept="image/*" name="logo"
+                                        <span class="sr-only">Pas Foto</span>
+                                        <input type="file" accept="image/*" name="photo"
                                             class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
                                     </label>
                                 </div>
@@ -175,7 +177,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Tahun Kelulusan <span class="text-red-500 text-sm">*</span>
                                     </label>
-                                    <input type="number" name="graduation_year" required placeholder="2024" value="{{ old('graduation_year', $user->graduation_year) }}" required
+                                    <input type="number" name="graduation_year" placeholder="2024" value="{{ old('graduation_year', $user->graduation_year) }}" required
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
 
@@ -183,7 +185,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Jurusan<span class="text-red-500 text-sm">*</span>
                                     </label>
-                                        <select name="major_id" required 
+                                        <select name="major_id" 
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
                                         <option value="">Pilih Jurusan</option>
                                         @foreach($majors as $majors)
@@ -201,7 +203,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Gelar Terakhir<span class="text-red-500 text-sm">*</span>
                                     </label>
-                                        <select name="latest_degree" required 
+                                        <select name="latest_degree" required
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
                                         <option value="" disabled selected>Pilih Gelar Terakhir</option>
                                         <option value="SMK" {{ old('latest_degree', $user->latest_degree) == 'SMK' ? 'selected' : '' }}>SMK</option>
@@ -228,7 +230,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Fakultas
                                     </label>
-                                    <input type="text" name="faculty" placeholder="Masukkan nama fakultas" value="{{ old('faculty', $user->faculty) }}" required
+                                    <input type="text" name="faculty" placeholder="Masukkan nama fakultas" value="{{ old('faculty', $user->faculty) }}" 
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
                             </div>
@@ -295,7 +297,7 @@
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         Posisi
                                     </label>
-                                    <input type="text" name="position" placeholder="Masukkan nama fakultas" value="{{ old('position', $user->position) }}" required
+                                    <input type="text" name="position" placeholder="Masukkan nama fakultas" value="{{ old('position', $user->position) }}"
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                                 </div>
                             </div>
@@ -316,32 +318,32 @@
                            
                             <div class="mb-4.5">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Pas Foto
+                                    Dokumen CV (pdf, max 1024)
                                 </label>
-                                <div class="flex items-center gap-4">
-                                    <div class="block">
-                                    @if($user->photo)
-                                    <div class="w-40 h-40">
-                                        <img src="{{ $user->photo }}" alt="Logo {{ $user->photo }}" class="object-cover w-full h-full rounded">
-                                    </div>
-                                    @else
-                                    <div
-                                        class="flex items-center justify-center w-40 h-40 bg-gray-200 rounded dark:bg-gray-700">
-                                        <span class="font-medium text-gray-700 dark:text-gray-300">
-                                            {{ Str::upper(Str::substr($user->name, 0, 1)) }}
-                                        </span>
-                                    </div>
-                                    @endif
-                                </div>
                                 <div>
                                     <label class="block">
-                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max
-                                            1mb)</span>
-                                        <input type="file" accept="image/*" name="logo"
+                                        <span class="sr-only">CV (1mb)</span>
+                                        <input type="file" accept="application/pdf" name="document"
                                             class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
                                     </label>
                                 </div>
+                                <div class="my-8">
+                                    @if($user->document)
+                                    <a href="{{ $user->document }}" class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-blue-600 hover:bg-opacity-90">
+                                        <span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                                </svg>
+                                        </span>
+                                        Lihat Curriculum Vitae (CV) User
+
+                                    </a>
+                                    @else
+                                        <p class="text-gray-500">Dokumen tidak tersedia.</p>
+                                    @endif
                                 </div>
+
                             </div>
                            
                         </div>

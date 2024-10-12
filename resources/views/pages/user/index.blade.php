@@ -12,7 +12,7 @@
     <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
         <!-- Breadcrumb Start -->
         <div class="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="font-bold text-black text-title-md2 dark:text-white">
+            <h2 class="font-bold text-gray-700 text-title-md2 dark:text-white">
                 Daftar User
             </h2>
 
@@ -21,7 +21,7 @@
                     <li>
                         <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
-                    <li class="font-medium text-meta-3">User</li>
+                    <li class="font-medium text-blue-500">User</li>
                 </ol>
             </nav>
         </div>
@@ -31,7 +31,7 @@
         <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between">
             <span></span>
             <button type="button"
-                class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-meta-3 hover:bg-opacity-90"
+                class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-blue-600 hover:bg-opacity-90"
                 aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-user-modal"
                 data-hs-overlay="#hs-add-data-user-modal">
                 <span>
@@ -63,20 +63,20 @@
                     <table id="dataTableBkk" class="w-full table-auto">
                         <thead>
                             <tr class="text-left bg-gray-2 dark:bg-meta-4">
-                                <th class="px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
+                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
                                     No.
                                 </th>
-                                <th class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
+                                <th class="min-w-[220px] px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
                                     Nama
                                 </th>
-                                <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
+                                <th class="min-w-[150px] px-4 py-4 font-medium text-gray-700 dark:text-white">
                                     Email
                                 </th>
                                 
-                                <th class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
+                                <th class="min-w-[150px] px-4 py-4 font-medium text-gray-700 dark:text-white">
                                     Status
                                 </th>
-                                <th class="px-4 py-4 font-medium text-black dark:text-white">
+                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
                                     Aksi
                                 </th>
                             </tr>
@@ -85,13 +85,13 @@
                             @foreach($users as $user)
                             <tr>
                                 <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
-                                    <h5 class="font-medium text-black dark:text-white">{{ $loop->iteration }}</h5>
+                                    <h5 class="font-medium text-gray-700 dark:text-white">{{ $loop->iteration }}</h5>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $user->name }}</p>
+                                    <p class="text-gray-700 dark:text-white">{{ $user->name }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-black dark:text-white">{{ $user->email }}</p>
+                                    <p class="text-gray-700 dark:text-white">{{ $user->email }}</p>
                                 </td>
                                
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">

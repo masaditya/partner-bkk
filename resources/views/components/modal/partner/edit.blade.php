@@ -235,9 +235,6 @@
                                 class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-blue-600 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
                                 Perbarui
                             </button>
-
-
-
                         </div>
                     </div>
                 </form>

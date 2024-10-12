@@ -96,7 +96,7 @@ class PartnerController extends Controller
             if ($request->hasFile('logo')) {
                 $filename = time() . '.' . $request->logo->extension();
                 $path = $request->logo->storeAs('logos', $filename, 'public');
-                $admin->logo = '/storage/' . $path;
+                $admin->logo = url('/storage/' . $path);
             }
 
             $admin->save();
