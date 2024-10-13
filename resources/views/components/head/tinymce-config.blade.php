@@ -1,11 +1,10 @@
-<script src="https://cdn.tiny.cloud/1/q6pin40kotbyee8szbgm9v9wsyih1v7f16goz0tc19hdpxve/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="{{ asset('js/tinymce/js/tinymce/tinymce.min.js') }}" referrerpolicy="origin"></script>
 <script>
   tinymce.init({
     selector: 'textarea#jobdescription',
     height: 1000,
-    plugins: 'image table lists textcolor',
-    toolbar: 'undo redo | image | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | lineheight | table',
-
+    plugins: 'image table lists',
+    toolbar: 'undo redo | image | blocks | bold italic | alignleft aligncenter alignright alignjustify | indent outdent | bullist numlist | lineheight | table',
     image_title: true,
     automatic_uploads: true,
     file_picker_types: 'image',

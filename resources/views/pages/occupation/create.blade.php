@@ -4,7 +4,7 @@
 @section('content')
 
 <main>
-<x-head.tinymce-config/>
+    <x-head.tinymce-config/>
     {{-- toast success or failed Start --}}
     @include('includes.toast')
     {{-- toast success or failed End --}}
@@ -33,10 +33,10 @@
         <form action="{{ route('occupation.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
-            <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between mt-6">
+            <div class="flex flex-col gap-3 mt-6 mb-4 sm:flex-row sm:items-center sm:justify-between">
                 <span></span>
                 <button type="submit"
-                    class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-blue-600 hover:bg-opacity-90">
+                    class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-md hover:bg-opacity-90">
                     <span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-[18px] -rotate-45">
@@ -49,41 +49,41 @@
             </div>
             {{-- Button add end --}}
 
-            <div class="flex flex-col gap-9 mt-4">
+            <div class="flex flex-col mt-4 gap-9">
                 <div
-                    class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
+                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                         </h3>
                     </div>
                     <div class="p-6.5">
                         <div class="mb-4.5">
-                            <label class="mb-3 block text-base font-medium text-gray-700 dark:text-white">
-                                Judul Lowongan <span class="text-red-500 text-sm">*</span>
+                            <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                Judul Lowongan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="title" placeholder="Masukkan judul pekerjaan" required
                                 class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <div class="mb-4.5">
-                            <label class="mb-3 block text-base font-medium text-gray-700 dark:text-white">
-                                Nama Perusahaan <span class="text-red-500 text-sm">*</span>
+                            <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                Nama Perusahaan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="company" placeholder="Masukkan nama perusahaan" required
                                 class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <div class="mb-4.5">
-                            <label class="mb-3 block text-base font-medium text-gray-700 dark:text-white">
-                                Lokasi Pekerjaan <span class="text-red-500 text-sm">*</span>
+                            <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                Lokasi Pekerjaan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="location" placeholder="Masukkan lokasi pekerjaan" required
                                 class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
 
                         <div class="mb-4.5">
-                            <label class="mb-3 block text-base font-medium text-gray-700 dark:text-white">
-                                Job Deskripsi <span class="text-red-500 text-sm">*</span>
+                            <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                Job Deskripsi <span class="text-sm text-red-500">*</span>
                             </label>
                             
                             <textarea id="jobdescription" name="description" placeholder="Masukkan deskripsi pekerjaan" required
@@ -94,21 +94,21 @@
 
                         <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-base font-medium text-gray-700 dark:text-white">
-                                    Batas Waktu Pendaftaran <span class="text-red-500 text-sm">*</span>
+                                <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                    Batas Waktu Pendaftaran <span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="date" name="deadline" placeholder="Masukkan batas waktu" required
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                             </div>
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-base font-medium text-gray-700 dark:text-white">
-                                    Logo Perusahaan <span class="text-red-500 text-sm">*</span>
+                                <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                    Logo Perusahaan <span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="file" name="thumbnail" accept="image/*"
                                     placeholder="Masukkan logo perusahaan" required
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                                     id="logo" onchange="previewImage()" />
-                                <div class="h-40 w-40 overflow-hidden p-4">
+                                <div class="w-40 h-40 p-4 overflow-hidden">
                                     <img id="previewImage" src="https://placehold.co/400" alt="Preview Logo"
                                         class="object-cover rounded" />
                                 </div>

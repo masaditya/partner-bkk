@@ -4,7 +4,7 @@
 @section('content')
 
 <main>
-<x-head.tinymce-config/>
+    <x-head.tinymce-config/>
     {{-- toast success or failed Start --}}
     @include('includes.toast')
     {{-- toast success or failed End --}}
