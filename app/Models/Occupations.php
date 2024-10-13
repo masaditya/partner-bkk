@@ -16,4 +16,10 @@ class Occupations extends Model
     protected $fillable = [
         'id', 'title', 'description', 'deadline', 'location', 'company', 'publisher_id', 'thumbnail'
     ];
+
+    
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'publisher_id');
+    }
 }

@@ -2,16 +2,18 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyIndustryController;
 use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\EmploymentStatusesController;
+use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MajorController;
+use App\Http\Controllers\OccupationsController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\UserController;
-use App\Models\EmploymentStatuses;
 use Illuminate\Support\Facades\Route;
 
 
@@ -91,4 +93,24 @@ use Illuminate\Support\Facades\Route;
         Route::get('/setting', [SettingController::class, 'index'])->name('setting.index');
         Route::put('/setting/{id}', [SettingController::class, 'update'])->name('setting.update');
         //
+
+        // 
+        Route::get('/occupation', [OccupationsController::class, 'index'])->name('occupation.index');
+        Route::get('occupation/create', [OccupationsController::class, 'create'])->name('occupation.create');
+        Route::post('/occupation/store', [OccupationsController::class, 'store'])->name('occupation.store');
+        Route::put('occupation/{id}', [OccupationsController::class, 'update'])->name('occupation.update');
+        Route::get('/occupation/{id}/edit', [OccupationsController::class, 'edit'])->name('occupation.edit');
+        Route::put('occupation/update-password/{id}', [OccupationsController::class, 'updatePassword'])->name('occupation.update.password');
+        Route::delete('/occupation/{id}', [OccupationsController::class, 'destroy'])->name('occupation.destroy');
+        // 
+
+        // 
+        Route::get('/article', [ArticleController::class, 'index'])->name('article.index');
+        Route::put('article/create', [ArticleController::class, 'create'])->name('article.create');
+        Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
+        Route::put('article/{id}', [ArticleController::class, 'update'])->name('article.update');
+        Route::get('/article/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
+        Route::put('article/update-password/{id}', [ArticleController::class, 'updatePassword'])->name('article.update.password');
+        Route::delete('/article/{id}', [ArticleController::class, 'destroy'])->name('article.destroy');
+        // 
     });

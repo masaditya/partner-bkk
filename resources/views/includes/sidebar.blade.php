@@ -49,8 +49,8 @@
                     <!-- Menu Item Job -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="/" @click="selected = (selected === 'Occupations' ? '':'Occupations')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Occupations') && (page === 'occupations') }">
+                            href="{{ route('occupation.index') }}" @click="selected = (selected === 'Occupations' ? '':'Occupations')"
+                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Occupations') && (page === 'Lowongan-Pekerjaan') }">
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" width="18" height="19">

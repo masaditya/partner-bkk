@@ -15,13 +15,13 @@ use Illuminate\Support\Facades\Response;
 
 class UserController extends Controller
 {
+
     public function index()
     {
         $users = User::get();
         $majors = Major::all();
         return view('pages.user.index', compact('users', 'majors'));
     }
-
 
     public function store(Request $request)
     {
