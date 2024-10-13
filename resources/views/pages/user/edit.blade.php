@@ -103,8 +103,8 @@
                                     <select name="gender" required 
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
                                         <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                                        <option value="Laki-laki" {{ old('gender', $user->gender) == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                                        <option value="Perempuan" {{ old('gender', $user->gender) == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                                        <option value="male" {{ old('gender', $user->gender) == 'male' ? 'selected' : '' }}>Laki-laki</option>
+                                        <option value="female" {{ old('gender', $user->gender) == 'female' ? 'selected' : '' }}>Perempuan</option>
                                     </select>
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
 
                                 <div class="w-full xl:w-1/2">
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                        Gelar Terakhir<span class="text-red-500 text-sm">*</span>
+                                        Pendidikan Terakhir<span class="text-red-500 text-sm">*</span>
                                     </label>
                                         <select name="latest_degree" required
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">

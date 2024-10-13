@@ -98,15 +98,26 @@
                                 </td>
                                  <td class="border-b border-[#eee] dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">
-                                        {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}
-
+                                        @if(\Carbon\Carbon::parse($occupation->deadline) < \Carbon\Carbon::now())
+                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">Sudah Lewat</span>
+                                        @else
+                                            {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}
+                                        @endif
                                     </p>
                                 </td>
                                  <td class="border-b border-[#eee] dark:border-strokedark">
-                                    <p class="text-gray-700 dark:text-white">{!! $occupation->description !!}</p>
+                                    <p class="text-gray-700 dark:text-white">
+                                        {{ $occupation->location }}
+                                    </p>
                                 </td>
                                  <td class="border-b border-[#eee] dark:border-strokedark">
-                                    <p class="text-gray-700 dark:text-white">{{ $occupation->admin->name }}</p>
+                                    <p class="text-gray-700 dark:text-white">
+                                        @if($occupation->admin->is_partner == 0)
+                                            Admin
+                                        @else
+                                            {{ $occupation->admin->name }}
+                                        @endif
+                                    </p>
                                 </td>
                                 <td class="border-b border-[#eee] dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">

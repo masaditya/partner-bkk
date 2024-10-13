@@ -22,4 +22,11 @@ class Occupations extends Model
     {
         return $this->belongsTo(Admin::class, 'publisher_id');
     }
+
+    
+    public function applicants()
+    {
+        return $this->hasMany(Applicant::class);
+    }
+    
 }

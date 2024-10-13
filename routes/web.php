@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
@@ -110,7 +111,11 @@ use Illuminate\Support\Facades\Route;
         Route::post('/article/store', [ArticleController::class, 'store'])->name('article.store');
         Route::put('article/{id}', [ArticleController::class, 'update'])->name('article.update');
         Route::get('/article/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
-        Route::put('article/update-password/{id}', [ArticleController::class, 'updatePassword'])->name('article.update.password');
         Route::delete('/article/{id}', [ArticleController::class, 'destroy'])->name('article.destroy');
+        // 
+
+        // 
+        Route::get('/applicant', [ApplicantController::class, 'index'])->name('applicant.index');
+        Route::get('/applicant/{id}/detail', [ApplicantController::class, 'detail'])->name('applicant.detail');
         // 
     });
