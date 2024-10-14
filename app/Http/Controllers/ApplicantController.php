@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ApplicantExport;
 use App\Models\Applicant;
 use Illuminate\Http\Request;
 use Exception;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ApplicantController extends Controller
 {
@@ -46,6 +49,32 @@ class ApplicantController extends Controller
         } catch (Exception $e) {
             return redirect()->back()->withErrors([
                 'error' => 'Terjadi kesalahan saat mengarahkan ke halaman edit pelamar. Silakan coba lagi.'
+            ]);
+        }
+    }
+
+    public function exportExcel()
+    {
+        try {
+            return Excel::download(new ApplicantExport, 'data_pelamar_BKK_SIGMA.xlsx');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors([
+                'error' => 'Terjadi kesalahan saat meng-export data pelamar ke Excel: ' . $e->getMessage()
+            ]);
+        }
+    }
+
+    // Fungsi untuk export data Partner ke PDF
+    public function exportPDF()
+    {
+        try {
+            $applicants = Applicant::get();
+            $pdf = PDF::loadView('exports.applicant_pdf', compact('applicants'))
+                ->setPaper('a4', 'landscape');
+            return $pdf->download('data_pelamar_BKK_SIGMA.pdf');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors([
+                'error' => 'Terjadi kesalahan saat meng-export data pelamar ke PDF. Silakan coba lagi.'
             ]);
         }
     }

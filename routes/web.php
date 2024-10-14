@@ -107,6 +107,8 @@ use Illuminate\Support\Facades\Route;
         Route::get('/occupation/{id}/edit', [OccupationsController::class, 'edit'])->name('occupation.edit');
         Route::put('occupation/update-password/{id}', [OccupationsController::class, 'updatePassword'])->name('occupation.update.password');
         Route::delete('/occupation/{id}', [OccupationsController::class, 'destroy'])->name('occupation.destroy');
+        Route::get('occupation/export-excel', [OccupationsController::class, 'exportExcel'])->name('occupation.export.excel');
+        Route::get('occupation/export-pdf', [OccupationsController::class, 'exportPDF'])->name('occupation.export.pdf');
         // 
 
         // 
@@ -121,5 +123,7 @@ use Illuminate\Support\Facades\Route;
         // 
         Route::get('/applicant', [ApplicantController::class, 'index'])->name('applicant.index');
         Route::get('/applicant/{id}/detail', [ApplicantController::class, 'detail'])->name('applicant.detail');
+        Route::get('applicant/export-excel', [ApplicantController::class, 'exportExcel'])->name('applicant.export.excel');
+        Route::get('applicant/export-pdf', [ApplicantController::class, 'exportPDF'])->name('applicant.export.pdf');
         // 
     });

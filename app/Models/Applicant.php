@@ -25,4 +25,6 @@ class Applicant extends Model
     {
         return $this->belongsTo(Occupations::class, 'id_occupation', 'id');
     }
+
+    
 }

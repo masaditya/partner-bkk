@@ -191,15 +191,23 @@ class UserController extends Controller
 
     public function exportExcel()
     {
-        return Excel::download(new UserExport, 'data_user_BKK_SIGMA.xlsx');
+        try {
+            return Excel::download(new UserExport, 'data_user_BKK_SIGMA.xlsx');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat mengunduh data user ke Excel: ' . $e->getMessage()]);
+        }
     }
 
     // Fungsi untuk export data Partner ke PDF
     public function exportPDF()
     {
-        $users = User::get();
-        $pdf = PDF::loadView('exports.user_pdf', compact('users'))
-            ->setPaper('a4', 'landscape');
-        return $pdf->download('data_user_BKK_SIGMA.pdf');
+        try {
+            $users = User::get();
+            $pdf = PDF::loadView('exports.user_pdf', compact('users'))
+                ->setPaper('a4', 'landscape');
+            return $pdf->download('data_user_BKK_SIGMA.pdf');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat mengunduh data user ke PDF: ' . $e->getMessage()]);
+        }
     }
 }

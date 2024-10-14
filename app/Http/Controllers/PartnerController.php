@@ -147,15 +147,23 @@ class PartnerController extends Controller
     // Fungsi untuk export data Partner ke Excel
     public function exportExcel()
     {
-        return Excel::download(new PartnerExport, 'data_partner_industri_BKK_SIGMA.xlsx');
+        try {
+            return Excel::download(new PartnerExport, 'data_partner_industri_BKK_SIGMA.xlsx');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengunduh data partner ke Excel: ' . $e->getMessage());
+        }
     }
 
     // Fungsi untuk export data Partner ke PDF
     public function exportPDF()
     {
-        $partners = Admin::where('is_partner', '1')->get();
-        $pdf = PDF::loadView('exports.partner_pdf', compact('partners'))
-            ->setPaper('a4', 'landscape');
-        return $pdf->download('data_partner_industri_BKK_SIGMA.pdf');
+        try {
+            $partners = Admin::where('is_partner', '1')->get();
+            $pdf = PDF::loadView('exports.partner_pdf', compact('partners'))
+                ->setPaper('a4', 'landscape');
+            return $pdf->download('data_partner_industri_BKK_SIGMA.pdf');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengunduh data partner ke PDF: ' . $e->getMessage());
+        }
     }
 }

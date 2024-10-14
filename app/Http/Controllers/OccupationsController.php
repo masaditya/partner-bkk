@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OccupationExport;
 use App\Models\Occupations;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class OccupationsController extends Controller
 {
@@ -174,6 +177,29 @@ class OccupationsController extends Controller
             return redirect()->route('occupation.index')->with('success', 'lowongan pekerjaan berhasil dihapus.');
         } catch (Exception $e) {
             return redirect()->route('occupation.index')->with('error', 'Gagal menghapus lowongan pekerjaan. ' . $e->getMessage());
+        }
+    }
+
+        // Fungsi untuk export data Partner ke Excel
+    public function exportExcel()
+    {
+        try {
+            return Excel::download(new OccupationExport, 'Data_lowongan_pekerjaan_BKK_SIGMA.xlsx');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengunduh data lowongan pekerjaan ke Excel: ' . $e->getMessage());
+        }
+    }
+
+    // Fungsi untuk export data Partner ke PDF
+    public function exportPDF()
+    {
+        try {
+            $occupations = Occupations::all();
+            $pdf = PDF::loadView('exports.occupation_pdf', compact('occupations'))
+                ->setPaper('a4', 'potrait');
+            return $pdf->download('Data_lowongan_pekerjaan_BKK_SIGMA.pdf');
+        } catch (Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat mengunduh data lowongan pekerjaan ke PDF: ' . $e->getMessage());
         }
     }
 }
