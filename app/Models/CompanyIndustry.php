@@ -20,4 +20,9 @@ class CompanyIndustry extends Model
     {
         return $this->hasMany(Admin::class, 'company_industry_id');
     }
+
+    public function user()
+    {
+        return $this->hasMany(User::class, 'company_industry_id');
+    }
 }

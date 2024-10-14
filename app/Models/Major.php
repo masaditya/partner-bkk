@@ -15,4 +15,10 @@ class Major extends Model
     protected $fillable = [
         'id', 'name'
     ];
+
+    
+    public function user()
+    {
+        return $this->hasMany(User::class, 'major_id', 'id');
+    }
 }

@@ -72,4 +72,22 @@ class User extends Authenticatable
     {
         return $this->hasMany(Applicant::class);
     }
+
+    
+    public function employmentStatus()
+    {
+        return $this->belongsTo(EmploymentStatuses::class, 'status_id');
+    }
+
+    
+    public function major()
+    {
+        return $this->belongsTo(Major::class, 'major_id');
+    }
+
+    public function companyIndustry()
+    {
+        return $this->belongsTo(CompanyIndustry::class, 'company_industry_id');
+    }
+    
 }

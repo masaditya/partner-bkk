@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\UserExport;
 use App\Models\CompanyIndustry;
 use App\Models\EmploymentStatuses;
 use App\Models\Major;
@@ -11,7 +12,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Response;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class UserController extends Controller
 {
@@ -185,5 +187,19 @@ class UserController extends Controller
 
             return redirect()->route('user.index')->with('error', 'Gagal menghapus pelamar. ' . $e->getMessage());
         }
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new UserExport, 'data_user_BKK_SIGMA.xlsx');
+    }
+
+    // Fungsi untuk export data Partner ke PDF
+    public function exportPDF()
+    {
+        $users = User::get();
+        $pdf = PDF::loadView('exports.user_pdf', compact('users'))
+            ->setPaper('a4', 'landscape');
+        return $pdf->download('data_user_BKK_SIGMA.pdf');
     }
 }

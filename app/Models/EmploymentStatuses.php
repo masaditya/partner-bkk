@@ -15,4 +15,10 @@ class EmploymentStatuses extends Model
     protected $fillable = [
         'id', 'name'
     ];
+
+    
+    public function user()
+    {
+        return $this->hasMany(User::class, 'status_id', 'id');
+    }
 }

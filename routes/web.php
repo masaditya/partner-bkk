@@ -62,6 +62,8 @@ use Illuminate\Support\Facades\Route;
         Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
         Route::put('user/update-password/{id}', [UserController::class, 'updatePassword'])->name('user.update.password');
         Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+        Route::get('user/export-excel', [UserController::class, 'exportExcel'])->name('user.export.excel');
+        Route::get('user/export-pdf', [UserController::class, 'exportPDF'])->name('user.export.pdf');
         // 
 
         // 
