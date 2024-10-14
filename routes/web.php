@@ -7,6 +7,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyIndustryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DefaultController;
 use App\Http\Controllers\EmploymentStatusesController;
 use App\Http\Controllers\ImageUploadController;
@@ -26,9 +27,7 @@ use Illuminate\Support\Facades\Route;
 
         Route::get('/', [DefaultController::class, 'index']);
 
-        Route::get('/dashboard', function () {
-            return view('pages.index');
-        })->name('dashboard');
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
          Route::get('/profile', function () {
             return view('pages.profile');
