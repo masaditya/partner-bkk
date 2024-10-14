@@ -19,7 +19,7 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium dark:text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-gray-700 dark:text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li class="font-medium text-blue-500">Profile</li>
                 </ol>

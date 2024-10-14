@@ -28,11 +28,11 @@
                     <div class="p-2">
                         <!-- Name Field -->
                         <div class="mb-4.5">
-                            <label class="block mb-3 text-sm font-medium text-black dark:text-white">
+                            <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                 Nama
                             </label>
                             <input type="text" name="name" placeholder="Masukkan nama"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                         </div>
                     </div>
 

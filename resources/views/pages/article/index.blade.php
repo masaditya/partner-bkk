@@ -19,7 +19,7 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-gray-700 dark:text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li class="font-medium text-blue-500">Artikel</li>
                 </ol>
@@ -99,7 +99,7 @@
 
                                 <td class="border-b border-[#eee] dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button type="button" class="hover:text-primary text-gray-100" aria-haspopup="dialog"
+                                        <button type="button" class="hover:text-primary dark:text-gray-100" aria-haspopup="dialog"
                                             aria-expanded="false" aria-controls="hs-delete-data-{{ $article->id }}"
                                             data-hs-overlay="#hs-delete-data-{{ $article->id }}">
                                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
@@ -118,7 +118,7 @@
                                                     fill="" />
                                             </svg>
                                         </button>
-                                        <a href="{{ route('article.edit', $article->id) }}" class="hover:text-primary text-gray-100">
+                                        <a href="{{ route('article.edit', $article->id) }}" class="hover:text-primary dark:text-gray-100">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"

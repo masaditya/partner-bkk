@@ -19,10 +19,10 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-gray-700 dark:text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li>
-                        <a class="font-medium" href="{{ route('occupation.index') }}">Lowongan /</a>
+                        <a class="font-medium text-gray-700 dark:text-neutral-200" href="{{ route('occupation.index') }}">Lowongan /</a>
                     </li>
                     <li class="font-medium text-blue-500">Buat</li>
                 </ol>
@@ -51,8 +51,8 @@
 
             <div class="flex flex-col mt-4 gap-9">
                 <div
-                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                         </h3>
                     </div>
@@ -62,7 +62,7 @@
                                 Judul Lowongan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="title" placeholder="Masukkan judul pekerjaan" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -70,7 +70,7 @@
                                 Nama Perusahaan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="company" placeholder="Masukkan nama perusahaan" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -78,7 +78,7 @@
                                 Lokasi Pekerjaan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="location" placeholder="Masukkan lokasi pekerjaan" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -87,7 +87,7 @@
                             </label>
                             
                             <textarea id="jobdescription" name="description" placeholder="Masukkan deskripsi pekerjaan" required
-                                class="w-full rounded border-[1.5px] z-[19999] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                class="w-full rounded border-[1.5px] z-[19999] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 rows="10">
                             </textarea>
                         </div>
@@ -98,7 +98,7 @@
                                     Batas Waktu Pendaftaran <span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="date" name="deadline" placeholder="Masukkan batas waktu" required
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                             </div>
                             <div class="w-full xl:w-1/2">
                                 <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
@@ -106,7 +106,7 @@
                                 </label>
                                 <input type="file" name="thumbnail" accept="image/*"
                                     placeholder="Masukkan logo perusahaan" required
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     id="logo" onchange="previewImage()" />
                                 <div class="w-40 h-40 p-4 overflow-hidden">
                                     <img id="previewImage" src="https://placehold.co/400" alt="Preview Logo"

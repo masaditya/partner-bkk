@@ -32,8 +32,9 @@
                     <!-- Menu Item Dashboard -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="/" @click="selected = (selected === 'dashboard' ? '':'dashboard')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'dashboard') && (page === 'dashboard') }">
+                            href="{{ route('dashboard') }}" @click="selected = (selected === 'Dasbor' ? '':'Dasbor')"
+                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Dasbor') && (page === 'Dasbor') }"
+                            :class="page === 'Dasbor' && 'bg-graydark'">
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" width="20" height="20">
@@ -65,8 +66,9 @@
                     <!-- Menu Item Daftar Pelamar -->
                     <li>
                         <a class="group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4"
-                            href="{{ route('applicant.index') }}" @click="selected = (selected === 'Pelamar ' ? '':'Pelamar ')"
-                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Pelamar ') && (page === 'Pelamar ') }">
+                            href="{{ route('applicant.index') }}" @click="selected = (selected === 'Pelamar' ? '':'Pelamar')"
+                            :class="{ 'bg-graydark dark:bg-meta-4': (selected === 'Pelamar') && (page === 'Pelamar') }"
+                            :class="page === 'Pelamar' && 'bg-graydark'">
 
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                 stroke="currentColor" width="18" height="18">

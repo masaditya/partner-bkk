@@ -19,7 +19,7 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium text-stone-200" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-gray-700 dark:text-stone-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li class="font-medium text-blue-500">Pelamar</li>
                 </ol>
@@ -96,7 +96,7 @@
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
                                         
-                                        <a href="{{ route('applicant.detail', $applicant->id) }}" class="hover:text-primary text-gray-100"
+                                        <a href="{{ route('applicant.detail', $applicant->id) }}" class="hover:text-primary dark:text-gray-100"
                                         aria-haspopup="dialog"
                                             aria-expanded="false" aria-controls="hs-edit-data-{{ $applicant->id }}"
                                             data-hs-overlay="#hs-edit-data-{{ $applicant->id }}">
