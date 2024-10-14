@@ -19,7 +19,7 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li class="font-medium text-blue-500">Artikel</li>
                 </ol>
@@ -48,7 +48,7 @@
         <div class="w-full px-2 mb-4">
             <!-- Gunakan margin dan lebar penuh langsung di sini -->
             <input type="text" id="customSearchInput" placeholder="Cari data..."
-                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
+                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <!-- ====== Table Section Start -->
@@ -56,24 +56,24 @@
 
             <!-- ====== Table Three Start -->
             <div
-                class="border border-stroke p-6 rounded-lg bg-white pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:pb-1">
+                class="border border-stroke p-6 rounded-lg bg-white pb-2.5 shadow-default dark:border-gray-800 dark:bg-gray-800 xl:pb-1">
                 <div class="max-w-full overflow-x-auto">
                     <table id="dataTableBkk" class="w-full table-auto">
                         <thead>
-                            <tr class="text-left bg-gray-2 dark:bg-meta-4">
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
+                            <tr class="text-left bg-gray-2 dark:bg-gray-700 dark:text-gray-100">
+                                <th class="px-4 py-4 font-medium xl:pl-11">
                                     No.
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
+                                <th class="px-4 py-4 font-medium xl:pl-11">
                                     Judul
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium">
                                     Kategori
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium">
                                     Tanggal
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium">
                                     Aksi
                                 </th>
                             </tr>
@@ -99,7 +99,7 @@
 
                                 <td class="border-b border-[#eee] dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button type="button" class="hover:text-primary" aria-haspopup="dialog"
+                                        <button type="button" class="hover:text-primary text-gray-100" aria-haspopup="dialog"
                                             aria-expanded="false" aria-controls="hs-delete-data-{{ $article->id }}"
                                             data-hs-overlay="#hs-delete-data-{{ $article->id }}">
                                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"
@@ -118,7 +118,7 @@
                                                     fill="" />
                                             </svg>
                                         </button>
-                                        <a href="{{ route('article.edit', $article->id) }}" class="hover:text-primary">
+                                        <a href="{{ route('article.edit', $article->id) }}" class="hover:text-primary text-gray-100">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" width="18" height="18">
                                                 <path stroke-linecap="round" stroke-linejoin="round"

@@ -11,6 +11,7 @@
 <script>
     $(document).ready(function () {
         var table = $('#dataTableBkk').DataTable({
+            pagingType: 'simple',
             "responsive": true,
             "autoWidth": false,
             "paging": true,
@@ -19,14 +20,14 @@
             "ordering": true,
             "info": true,
             "pageLength": 10,
-            "language": {
-                "paginate": {
-                    "previous": "Sebelumnya",
-                    "next": "Selanjutnya"
+            language: {
+                paginate: {
+                    previous: '<span class="dark:text-gray-400">Sebelumnya</span>',
+                    next: '<span class="dark:text-gray-400">Selanjutnya</span>'
                 },
-                "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
-                "lengthMenu": "Tampilkan _MENU_ entri"
-            }
+                info: '<span class="dark:text-gray-400">Menampilkan _START_ sampai _END_ dari _TOTAL_ entri</span>',
+                lengthMenu: '<span class="dark:text-gray-400">Tampilkan _MENU_ entri</span>'
+            },
         });
         $('#customSearchInput').on('keyup', function () {
             table.search(this.value).draw();

@@ -30,30 +30,36 @@
 
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-     {{-- <link href="{{ asset('build/assets/app-1oZlPBIH.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('build/assets/app-1oZlPBIH.css') }}" rel="stylesheet">
     <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script> --}}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 
     <style>
-        body{
+        body {
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
         }
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 
     <style>
-        body{
+        body {
             font-family: "Inter", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
         }
+
     </style>
 
 
@@ -62,60 +68,48 @@
 <body>
 
     <main>
-        <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
-            {{-- toast success or failed Start --}}
-            @include('includes.toast')
-            {{-- toast success or failed End --}}
-            <div class="bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark">
-                <div class="flex flex-wrap items-center">
-                    <div class="hidden w-full xl:block xl:w-1/2">
-                        <div class="px-26 py-17.5 text-center">
+        <section class="bg-gray-50 dark:bg-gray-900">
+            <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+                <a href="#" class="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                    <img class="w-32" src="{{ asset('images/bkk-sigma.png') }}"
+                        alt="logo">
+                   
+                </a>
+                <div
+                    class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                        <h1
+                            class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+                            Masuk ke akun Anda
+                        </h1>
 
-                            <p class="font-medium 2xl:px-20">
+                        @include('includes.toast-auth')
 
-                            </p>
-
-                            <span class="inline-block mt-15">
-                                <img class="size-80" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}" alt="Logo" />
-                            </span>
-                        </div>
-                    </div>
-                    <div class="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
-                        <div class="w-full p-4 sm:p-12.5 xl:p-17.5">
-                            <span class="mb-1.5 block font-medium">SMKN 1 BOJONEGORO</span>
-                            <h2 class="text-2xl font-bold text-black mb-9 dark:text-white sm:text-title-xl2">
-                                Masuk ke Aplikasi BKK SIGMA
-                            </h2>
-
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
-                                <div class="mb-4">
-                                    <label class="mb-2.5 block font-medium text-black dark:text-white">Email</label>
-                                    <input type="email" name="email" placeholder="Masukkan email"
-                                        class="w-full py-4 pl-6 pr-10 bg-transparent border rounded-lg outline-none border-stroke focus:border-primary"
-                                        required>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="mb-2.5 block font-medium text-black dark:text-white">Kata
-                                        Sandi</label>
-                                    <input type="password" name="password" placeholder="Masukkan kata sandi"
-                                        class="w-full py-4 pl-6 pr-10 bg-transparent border rounded-lg outline-none border-stroke focus:border-primary"
-                                        required>
-                                </div>
-
-                                <div class="mb-5">
-                                    <button type="submit"
-                                        class="w-full p-4 font-medium text-white transition border rounded-lg cursor-pointer border-primary bg-meta-3 hover:bg-opacity-90"> Masuk
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        <form class="space-y-4 md:space-y-6" method="POST" action="{{ route('login') }}">
+                            @csrf
+                            <div>
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email Anda</label>
+                                <input type="email" name="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="nama@mail.com" required="">
+                            </div>
+                            <div>
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kata Sandi</label>
+                                <input type="password" name="password" id="password" placeholder="••••••••"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-600 focus:border-blue-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    required="">
+                            </div>
+                            
+                            <button type="submit"
+                                class="w-full text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masuk</button>
+                            
+                        </form>
                     </div>
                 </div>
             </div>
-            <!-- ====== Forms Section End -->
-        </div>
+        </section>
     </main>
     <script defer src="{{ asset('tail-admin/bundle.js') }}"></script>
 </body>

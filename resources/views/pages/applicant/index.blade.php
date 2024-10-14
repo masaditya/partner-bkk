@@ -19,7 +19,7 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-stone-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li class="font-medium text-blue-500">Pelamar</li>
                 </ol>
@@ -38,34 +38,34 @@
         <div class="w-full px-2 mb-4">
             <!-- Gunakan margin dan lebar penuh langsung di sini -->
             <input type="text" id="customSearchInput" placeholder="Cari data..."
-                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
+                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <!-- ====== Table Section Start -->
         <div class="flex flex-col gap-10">
             <!-- ====== Table Three Start -->
             <div
-                class="border border-stroke p-6 rounded-lg bg-white pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:pb-1">
+                class="border border-stroke p-6 rounded-lg bg-white pb-2.5 shadow-default dark:border-gray-800 dark:bg-gray-800 xl:pb-1">
                 <div class="max-w-full overflow-x-auto">
                     <table id="dataTableBkk" class="w-full table-auto">
                         <thead>
-                            <tr class="text-left bg-gray-2 dark:bg-meta-4">
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
+                            <tr class="text-left bg-gray-2 dark:bg-gray-700 dark:text-gray-100">
+                                <th class="px-4 py-4 font-medium  xl:pl-11">
                                     No.
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
+                                <th class="px-4 py-4 font-medium  xl:pl-11">
                                     Nama User
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium ">
                                     Status Alumni
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium ">
                                     Nama Pekerjaan
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium ">
                                     Tanggal Lamar
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium ">
                                     Aksi
                                 </th>
                             </tr>
@@ -96,7 +96,7 @@
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
                                         
-                                        <a href="{{ route('applicant.detail', $applicant->id) }}" class="hover:text-primary"
+                                        <a href="{{ route('applicant.detail', $applicant->id) }}" class="hover:text-primary text-gray-100"
                                         aria-haspopup="dialog"
                                             aria-expanded="false" aria-controls="hs-edit-data-{{ $applicant->id }}"
                                             data-hs-overlay="#hs-edit-data-{{ $applicant->id }}">

@@ -19,7 +19,7 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="/">Dasbor /</a>
+                        <a class="font-medium text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li class="font-medium text-blue-500">Admin</li>
                 </ol>
@@ -35,11 +35,9 @@
                 aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-admin-modal"
                 data-hs-overlay="#hs-add-data-admin-modal">
                 <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" width="18" height="18">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-[18px]">
+                    <path d="M10.75 4.75a.75.75 0 0 0-1.5 0v4.5h-4.5a.75.75 0 0 0 0 1.5h4.5v4.5a.75.75 0 0 0 1.5 0v-4.5h4.5a.75.75 0 0 0 0-1.5h-4.5v-4.5Z" />
+                </svg>
                 </span>
                 Tambah Admin
             </button>
@@ -50,7 +48,7 @@
         <div class="w-full px-2 mb-4">
             <!-- Gunakan margin dan lebar penuh langsung di sini -->
             <input type="text" id="customSearchInput" placeholder="Cari data..."
-                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300">
+                class="w-full py-2.5 px-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
         </div>
 
         <!-- ====== Table Section Start -->
@@ -58,24 +56,24 @@
 
             <!-- ====== Table Three Start -->
             <div
-                class="border border-stroke p-6 rounded-lg bg-white pb-2.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:pb-1">
+                class="border border-stroke p-6 rounded-lg bg-white pb-2.5 shadow-default dark:border-gray-800 dark:bg-gray-800 xl:pb-1">
                 <div class="max-w-full overflow-x-auto">
                     <table id="dataTableBkk" class="w-full table-auto">
                         <thead>
-                            <tr class="text-left bg-gray-2 dark:bg-meta-4">
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
+                            <tr class="text-left bg-gray-2 dark:bg-gray-700 dark:text-gray-100">
+                                <th class="px-4 py-4 font-medium  xl:pl-11">
                                     No.
                                 </th>
-                                <th class="min-w-[220px] px-4 py-4 font-medium text-gray-700 dark:text-white xl:pl-11">
+                                <th class="min-w-[220px] px-4 py-4 font-medium  xl:pl-11">
                                     Nama
                                 </th>
-                                <th class="min-w-[150px] px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="min-w-[150px] px-4 py-4 font-medium ">
                                     Email
                                 </th>
-                                <th class="min-w-[120px] px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="min-w-[120px] px-4 py-4 font-medium ">
                                     No. Telepon
                                 </th>
-                                <th class="px-4 py-4 font-medium text-gray-700 dark:text-white">
+                                <th class="px-4 py-4 font-medium ">
                                     Aksi
                                 </th>
                             </tr>
@@ -97,7 +95,7 @@
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        <button class="hover:text-primary"
+                                        <button class="hover:text-primary dark:text-gray-100"
                                         aria-haspopup="dialog"
                                             aria-expanded="false" aria-controls="hs-update-password-data-{{ $admin->id }}"
                                             data-hs-overlay="#hs-update-password-data-{{ $admin->id }}">
@@ -107,7 +105,7 @@
                                                     d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" />
                                             </svg>
                                         </button>
-                                        <button type="button" class="hover:text-primary" aria-haspopup="dialog"
+                                        <button type="button" class="hover:text-primary dark:text-gray-100" aria-haspopup="dialog"
                                             aria-expanded="false" aria-controls="hs-delete-data-{{ $admin->id }}"
                                             data-hs-overlay="#hs-delete-data-{{ $admin->id }}">
                                             <svg class="fill-current" width="18" height="18" viewBox="0 0 18 18"

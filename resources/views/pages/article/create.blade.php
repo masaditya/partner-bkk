@@ -18,10 +18,10 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li>
-                        <a class="font-medium" href="{{ route('article.index') }}">Artikel /</a>
+                        <a class="font-medium text-neutral-200" href="{{ route('article.index') }}">Artikel /</a>
                     </li>
                     <li class="font-medium text-blue-500">Buat</li>
                 </ol>
@@ -49,8 +49,8 @@
 
             <div class="flex flex-col mt-4 gap-9">
                 <div
-                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                         </h3>
                     </div>
@@ -61,7 +61,7 @@
                             </label>
                             <input type="text" name="title" placeholder="Masukkan judul artikel" required
                                 value="{{ old('title') }}"
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -70,7 +70,7 @@
                             </label>
                             <input type="file" name="thumbnail" accept="image/*"
                                 placeholder="Masukkan thumbnail artikel" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 id="thumbnail" onchange="previewImage()" />
                             <div class="w-full h-64 p-4 overflow-hidden">
                                 <img id="previewImage" src="https://placehold.co/8000x1000" alt="Preview Thumbnail"
@@ -83,7 +83,7 @@
                                 Kategori <span class="text-sm text-red-500">*</span>
                             </label>
                             <select name="category_id" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="">Pilih Kategori</option>
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -96,7 +96,7 @@
                                 Konten <span class="text-sm text-red-500">*</span>
                             </label>
                             <textarea id="jobdescription" name="content" placeholder="Masukkan konten artikel"
-                                class="w-full rounded border-[1.5px] z-[19999] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
+                                class="w-full rounded border-[1.5px] z-[19999] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 rows="10"></textarea>
                         </div>
                     </div>

@@ -19,9 +19,9 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="/">Dasbor /</a>
+                        <a class="font-medium dark:text-neutral-200" href="/">Dasbor /</a>
                     </li>
-                    <li class="font-medium text-meta-3">Pengaturan</li>
+                    <li class="font-medium text-blue-500">Pengaturan</li>
                 </ol>
             </nav>
         </div>
@@ -30,7 +30,7 @@
         <!-- Card Section -->
         <div class="max-w-6xl px-4 py-5 mx-auto sm:px-6 lg:px-12 lg:py-10">
             <!-- Card -->
-            <div class="p-4 bg-white shadow rounded-xl sm:p-7 dark:bg-neutral-900">
+            <div class="p-4 bg-white rounded shadow sm:p-7 dark:bg-gray-800">
 
                 @foreach($settings as $setting)
                 <form action="{{ route('setting.update', $setting->id) }}" method="POST">
@@ -46,7 +46,7 @@
                             </label>
                             <input type="email" name="email" value="{{ old('email', $setting->email) }}"
                                 placeholder="Masukkan alamat email"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <!-- Phone Field -->
@@ -56,7 +56,7 @@
                             </label>
                             <input name="phone" type="text" value="{{ old('phone', $setting->phone) }}"
                                 placeholder="Masukkan nomor telepon" maxlength="15" minlength="10"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
 
@@ -66,7 +66,7 @@
                             </label>
                             <input type="text" name="facebook" value="{{ old('name', $setting->facebook) }}"
                                 placeholder="Masukkan link facebook"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -75,7 +75,7 @@
                             </label>
                             <input type="text" name="instagram" value="{{ old('name', $setting->instagram) }}"
                                 placeholder="Masukkan link instagram"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -84,7 +84,7 @@
                             </label>
                             <input type="text" name="youtube" value="{{ old('name', $setting->youtube) }}"
                                 placeholder="Masukkan link youtube"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -93,7 +93,7 @@
                             </label>
                             <input type="text" name="tiktok" value="{{ old('name', $setting->tiktok) }}"
                                 placeholder="Masukkan link tiktok"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -102,7 +102,7 @@
                             </label>
                             <input type="text" name="website" value="{{ old('name', $setting->website) }}"
                                 placeholder="Masukkan link website"
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
                         <div class="mb-4.5">
@@ -110,13 +110,13 @@
                                 Alamat Sekolah
                             </label>
                             <textarea name="address" placeholder="Masukkan alamat sekolah" 
-                                class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ $setting->address }}
+                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-black outline-none transition focus:border-primary active:border-primary dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{ $setting->address }}
                             </textarea>
                         </div>
                     </div>
 
                     <button type="submit"
-                        class="inline-flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white border border-transparent rounded-lg bg-meta-3 gap-x-2 hover:bg-emerald-500 focus:outline-none focus:bg-emerald-700 disabled:opacity-50 disabled:pointer-events-none">
+                        class="inline-flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-500 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
                         Simpan Perubahan
                     </button>
                 </form>

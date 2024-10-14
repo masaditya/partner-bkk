@@ -31,7 +31,7 @@
         <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between">
             <span></span>
             <a href="{{ route('occupation.create') }}"
-                class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-blue-600 hover:bg-opacity-90"
+                class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-md hover:bg-opacity-90"
                 aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-user-modal"
                 data-hs-overlay="#hs-add-data-user-modal">
                 <span>

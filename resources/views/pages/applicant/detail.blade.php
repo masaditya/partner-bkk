@@ -14,10 +14,10 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li>
-                        <a class="font-medium" href="{{ route('applicant.index') }}">Pelamar /</a>
+                        <a class="font-medium text-neutral-200" href="{{ route('applicant.index') }}">Pelamar /</a>
                     </li>
                     <li class="font-medium text-blue-500">Detail Pelamar</li>
                 </ol>
@@ -27,8 +27,8 @@
 
             <div class="flex flex-col gap-9 mt-4">
                 <div
-                    class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                    class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Informasi Pribadi
                         </h3>
@@ -55,61 +55,61 @@
                       
                                 <div class="w-full xl:w-1/2">
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                        Nama Lengkap <span class="text-red-500 text-sm">*</span>
+                                        Nama Lengkap
                                     </label>
-                                    <input type="name" name="name" placeholder="Masukkan nama lengkap" value="{{ old('name', $applicant->user->name) }}" disabled
-                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="name" name="name" value="{{ old('name', $applicant->user->name) }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                         NIS (Hanya untuk alumni)
                                     </label>
-                                    <input type="text" name="NIS" placeholder="Masukkan nomer induk siswa" value="{{ old('NIS', $applicant->user->NIS) }}" disabled
-                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="text" name="NIS" value="{{ old('NIS', $applicant->user->NIS) }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                                 </div>
                             </div>
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                       
                                 <div class="w-full xl:w-1/2">
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                        Alamat Email <span class="text-red-500 text-sm">*</span>
+                                        Alamat Email
                                     </label>
-                                    <input type="email" name="email" placeholder="Masukkan alamat email" required value="{{ old('email', $applicant->user->email) }}" disabled
-                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="email" name="email" required value="{{ old('email', $applicant->user->email) }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                        Nomer HP (WA Aktif) <span class="text-red-500 text-sm">*</span>
+                                        Nomer HP (WA Aktif)
                                     </label>
-                                    <input type="text" name="phone" placeholder="Masukkan nomer telepon" value="{{ old('phone', $applicant->user->phone) }}" required disabled
-                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="text" name="phone" value="{{ old('phone', $applicant->user->phone) }}" required disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
                                     <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                        Jenis Kelamin <span class="text-red-500 text-sm">*</span>
+                                        Jenis Kelamin
                                     </label>
-                                    <input type="text" placeholder="" value="{{  $applicant->user->gender == 'male' ? 'Laki - Laki' : 'Perempuan' }}" required disabled
-                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    <input type="text" value="{{  $applicant->user->gender == 'male' ? 'Laki - Laki' : 'Perempuan' }}" required disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                                 </div>
 
                             </div>
                             <div class="mb-6">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Alamat<span class="text-red-500 text-sm">*</span>
+                                    Alama
                                 </label>
-                                <textarea name="address" rows="3" placeholder="Masukikan alamat" disabled
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">{{ old('mail', $applicant->user->address) }}</textarea>
+                                <textarea name="address" rows="3" disabled
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700">{{ old('mail', $applicant->user->address) }}</textarea>
                             </div>
                         </div>
                 </div>
             </div>
 
             <div class="flex flex-col gap-9 mt-4">
-                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Pendidikan
                         </h3>
@@ -118,35 +118,33 @@
                     <div class="p-6.5">
                         <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
 
-                            <div class="w-full xl:w-1/2">
+                            
+
+                             <div class="w-full xl:w-1/2">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Status User <span class="text-red-500 text-sm">*</span>
+                                    Status User
                                 </label>
-                                <select name="is_alumni" required disabled
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
-                                    <option value="" disabled selected>Pilih Status User</option>
-                                    <option value="1" {{ old('is_alumni', $applicant->user->is_alumni) == 1 ? 'selected' : '' }}>Alumni
-                                    </option>
-                                    <option value="0" {{ old('is_alumni', $applicant->user->is_alumni) == 0 ? 'selected' : '' }}>Umum</option>
-                                </select>
+                                <input type="number" name="graduation_year" disabled
+                                    value="{{ $applicant->user->is_alumni }}" required
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
                             <div class="w-full xl:w-1/2">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Tahun Kelulusan <span class="text-red-500 text-sm">*</span>
+                                    Tahun Kelulusan
                                 </label>
-                                <input type="number" name="graduation_year" placeholder="2024" disabled
+                                <input type="number" name="graduation_year" disabled
                                     value="{{ $applicant->user->graduation_year }}" required
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
                             <div class="w-full xl:w-1/2">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Jurusan <span class="text-red-500 text-sm">*</span>
+                                    Jurusan
                                 </label>
                                 <input type="text" disabled
                                     value="{{ $applicant->user->major_id }}" required
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
                         </div>
 
@@ -154,20 +152,20 @@
 
                             <div class="w-full xl:w-1/2">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Pendidikan Terakhir <span class="text-red-500 text-sm">*</span>
+                                    Pendidikan Terakhir
                                 </label>
                                 <input type="text" disabled
                                     value="{{ $applicant->user->latest_degree }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
                             <div class="w-full xl:w-1/2">
                                 <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
                                     Universitas
                                 </label>
-                                <input type="text" name="university " placeholder="Masukkan nama universitas" disabled
+                                <input type="text" name="university " disabled
                                     value="{{ old('university ', $applicant->user->university ) }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
                             <div class="w-full xl:w-1/2">
@@ -176,7 +174,7 @@
                                 </label>
                                 <input type="text" name="faculty" disabled
                                     value="{{ old('faculty', $applicant->user->faculty) }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
                         </div>
 
@@ -187,8 +185,8 @@
 
 
             <div class="flex flex-col gap-9 mt-4">
-                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Pekerjaan
                         </h3>
@@ -203,7 +201,7 @@
                                 </label>
                                 <input type="text" disabled
                                     value="{{ old('company ', $applicant->user->status_id ) }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>                       
 
                             <div class="w-full xl:w-1/2">
@@ -212,7 +210,7 @@
                                 </label>
                                 <input type="text" disabled
                                     value="{{ old('company ', $applicant->user->company ) }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
                         </div>
@@ -225,7 +223,7 @@
                                 </label>
                                 <input type="text" disabled
                                     value="{{ old('company ', $applicant->user->company_industry_id ) }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
                             
@@ -235,7 +233,7 @@
                                 </label>
                                 <input type="text" disabled
                                     value="{{ old('position', $applicant->user->position) }}"
-                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
                         </div>
                     </div>
@@ -243,8 +241,8 @@
             </div>
 
             <div class="flex flex-col gap-9 mt-4">
-                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div class="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Dokument (CV)
                         </h3>
