@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PartnerExport;
 use App\Models\Admin;
 use App\Models\CompanyIndustry;
 use Exception;
@@ -9,7 +10,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PartnerController extends Controller
 {
@@ -140,5 +142,20 @@ class PartnerController extends Controller
             // Tangani error jika admin tidak dapat dihapus atau tidak ditemukan
             return redirect()->route('partner.index')->with('error', 'Gagal menghapus partner. ' . $e->getMessage());
         }
+    }
+
+    // Fungsi untuk export data Partner ke Excel
+    public function exportExcel()
+    {
+        return Excel::download(new PartnerExport, 'data_partner_industri_BKK_SIGMA.xlsx');
+    }
+
+    // Fungsi untuk export data Partner ke PDF
+    public function exportPDF()
+    {
+        $partners = Admin::where('is_partner', '1')->get();
+        $pdf = PDF::loadView('exports.partner_pdf', compact('partners'))
+            ->setPaper('a4', 'landscape');
+        return $pdf->download('data_partner_industri_BKK_SIGMA.pdf');
     }
 }

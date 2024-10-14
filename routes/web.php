@@ -51,6 +51,8 @@ use Illuminate\Support\Facades\Route;
         Route::put('partner/{id}', [PartnerController::class, 'update'])->name('partner.update');
         Route::put('partner/update-password/{id}', [PartnerController::class, 'updatePassword'])->name('partner.update.password');
         Route::delete('/partner/{id}', [PartnerController::class, 'destroy'])->name('partner.destroy');
+        Route::get('partners/export-excel', [PartnerController::class, 'exportExcel'])->name('partners.export.excel');
+        Route::get('partners/export-pdf', [PartnerController::class, 'exportPDF'])->name('partners.export.pdf');
         // 
 
         // 
