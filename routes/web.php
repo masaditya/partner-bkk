@@ -28,8 +28,17 @@ use Illuminate\Support\Facades\Route;
         Route::get('/', [DefaultController::class, 'index']);
 
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+        // chart stats Alumni
+        Route::get('/getIndustryData', [DashboardController::class, 'getIndustryData']);
+        Route::get('/getStatusData', [DashboardController::class, 'getStatusData']);
+        Route::get('/getPartnerIndustryData', [DashboardController::class, 'getPartnerIndustryData']);
+        // Chart Stats umum
+        Route::get('/user-growth-data', [DashboardController::class, 'getUserGrowthData']);
+        Route::get('/education-data', [DashboardController::class, 'getEducationData']);
+        Route::get('/applicants-data', [DashboardController::class, 'getApplicantsData']);
+        Route::get('/gender-distribution', [DashboardController::class, 'getGenderDistribution']);
 
-         Route::get('/profile', function () {
+        Route::get('/profile', function () {
             return view('pages.profile');
         })->name('profile');
 

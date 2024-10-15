@@ -28,8 +28,8 @@
 
  @vite('resources/css/app.css')
  @vite('resources/js/app.js')
-{{-- 
- <link href="{{ asset('build/assets/app-1oZlPBIH.css') }}" rel="stylesheet">
+
+ {{-- <link href="{{ asset('build/assets/app-1oZlPBIH.css') }}" rel="stylesheet">
  <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script> --}}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

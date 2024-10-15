@@ -156,206 +156,113 @@
     </div>
     <!-- End Card Stats -->
 
-    <div class="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5 px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14">
-        <!-- ====== Chart One Start -->
-        <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-            <div>
-                <canvas id="myBarChart" width="400" height="200"></canvas>
+    <div class="flex px-4 sm:px-6 lg:px-8">
+        <div class="flex p-1 transition bg-gray-200 rounded-lg dark:bg-neutral-700 dark:hover:bg-neutral-600">
+            <nav class="flex gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+            <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-500 bg-transparent rounded-lg hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 gap-x-2 hover:text-gray-700 focus:outline-none focus:text-gray-700 hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white active" id="segment-item-1" aria-selected="true" data-hs-tab="#segment-1" aria-controls="segment-1" role="tab">
+                Statistik Alumni
+            </button>
+            <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-500 bg-transparent rounded-lg hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 gap-x-2 hover:text-gray-700 focus:outline-none focus:text-gray-700 hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white" id="segment-item-2" aria-selected="false" data-hs-tab="#segment-2" aria-controls="segment-2" role="tab">
+                Statistik Umum
+            </button>
+            </nav>
+        </div>
+        </div>
+
+        <div class="mt-3">
+        <div id="segment-1" role="tabpanel" aria-labelledby="segment-item-1">
+            
+            <div class="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5 px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14">
+                <!-- ====== Chart One Start -->
+                <div
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    <div class="mb-4">
+                        <canvas id="alumniBarChart" width="400" height="200"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk menunjukkan pertumbuhan atau fluktuasi lulusan tiap tahun.</span>
+                </div>
+                <!-- ====== Chart One End -->
+
+                <!-- ====== Chart Two Start -->
+                <div
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    <div class="mb-4">
+                        <canvas id="statusGraduation" width="500" height="500"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk menunjukkan diversifikasi bidang pekerjaan lulusan.</span>
+                </div>
+                <!-- ====== Chart Two End -->
+
+                <!-- ====== Chart Three Start -->
+                <div
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    <div class="mb-4">
+                        <canvas id="statusEmployee" width="400" height="400"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk memberikan gambaran cepat mengenai tingkat keberhasilan penyaluran kerja.</span>
+                </div>
+                <!-- ====== Chart Three End -->
+
+                <!-- ====== Map One Start -->
+                <div
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    <div class="mb-4">
+                        <canvas id="partnerIndustry" width="400" height="200"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Data statistik yang menunjukkan berapa banyak perusahaan yang bermitra dengan sekolah setiap tahun.</span>
+                </div>
+                <!-- ====== Map One End -->
+
+                <!-- ====== Chat Card End -->
+            </div>
+
+        </div>
+        <div id="segment-2" class="hidden" role="tabpanel" aria-labelledby="segment-item-2">
+           <div class="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5 px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14">
+                <div
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    <div class="mb-4">
+                        <canvas id="userGrowthChart" width="400" height="200"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk menunjukkan pertumbuhan Pengguna Umum per tahun.</span>
+                </div>
+                 <div
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    <div class="mb-4">
+                         <canvas id="educationChart" width="400" height="400"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk menunjukkan tingkat pendidikan user umum.</span>
+                </div>
+                <div
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    <div class="mb-4">
+                        <canvas id="genderChart" width="400" height="200"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk memberikan gambaran cepat mengenai statistik Jenis Kelamin User Umum.</span>
+                </div>
+                <div
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    <div class="mb-4">
+                        <canvas id="applicantsChart" width="400" height="200"></canvas>
+                    </div>
+                    <span class="text-sm text-gray-500">Untuk memberikan gambaran cepat mengenai User Umum yang Melakukan Apply Lamaran per Tahun.</span>
+                </div>
             </div>
         </div>
-
-        <!-- ====== Chart One End -->
-
-        <!-- ====== Chart Two Start -->
-        <div
-            class="col-span-12 p-2 bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-            <div>
-                <canvas id="statusGraduation" width="500" height="500"></canvas>
-            </div>
-        </div>
-
-        <!-- ====== Chart Two End -->
-
-        <!-- ====== Chart Three Start -->
-        <div
-            class="col-span-12 p-2 bg-white border rounded-sm border-stroke shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-4">
-            <div class="mb-2">
-                <canvas id="statusEmployee" width="400" height="400"></canvas>
-            </div>
-        </div>
-
-        <!-- ====== Chart Three End -->
-
-        <!-- ====== Map One Start -->
-        <div
-            class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
-            <canvas id="partnerBarChart" width="400" height="200"></canvas>
-        </div>
-
-        <!-- ====== Map One End -->
-
-        <!-- ====== Chat Card End -->
     </div>
+
 </main>
 
-{{-- bar chart 1 --}}
-<script>
-  // Dapatkan elemen canvas
-  var ctx = document.getElementById('myBarChart').getContext('2d');
 
-  // Buat chart baru
-  var myBarChart = new Chart(ctx, {
-    type: 'bar', // Jenis chart yang ingin digunakan
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'], // Label pada sumbu X
-      datasets: [{
-        label: 'Sales 2024', // Label dataset
-        data: [12, 19, 3, 5, 2, 3], // Data pada sumbu Y
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1 // Ketebalan garis batas
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true // Memulai nilai Y dari 0
-        }
-      }
-    }
-  });
-</script>
 
-{{-- bar pie 2 --}}
-<script>
-  var ctx = document.getElementById('statusGraduation').getContext('2d');
-  var statusGraduation = new Chart(ctx, {
-    type: 'pie', // Jenis chart pie
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'], // Label untuk setiap bagian pie
-      datasets: [{
-        label: 'Votes',
-        data: [12, 19, 3, 5, 2], // Data untuk setiap label
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.6)',  // Warna Red
-          'rgba(54, 162, 235, 0.6)',  // Warna Blue
-          'rgba(255, 206, 86, 0.6)',  // Warna Yellow
-          'rgba(75, 192, 192, 0.6)',  // Warna Green
-          'rgba(153, 102, 255, 0.6)'  // Warna Purple
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'top', // Posisi legend di atas
-        }
-      }
-    }
-  });
-</script>
-
-{{-- bar pie 3 --}}
-<script>
-  var ctx = document.getElementById('statusEmployee').getContext('2d');
-  var statusEmployee = new Chart(ctx, {
-    type: 'pie', // Jenis chart pie
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'], // Label untuk setiap bagian pie
-      datasets: [{
-        label: 'Votes',
-        data: [12, 19, 3, 5, 2], // Data untuk setiap label
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.6)',  // Warna Red
-          'rgba(54, 162, 235, 0.6)',  // Warna Blue
-          'rgba(255, 206, 86, 0.6)',  // Warna Yellow
-          'rgba(75, 192, 192, 0.6)',  // Warna Green
-          'rgba(153, 102, 255, 0.6)'  // Warna Purple
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'top', // Posisi legend di atas
-        }
-      }
-    }
-  });
-</script>
-
-{{-- bar chart 1 --}}
-<script>
-  // Dapatkan elemen canvas
-  var ctx = document.getElementById('partnerBarChart').getContext('2d');
-
-  // Buat chart baru
-  var partnerBarChart = new Chart(ctx, {
-    type: 'bar', // Jenis chart yang ingin digunakan
-    data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June'], // Label pada sumbu X
-      datasets: [{
-        label: 'Sales 2024', // Label dataset
-        data: [12, 19, 3, 5, 2, 3], // Data pada sumbu Y
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255, 99, 132, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1 // Ketebalan garis batas
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true // Memulai nilai Y dari 0
-        }
-      }
-    }
-  });
-</script>
+{{-- umum --}}
+@include('components.chart.userGrowthChart')
+@include('components.chart.educationChart')
+@include('components.chart.applicantsChart')
+@include('components.chart.genderChart')
+{{-- Alumni --}}
+@include('components.chart.alumniBarChart')
+@include('components.chart.statusGraduation')
+@include('components.chart.statusEmployee')
+@include('components.chart.partnerIndustry')
 @endsection
