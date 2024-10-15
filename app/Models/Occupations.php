@@ -14,7 +14,7 @@ class Occupations extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id', 'title', 'description', 'deadline', 'location', 'company', 'publisher_id', 'thumbnail'
+        'id', 'title', 'description', 'deadline', 'location', 'company', 'publisher_id', 'thumbnail','job_type', 'company_industry_id'
     ];
 
     
@@ -23,6 +23,10 @@ class Occupations extends Model
         return $this->belongsTo(Admin::class, 'publisher_id');
     }
 
+    public function companyIndustry()
+    {
+        return $this->belongsTo(CompanyIndustry::class, 'company_industry_id');
+    }
     
     public function applicants()
     {

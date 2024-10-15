@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\OccupationExport;
+use App\Models\CompanyIndustry;
 use App\Models\Occupations;
 use Exception;
 use Illuminate\Http\Request;
@@ -41,14 +42,14 @@ class OccupationsController extends Controller
     public function create()
     {
         try {
-            return view('pages.occupation.create');
+            $industries = CompanyIndustry::all();
+            return view('pages.occupation.create', compact('industries'));
         } catch (Exception $e) {
             return redirect()->back()->withErrors([
                 'error' => 'Terjadi Kesalahan Saat Mengarahkan Ke Halaman Create Lowongan Pekerjaan'
             ]);
         }
     }
-
     
     /**
      * Store a newly created resource in storage.
@@ -64,6 +65,8 @@ class OccupationsController extends Controller
             'deadline' => 'required|date|after:today',
             'location' => 'required|string|max:255',
             'company' => 'required|string|max:255',
+            'job_type' => 'required|string|max:255',
+            'company_industry_id' => 'required|exists:company_industries,id',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -87,6 +90,8 @@ class OccupationsController extends Controller
                 'location' => $request->location,
                 'company' => $request->company,
                 'thumbnail' => $thumbnail_url,
+                'job_type' => $request->job_type,
+                'company_industry_id' => $request->company_industry_id,
                 'publisher_id' => Auth::id(),
             ]);
 
@@ -107,7 +112,8 @@ class OccupationsController extends Controller
     {
         try {
              $occupation = Occupations::findOrFail($id);
-            return view('pages.occupation.edit', compact('occupation'));
+             $industries = CompanyIndustry::all();
+             return view('pages.occupation.edit', compact('occupation', 'industries'));
         } catch (Exception $e) {
             return redirect()->back()->withErrors([
                 'error' => 'Terjadi Kesalahan Saat Mengarahkan Ke Halaman Edit Lowongan Pekerjaan: ' . $e->getMessage()
@@ -130,6 +136,8 @@ class OccupationsController extends Controller
             'deadline' => 'required|date|after:today',
             'location' => 'required|string|max:255',
             'company' => 'required|string|max:255',
+            'job_type' => 'required|string|max:255',
+            'company_industry_id' => 'required|exists:company_industries,id',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -153,6 +161,8 @@ class OccupationsController extends Controller
             $occupation->deadline = $request->deadline;
             $occupation->location = $request->location;
             $occupation->company = $request->company;
+            $occupation->job_type = $request->job_type;
+            $occupation->company_industry_id = $request->company_industry_id;
             $occupation->save();
 
             return redirect()->route('occupation.index')->with('success', 'Lowongan pekerjaan berhasil diupdate');

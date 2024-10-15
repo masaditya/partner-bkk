@@ -59,28 +59,97 @@
                     <div class="p-6.5">
                         <div class="mb-4.5">
                             <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
-                                Judul Lowongan <span class="text-sm text-red-500">*</span>
+                                Posisi Lowongan <span class="text-sm text-red-500">*</span>
                             </label>
                             <input type="text" name="title" placeholder="Masukkan judul pekerjaan" required
                                 class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                         </div>
 
-                        <div class="mb-4.5">
-                            <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
-                                Nama Perusahaan <span class="text-sm text-red-500">*</span>
-                            </label>
-                            <input type="text" name="company" placeholder="Masukkan nama perusahaan" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                        <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                            <div class="w-full xl:w-1/2">
+                                <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                    Nama Perusahaan <span class="text-sm text-red-500">*</span>
+                                </label>
+                                <input type="text" name="company" placeholder="Masukkan nama perusahaan" required
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
+                            </div>
+
+                            <div class="w-full xl:w-1/2">
+                                <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                    Lokasi Pekerjaan <span class="text-sm text-red-500">*</span>
+                                </label>
+                                <select name="location" required
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="">Pilih Lokasi Pekerjaan</option>
+                                    <option value="Bandung">Bandung</option>
+                                    <option value="Batam">Batam</option>
+                                    <option value="Batu">Batu</option>
+                                    <option value="Bekasi">Bekasi</option>
+                                    <option value="Blitar">Blitar</option>
+                                    <option value="Bogor">Bogor</option>
+                                    <option value="Bojonegoro">Bojonegoro</option>
+                                    <option value="Cimahi">Cimahi</option>
+                                    <option value="Cirebon">Cirebon</option>
+                                    <option value="Denpasar">Denpasar</option>
+                                    <option value="Depok">Depok</option>
+                                    <option value="Gresik">Gresik</option>
+                                    <option value="Jakarta">Jakarta</option>
+                                    <option value="Jombang">Jombang</option>
+                                    <option value="Kediri">Kediri</option>
+                                    <option value="Lamongan">Lamongan</option>
+                                    <option value="Lumajang">Lumajang</option>
+                                    <option value="Madiun">Madiun</option>
+                                    <option value="Magelang">Magelang</option>
+                                    <option value="Magetan">Magetan</option>
+                                    <option value="Malang">Malang</option>
+                                    <option value="Mojokerto">Mojokerto</option>
+                                    <option value="Nganjuk">Nganjuk</option>
+                                    <option value="Ngawi">Ngawi</option>
+                                    <option value="Pasuruan">Pasuruan</option>
+                                    <option value="Pekalongan">Pekalongan</option>
+                                    <option value="Probolinggo">Probolinggo</option>
+                                    <option value="Semarang">Semarang</option>
+                                    <option value="Sidoarjo">Sidoarjo</option>
+                                    <option value="Surabaya">Surabaya</option>
+                                    <option value="Surakarta">Surakarta</option>
+                                    <option value="Tangerang">Tangerang</option>
+                                    <option value="Tasikmalaya">Tasikmalaya</option>
+                                    <option value="Tangerang Selatan">Tangerang Selatan</option>
+                                    <option value="Tuban">Tuban</option>
+                                    <option value="Yogyakarta">Yogyakarta</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="mb-4.5">
-                            <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
-                                Lokasi Pekerjaan <span class="text-sm text-red-500">*</span>
-                            </label>
-                            <input type="text" name="location" placeholder="Masukkan lokasi pekerjaan" required
-                                class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
-                        </div>
+                        <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                            <div class="w-full xl:w-1/2">
+                                <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                    Jenis Pekerjaan <span class="text-sm text-red-500">*</span>
+                                </label>
+                                <select name="job_type" required
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="">Pilih Jenis Pekerjaan</option>
+                                    <option value="Purna Waktu">Purna Waktu</option>
+                                    <option value="Paruh Waktu">Paruh Waktu</option>
+                                    <option value="Kontrak">Kontrak</option>
+                                    <option value="Magang">Magang</option>
+                                </select>
+                            </div>
 
+                            <div class="w-full xl:w-1/2">
+                                <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
+                                    Industri Perusahaan <span class="text-sm text-red-500">*</span>
+                                </label>
+                                <select name="company_industry_id" required
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option value="">Pilih Industri Perusahaan</option>
+                                    @foreach ($industries as $industry)
+                                        <option value="{{ $industry->id }}">{{ $industry->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        
                         <div class="mb-4.5">
                             <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
                                 Job Deskripsi <span class="text-sm text-red-500">*</span>

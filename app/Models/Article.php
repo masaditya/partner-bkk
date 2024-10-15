@@ -13,9 +13,13 @@ class Article extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id', 'title', 'content', 'category_id', 'thumbnail'
+        'id', 'title', 'content', 'category_id', 'thumbnail', 'author_id'
     ];
 
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
     
     public function category()
     {

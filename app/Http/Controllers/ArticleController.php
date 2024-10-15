@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Category;
 use Exception;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -74,6 +75,7 @@ class ArticleController extends Controller
 
             $article = Article::create([
                 'id' => (string) Str::uuid(),
+                'author_id' => Auth::user()->id,
                 'title' => $request->title,
                 'content' => $request->content,
                 'category_id' => $request->category_id,
