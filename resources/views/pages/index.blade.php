@@ -10,7 +10,7 @@
         <!-- Grid -->
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-6">
             <!-- Card -->
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-800">
                 <div class="flex justify-between p-4 md:p-5 gap-x-3">
                     <div>
                         <p class="text-xs tracking-wide text-gray-500 uppercase dark:text-neutral-500">
@@ -46,7 +46,7 @@
             <!-- End Card -->
 
             <!-- Card -->
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-800">
                 <div class="flex justify-between p-4 md:p-5 gap-x-3">
                     <div>
                         <p class="text-xs tracking-wide text-gray-500 uppercase dark:text-neutral-500">
@@ -81,7 +81,7 @@
             <!-- End Card -->
 
             <!-- Card -->
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-800">
                 <div class="flex justify-between p-4 md:p-5 gap-x-3">
                     <div>
                         <p class="text-xs tracking-wide text-gray-500 uppercase dark:text-neutral-500">
@@ -117,7 +117,7 @@
             <!-- End Card -->
 
             <!-- Card -->
-            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-neutral-900 dark:border-neutral-800">
+            <div class="flex flex-col bg-white border shadow-sm rounded-xl dark:bg-gray-800 dark:border-neutral-800">
                 <div class="flex justify-between p-4 md:p-5 gap-x-3">
                     <div>
                         <p class="text-xs tracking-wide text-gray-500 uppercase dark:text-neutral-500">
@@ -159,10 +159,10 @@
     <div class="flex px-4 sm:px-6 lg:px-8">
         <div class="flex p-1 transition bg-gray-200 rounded-lg dark:bg-neutral-700 dark:hover:bg-neutral-600">
             <nav class="flex gap-x-1" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-            <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-500 bg-transparent rounded-lg hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 gap-x-2 hover:text-gray-700 focus:outline-none focus:text-gray-700 hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white active" id="segment-item-1" aria-selected="true" data-hs-tab="#segment-1" aria-controls="segment-1" role="tab">
+            <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-500 bg-transparent rounded-lg hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-200 dark:hs-tab-active:bg-gray-800 gap-x-2 hover:text-gray-700 focus:outline-none focus:text-gray-700 hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-white dark:focus:text-white active" id="segment-item-1" aria-selected="true" data-hs-tab="#segment-1" aria-controls="segment-1" role="tab">
                 Statistik Alumni
             </button>
-            <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-500 bg-transparent rounded-lg hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-400 dark:hs-tab-active:bg-gray-800 gap-x-2 hover:text-gray-700 focus:outline-none focus:text-gray-700 hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-white dark:focus:text-white" id="segment-item-2" aria-selected="false" data-hs-tab="#segment-2" aria-controls="segment-2" role="tab">
+            <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-gray-500 bg-transparent rounded-lg hs-tab-active:bg-white hs-tab-active:text-gray-700 hs-tab-active:dark:bg-neutral-800 hs-tab-active:dark:text-neutral-200 dark:hs-tab-active:bg-gray-800 gap-x-2 hover:text-gray-700 focus:outline-none focus:text-gray-700 hover:hover:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-200 dark:hover:text-white dark:focus:text-white" id="segment-item-2" aria-selected="false" data-hs-tab="#segment-2" aria-controls="segment-2" role="tab">
                 Statistik Umum
             </button>
             </nav>
@@ -175,17 +175,17 @@
             <div class="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5 px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14">
                 <!-- ====== Chart One Start -->
                 <div
-                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-300 sm:px-7.5 xl:col-span-8 text-center">
                     <div class="mb-4">
                         <canvas id="alumniBarChart" width="400" height="200"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Untuk menunjukkan pertumbuhan atau fluktuasi lulusan tiap tahun.</span>
+                    <span class="text-sm text-gray-500 ">Untuk menunjukkan pertumbuhan atau fluktuasi lulusan tiap tahun.</span>
                 </div>
                 <!-- ====== Chart One End -->
 
                 <!-- ====== Chart Two Start -->
                 <div
-                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-300 xl:col-span-4">
                     <div class="mb-4">
                         <canvas id="statusGraduation" width="500" height="500"></canvas>
                     </div>
@@ -195,21 +195,21 @@
 
                 <!-- ====== Chart Three Start -->
                 <div
-                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-300 xl:col-span-4">
                     <div class="mb-4">
                         <canvas id="statusEmployee" width="400" height="400"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Untuk memberikan gambaran cepat mengenai tingkat keberhasilan penyaluran kerja.</span>
+                    <span class="text-sm text-gray-500 ">Untuk memberikan gambaran cepat mengenai tingkat keberhasilan penyaluran kerja.</span>
                 </div>
                 <!-- ====== Chart Three End -->
 
                 <!-- ====== Map One Start -->
                 <div
-                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-300 sm:px-7.5 xl:col-span-8 text-center">
                     <div class="mb-4">
                         <canvas id="partnerIndustry" width="400" height="200"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Data statistik yang menunjukkan berapa banyak perusahaan yang bermitra dengan sekolah setiap tahun.</span>
+                    <span class="text-sm text-gray-500 ">Data statistik yang menunjukkan berapa banyak perusahaan yang bermitra dengan sekolah setiap tahun.</span>
                 </div>
                 <!-- ====== Map One End -->
 
@@ -220,32 +220,32 @@
         <div id="segment-2" class="hidden" role="tabpanel" aria-labelledby="segment-item-2">
            <div class="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5 px-4 sm:px-6 lg:px-8 pb-10 lg:pb-14">
                 <div
-                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-300 sm:px-7.5 xl:col-span-8 text-center">
                     <div class="mb-4">
                         <canvas id="userGrowthChart" width="400" height="200"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Untuk menunjukkan pertumbuhan Pengguna Umum per tahun.</span>
+                    <span class="text-sm text-gray-500 ">Untuk menunjukkan pertumbuhan Pengguna Umum per tahun.</span>
                 </div>
                  <div
-                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-300 xl:col-span-4">
                     <div class="mb-4">
                          <canvas id="educationChart" width="400" height="400"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Untuk menunjukkan tingkat pendidikan user umum.</span>
+                    <span class="text-sm text-gray-500 ">Untuk menunjukkan tingkat pendidikan user umum.</span>
                 </div>
                 <div
-                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-800 xl:col-span-4">
+                    class="col-span-12 p-2 text-center bg-white border rounded-sm border-stroke shadow-default dark:border-gray-200 dark:bg-gray-300 xl:col-span-4">
                     <div class="mb-4">
                         <canvas id="genderChart" width="400" height="200"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Untuk memberikan gambaran cepat mengenai statistik Jenis Kelamin User Umum.</span>
+                    <span class="text-sm text-gray-500 ">Untuk memberikan gambaran cepat mengenai statistik Jenis Kelamin User Umum.</span>
                 </div>
                 <div
-                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-800 sm:px-7.5 xl:col-span-8 text-center">
+                    class="col-span-12 rounded-sm border border-stroke bg-white px-5 pb-5 pt-7.5 shadow-default dark:border-gray-200 dark:bg-gray-300 sm:px-7.5 xl:col-span-8 text-center">
                     <div class="mb-4">
                         <canvas id="applicantsChart" width="400" height="200"></canvas>
                     </div>
-                    <span class="text-sm text-gray-500">Untuk memberikan gambaran cepat mengenai User Umum yang Melakukan Apply Lamaran per Tahun.</span>
+                    <span class="text-sm text-gray-500 ">Untuk memberikan gambaran cepat mengenai User Umum yang Melakukan Apply Lamaran per Tahun.</span>
                 </div>
             </div>
         </div>
