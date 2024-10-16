@@ -5,6 +5,8 @@
 
 <main>
     <div class="p-4 mx-auto max-w-screen-2xl md:p-6 2xl:p-10">
+
+        
         <!-- Breadcrumb Start -->
         <div class="flex flex-col gap-3 mb-2 sm:flex-row sm:items-center sm:justify-between">
             <h2 class="font-bold text-gray-700 text-title-md2 dark:text-white">
@@ -27,6 +29,51 @@
             </nav>
         </div>
         <!-- Breadcrumb End -->
+
+            <div class="flex flex-col mt-4 gap-9">
+                <div
+                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
+                        <h3 class="font-medium text-gray-700 dark:text-white">
+                            Detail Loker
+                        </h3>
+                    </div>
+                        <div class="p-6.5">
+                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                <div class="w-full xl:w-1/2">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                        Perusahaan
+                                    </label>
+                                    <input type="text" value="{{ $occupation->company }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
+                                </div>
+                                <div class="w-full xl:w-1/2">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                        Posisi
+                                    </label>
+                                    <input type="text" value="{{ $occupation->title }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
+                                </div>
+                            </div>
+                            <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
+                                <div class="w-full xl:w-1/2">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                        Jenis Pekerjaan
+                                    </label>
+                                    <input type="text" value="{{ $occupation->job_type }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
+                                </div>
+                                <div class="w-full xl:w-1/2">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                        Lokasi
+                                    </label>
+                                    <input type="text" value="{{ $occupation->location }}" disabled
+                                        class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
 
             <div class="flex flex-col mt-4 gap-9">
                 <div

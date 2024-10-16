@@ -33,7 +33,6 @@ class OccupationsController extends Controller
         }
     }
 
-    
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +61,7 @@ class OccupationsController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255|unique:occupations,title',
             'description' => 'required',
-            'deadline' => 'required|date|after:today',
+            'deadline' => 'required|date',
             'location' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'job_type' => 'required|string|max:255',
@@ -133,7 +132,7 @@ class OccupationsController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255|unique:occupations,title,' . $id,
             'description' => 'required',
-            'deadline' => 'required|date|after:today',
+            'deadline' => 'required|date',
             'location' => 'required|string|max:255',
             'company' => 'required|string|max:255',
             'job_type' => 'required|string|max:255',

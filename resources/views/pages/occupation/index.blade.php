@@ -30,10 +30,12 @@
         {{-- Button add start --}}
         <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between">
             <div class="flex justify-end text-sm">
-                <a href="{{ route('occupation.export.excel') }}" class="px-4 py-2 text-white bg-green-300 rounded hover:bg-green-400">
+                <a href="{{ route('occupation.export.excel') }}" class="flex items-center gap-2 px-4 py-2 text-white bg-green-300 rounded hover:bg-green-400">
+                    <span class="text-[#14532D] font-medium">Export</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#14532D" viewBox="0 0 256 256"><path d="M200,24H72A16,16,0,0,0,56,40V64H40A16,16,0,0,0,24,80v96a16,16,0,0,0,16,16H56v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM72,160a8,8,0,0,1-6.15-13.12L81.59,128,65.85,109.12a8,8,0,0,1,12.3-10.24L92,115.5l13.85-16.62a8,8,0,1,1,12.3,10.24L102.41,128l15.74,18.88a8,8,0,0,1-12.3,10.24L92,140.5,78.15,157.12A8,8,0,0,1,72,160Zm56,56H72V192h56Zm0-152H72V40h56Zm72,152H144V192a16,16,0,0,0,16-16v-8h40Zm0-64H160V104h40Zm0-64H160V80a16,16,0,0,0-16-16V40h56Z"></path></svg>
                 </a>
-                <a href="{{ route('occupation.export.pdf') }}" class="px-4 py-2 ml-2 text-white bg-red-300 rounded hover:bg-red-400">
+                <a href="{{ route('occupation.export.pdf') }}" class="flex items-center gap-2 px-4 py-2 ml-2 text-white bg-red-300 rounded hover:bg-red-400">
+                    <span class="text-[#7F1D1D] font-medium">Export</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7F1D1D" viewBox="0 0 256 256"><path d="M44,120H212a4,4,0,0,0,4-4V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v76A4,4,0,0,0,44,120ZM152,44l44,44H152Zm72,108.53a8.18,8.18,0,0,1-8.25,7.47H192v16h15.73a8.17,8.17,0,0,1,8.25,7.47,8,8,0,0,1-8,8.53H192v15.73a8.17,8.17,0,0,1-7.47,8.25,8,8,0,0,1-8.53-8V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152.53ZM64,144H48a8,8,0,0,0-8,8v55.73A8.17,8.17,0,0,0,47.47,216,8,8,0,0,0,56,208v-8h7.4c15.24,0,28.14-11.92,28.59-27.15A28,28,0,0,0,64,144Zm-.35,40H56V160h8a12,12,0,0,1,12,13.16A12.25,12.25,0,0,1,63.65,184ZM128,144H112a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h15.32c19.66,0,36.21-15.48,36.67-35.13A36,36,0,0,0,128,144Zm-.49,56H120V160h8a20,20,0,0,1,20,20.77C147.58,191.59,138.34,200,127.51,200Z"></path></svg>
                 </a>
             </div>

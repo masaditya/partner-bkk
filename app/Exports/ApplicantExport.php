@@ -8,6 +8,11 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class ApplicantExport implements FromCollection, WithHeadings
 {
+    protected $id;
+    public function __construct($id)
+    {
+        $this->id = $id;
+    }
     /**
     * @return \Illuminate\Support\Collection
     */
@@ -40,6 +45,7 @@ class ApplicantExport implements FromCollection, WithHeadings
                 'id_occupation',
                 'created_at',
             ])
+            ->where('id_occupation', $this->id)
             ->get()
             ->map(function ($applicant) {
                 return [

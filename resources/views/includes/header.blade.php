@@ -28,8 +28,8 @@
                 </span>
             </button>
             <!-- Hamburger Toggle BTN -->
-            <a class="flex-shrink-0 block lg:hidden" href="index.html">
-                <img class="object-cover w-8 h-8" src="{{ asset('images/LOGO-BKK-SMKN-1-BOJONEGORO.jpg') }}"
+            <a class="flex-shrink-0 block lg:hidden" href="{{ route('dashboard') }}">
+                <img class="object-cover w-12" src="{{ asset('images/bkk-sigma.png') }}"
                     alt="Logo BKK SMKN 1 Bojonegoro" />
             </a>
         </div>
