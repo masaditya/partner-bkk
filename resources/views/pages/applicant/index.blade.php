@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Pelamar')
+@section('title', 'Applicant')
 
 @section('content')
 
@@ -13,7 +13,7 @@
         <!-- Breadcrumb Start -->
         <div class="flex flex-col gap-3 mb-6 sm:flex-row sm:items-center sm:justify-between">
             <h2 class="font-bold text-gray-700 text-title-md2 dark:text-white">
-                Daftar Pelamar
+                Applicant Lowongan Pekerjaan
             </h2>
 
             <nav>
@@ -21,7 +21,7 @@
                     <li>
                         <a class="font-medium text-gray-700 dark:text-stone-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
-                    <li class="font-medium text-blue-500">Pelamar</li>
+                    <li class="font-medium text-blue-500">Applicant</li>
                 </ol>
             </nav>
         </div>
@@ -62,16 +62,19 @@
                                     No.
                                 </th>
                                 <th class="px-4 py-4 font-medium xl:pl-11">
-                                    Nama User
+                                    Lowongan
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
-                                    Status Alumni
+                                    Perusahaan
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
-                                    Nama Pekerjaan
+                                    Batas Waktu
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
-                                    Tanggal Lamar
+                                    Lokasi
+                                </th>
+                                <th class="px-4 py-4 font-medium ">
+                                    Publisher
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
                                     Aksi
@@ -79,43 +82,45 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($applicants as $applicant)
+                            @foreach($occupations as $occupation)
                             <tr class="text-sm">
-                                <td class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
+                                <td class="border-b border-[#eee] dark:border-strokedark">
                                     <h5 class="font-medium text-gray-700 dark:text-white">{{ $loop->iteration }}</h5>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-gray-700 dark:text-white">{{ $applicant->user->name }}</p>
+                                <td class="border-b border-[#eee] dark:border-strokedark">
+                                    <p class="text-gray-700 dark:text-white">{{ $occupation->title }}</p>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <span
-                                        class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium {{ $applicant->user->is_alumni ? 'bg-blue-100 text-blue-800 dark:bg-blue-800/30 dark:text-blue-500' : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-800/30 dark:text-yellow-500' }}">
-                                        {{ $applicant->user->is_alumni ? 'Alumni' : 'Umum' }}
-                                    </span>
+                                <td class="border-b border-[#eee] dark:border-strokedark">
+                                    <p class="text-gray-700 dark:text-white">{{ $occupation->company }}</p>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-gray-700 dark:text-white">{{ $applicant->occupation->title }}</p>
-                                </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                 <td class="border-b border-[#eee] dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">
-                                        {{ \Carbon\Carbon::parse($applicant->created_at)->locale('id_ID')->translatedFormat('d M Y') }}
+                                        {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}
                                     </p>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                 <td class="border-b border-[#eee] dark:border-strokedark">
+                                    <p class="text-gray-700 dark:text-white">
+                                        {{ $occupation->location }}
+                                    </p>
+                                </td>
+                                 <td class="border-b border-[#eee] dark:border-strokedark">
+                                    <p class="text-gray-700 dark:text-white">
+                                        @if($occupation->admin->is_partner == 0)
+                                            Admin
+                                        @else
+                                            {{ $occupation->admin->name }}
+                                        @endif
+                                    </p>
+                                </td>
+                                <td class="border-b border-[#eee] dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
-                                        
-                                        <a href="{{ route('applicant.detail', $applicant->id) }}" class="hover:text-primary dark:text-gray-100"
-                                        aria-haspopup="dialog"
-                                            aria-expanded="false" aria-controls="hs-edit-data-{{ $applicant->id }}"
-                                            data-hs-overlay="#hs-edit-data-{{ $applicant->id }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-[18px]">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                                            </svg>
+                                        <a href="{{ route('applicant.show', $occupation->id) }}" class="inline-flex items-center px-3 py-2.5 text-xs font-semibold text-blue-800 bg-blue-100 border border-transparent rounded-lg gap-x-2 hover:bg-blue-200 focus:outline-none focus:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-400 dark:bg-blue-800/30 dark:hover:bg-blue-800/20 dark:focus:bg-blue-800/20">
+                                            List Pelamar
                                         </a>
                                     </div>
                                 </td>
                             </tr>
+                            @include('components.modal.occupation.delete')
                             @endforeach
                         </tbody>
                     </table>

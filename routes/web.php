@@ -131,7 +131,8 @@ use Illuminate\Support\Facades\Route;
 
         // 
         Route::get('/applicant', [ApplicantController::class, 'index'])->name('applicant.index');
-        Route::get('/applicant/{id}/detail', [ApplicantController::class, 'detail'])->name('applicant.detail');
+        Route::get('/applicant/{idJob}/show', [ApplicantController::class, 'show'])->name('applicant.show');
+        Route::get('/applicant/{idJob}/{idUser}/detail-user', [ApplicantController::class, 'detail'])->name('applicant.detail');
         Route::get('applicant/export-excel', [ApplicantController::class, 'exportExcel'])->name('applicant.export.excel');
         Route::get('applicant/export-pdf', [ApplicantController::class, 'exportPDF'])->name('applicant.export.pdf');
         // 

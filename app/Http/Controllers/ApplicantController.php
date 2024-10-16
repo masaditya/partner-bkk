@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exports\ApplicantExport;
 use App\Models\Applicant;
+use App\Models\Occupations;
 use Illuminate\Http\Request;
 use Exception;
 use Maatwebsite\Excel\Facades\Excel;
@@ -12,21 +13,21 @@ use Barryvdh\DomPDF\Facade\Pdf;
 class ApplicantController extends Controller
 {
     /**
-     * Halaman daftar pelamar.
+     * Halaman daftar lowongan pekerjaan.
      *
-     * Menampilkan halaman yang berisi daftar pelamar beserta tombol untuk
-     * mengedit dan menghapus data pelamar. Jika terjadi kesalahan saat
-     * mengambil data pelamar, maka akan diarahkan ke halaman sebelumnya
-     * dengan pesan kesalahan.
+     * Menampilkan halaman yang berisi daftar lowongan pekerjaan beserta tombol
+     * untuk mengedit dan menghapus data lowongan pekerjaan. Jika terjadi
+     * kesalahan saat mengambil data lowongan pekerjaan, maka akan diarahkan ke
+     * halaman sebelumnya dengan pesan kesalahan.
      */
     public function index()
     {
         try {
-            $applicants = Applicant::get();
-            return view('pages.applicant.index', compact('applicants'));
+            $occupations = Occupations::get();
+            return view('pages.applicant.index', compact('occupations'));
         } catch (Exception $e) {
             return redirect()->back()->withErrors([
-                'error' => 'Terjadi kesalahan saat mengambil data pelamar. Silakan coba lagi.'
+                'error' => 'Terjadi kesalahan saat mengambil data lowongan pekerjaan. Silakan coba lagi.'
             ]);
         }
     }
@@ -41,14 +42,36 @@ class ApplicantController extends Controller
      * @param int $id ID pelamar
      * @return \Illuminate\Http\Response
      */
-    public function detail($id)
+    public function show($id)
     {
         try {
-            $applicant = Applicant::findOrFail($id);
+            $applicants = Applicant::where('id_occupation', $id)->get();
+            return view('pages.applicant.show', compact('applicants'));
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors([
+                'error' => 'Terjadi kesalahan saat mengarahkan ke halaman pelamar: ' . $e->getMessage()
+            ]);
+        }
+    }
+
+    /**
+     * Halaman edit pelamar.
+     *
+     * Mengarahkan ke halaman edit pelamar berdasarkan ID yang diterima.
+     * Jika terjadi kesalahan saat mengarahkan ke halaman edit, maka akan
+     * redirect kembali ke halaman sebelumnya dengan pesan error.
+     *
+     * @param int $id ID pelamar
+     * @return \Illuminate\Http\Response
+     */
+    public function detail($idJob, $idUser)
+    {
+        try {
+            $applicant = Applicant::where('id_occupation', $idJob)->where('id_user', $idUser)->firstOrFail();
             return view('pages.applicant.detail', compact('applicant'));
         } catch (Exception $e) {
             return redirect()->back()->withErrors([
-                'error' => 'Terjadi kesalahan saat mengarahkan ke halaman edit pelamar. Silakan coba lagi.'
+                'error' => 'Terjadi kesalahan saat mengarahkan ke halaman detail pelamar. Silakan coba lagi.'
             ]);
         }
     }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Pelamar')
+@section('title', 'Applicant')
 
 @section('content')
 
@@ -14,10 +14,13 @@
             <nav>
                 <ol class="flex items-center gap-2">
                     <li>
-                        <a class="font-medium text-neutral-200" href="{{ route('dashboard') }}">Dasbor /</a>
+                        <a class="font-medium text-gray-700 dark:text-stone-200" href="{{ route('dashboard') }}">Dasbor /</a>
                     </li>
                     <li>
-                        <a class="font-medium text-neutral-200" href="{{ route('applicant.index') }}">Pelamar /</a>
+                        <a class="font-medium text-gray-700 dark:text-stone-200" href="{{ route('applicant.index') }}">Applicant /</a>
+                    </li>
+                    <li>
+                        <a class="font-medium text-gray-700 dark:text-stone-200" href="{{ route('applicant.show', $applicant->id_occupation) }}">List Pelamar /</a>
                     </li>
                     <li class="font-medium text-blue-500">Detail Pelamar</li>
                 </ol>
@@ -25,9 +28,9 @@
         </div>
         <!-- Breadcrumb End -->
 
-            <div class="flex flex-col gap-9 mt-4">
+            <div class="flex flex-col mt-4 gap-9">
                 <div
-                    class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+                    class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Informasi Pribadi
@@ -35,7 +38,7 @@
                     </div>
                         <div class="p-6.5">
                             <div>
-                                <div class="flex items-center gap-4 mb-10 justify-center">
+                                <div class="flex items-center justify-center gap-4 mb-10">
                                     <div class="block">
                                     @if($applicant->user->photo)
                                     <div class="w-40 h-40">
@@ -54,7 +57,7 @@
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                       
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Nama Lengkap
                                     </label>
                                     <input type="name" name="name" value="{{ old('name', $applicant->user->name) }}" disabled
@@ -62,7 +65,7 @@
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         NIS (Hanya untuk alumni)
                                     </label>
                                     <input type="text" name="NIS" value="{{ old('NIS', $applicant->user->NIS) }}" disabled
@@ -72,7 +75,7 @@
                             <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
                       
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Alamat Email
                                     </label>
                                     <input type="email" name="email" required value="{{ old('email', $applicant->user->email) }}" disabled
@@ -80,7 +83,7 @@
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Nomer HP (WA Aktif)
                                     </label>
                                     <input type="text" name="phone" value="{{ old('phone', $applicant->user->phone) }}" required disabled
@@ -88,7 +91,7 @@
                                 </div>
 
                                 <div class="w-full xl:w-1/2">
-                                    <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Jenis Kelamin
                                     </label>
                                     <input type="text" value="{{  $applicant->user->gender == 'male' ? 'Laki - Laki' : 'Perempuan' }}" required disabled
@@ -97,7 +100,7 @@
 
                             </div>
                             <div class="mb-6">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Alama
                                 </label>
                                 <textarea name="address" rows="3" disabled
@@ -107,8 +110,8 @@
                 </div>
             </div>
 
-            <div class="flex flex-col gap-9 mt-4">
-                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+            <div class="flex flex-col mt-4 gap-9">
+                <div class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Pendidikan
@@ -121,7 +124,7 @@
                             
 
                              <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Status User
                                 </label>
                                 <input type="number" name="graduation_year" disabled
@@ -130,7 +133,7 @@
                             </div>
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Tahun Kelulusan
                                 </label>
                                 <input type="number" name="graduation_year" disabled
@@ -139,7 +142,7 @@
                             </div>
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Jurusan
                                 </label>
                                 <input type="text" disabled
@@ -151,7 +154,7 @@
                         <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Pendidikan Terakhir
                                 </label>
                                 <input type="text" disabled
@@ -160,7 +163,7 @@
                             </div>
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Universitas
                                 </label>
                                 <input type="text" name="university " disabled
@@ -169,7 +172,7 @@
                             </div>
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Fakultas
                                 </label>
                                 <input type="text" name="faculty" disabled
@@ -184,8 +187,8 @@
             </div>
 
 
-            <div class="flex flex-col gap-9 mt-4">
-                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+            <div class="flex flex-col mt-4 gap-9">
+                <div class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Pekerjaan
@@ -196,7 +199,7 @@
                         <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Status
                                 </label>
                                 <input type="text" disabled
@@ -205,7 +208,7 @@
                             </div>                       
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Nama Perusahaan
                                 </label>
                                 <input type="text" disabled
@@ -218,7 +221,7 @@
                         <div class="mb-4.5 flex flex-col gap-6 xl:flex-row">
 
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Perusahaan Industri
                                 </label>
                                 <input type="text" disabled
@@ -228,7 +231,7 @@
 
                             
                             <div class="w-full xl:w-1/2">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Posisi
                                 </label>
                                 <input type="text" disabled
@@ -240,8 +243,8 @@
                 </div>
             </div>
 
-            <div class="flex flex-col gap-9 mt-4">
-                <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-gray-600 dark:bg-gray-800">
+            <div class="flex flex-col mt-4 gap-9">
+                <div class="bg-white border rounded-sm border-stroke shadow-default dark:border-gray-600 dark:bg-gray-800">
                     <div class="border-b border-stroke px-6.5 py-4 dark:border-gray-600">
                         <h3 class="font-medium text-gray-700 dark:text-white">
                             Dokument (CV)
@@ -253,7 +256,7 @@
                         <div class="my-8">
                                 @if($applicant->user->document)
                                 <a href="{{ $applicant->user->document }}"
-                                    class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white rounded-md bg-blue-600 hover:bg-opacity-90">
+                                    class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-md hover:bg-opacity-90">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                             stroke="currentColor" class="size-6">
