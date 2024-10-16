@@ -15,6 +15,7 @@ use App\Http\Controllers\MajorController;
 use App\Http\Controllers\OccupationsController;
 use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -133,5 +134,9 @@ use Illuminate\Support\Facades\Route;
         Route::get('/applicant/{id}/detail', [ApplicantController::class, 'detail'])->name('applicant.detail');
         Route::get('applicant/export-excel', [ApplicantController::class, 'exportExcel'])->name('applicant.export.excel');
         Route::get('applicant/export-pdf', [ApplicantController::class, 'exportPDF'])->name('applicant.export.pdf');
+        // 
+
+        // 
+        Route::resource('testimoni', TestimoniController::class);
         // 
     });
