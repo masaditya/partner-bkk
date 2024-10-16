@@ -43,12 +43,6 @@
                         }]
                     },
                     options: {
-                        plugins: {
-                            title: {
-                            display: true,
-                            text: 'Tingkat Pendidikan User Umum'
-                            }
-                        },
                         responsive: true,
                         plugins: {
                             legend: {
@@ -56,6 +50,10 @@
                             },
                             tooltip: {
                                 enabled: true
+                            },
+                            title: {
+                                display: true,
+                                text: 'Tingkat Pendidikan User Umum'
                             }
                         }
                     }

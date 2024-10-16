@@ -15,7 +15,7 @@
                     data: {
                         labels: labels,
                         datasets: [{
-                            label: 'Jumlah Pengguna Umum Berdasarkan Gender',
+                            label: 'Jumlah Pengguna Umum Berdasarkan Jenis Kelamin',
                             data: genderCounts,
                             backgroundColor: [
                                 'rgba(54, 162, 235, 0.6)', // Laki - Laki
@@ -40,6 +40,10 @@
                                         return tooltipItem.label + ': ' + tooltipItem.raw + ' pengguna';
                                     }
                                 }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Statistik Pengguna Umum berdasarkan Jenis Kelamin'
                             }
                         }
                     }

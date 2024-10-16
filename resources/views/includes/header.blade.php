@@ -214,7 +214,7 @@
             <div class="p-4 overflow-y-auto text-center sm:p-10">
                 <!-- Icon -->
                 <span
-                    class="mb-4 inline-flex justify-center items-center size-[62px] rounded-full border-4 border-yellow-50 bg-yellow-100 text-yellow-500 dark:bg-yellow-700 dark:border-yellow-600 dark:text-yellow-100">
+                    class="mb-4 inline-flex justify-center items-center size-[62px] rounded-full border-4 border-yellow-100 bg-yellow-200 text-yellow-600 dark:bg-yellow-700 dark:border-yellow-600 dark:text-yellow-100">
                     <svg class="shrink-0 size-5" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" viewBox="0 0 16 16">
                         <path
@@ -227,19 +227,19 @@
                     Keluar
                 </h3>
                 <p class="text-gray-500 dark:text-neutral-500">
-                    Apakah Anda yakin ingin keluar dari akun BKK SIGMA Anda?
+                    Apakah Anda yakin ingin keluar dari akun BKK SIGMA SMKN 1 BOJONEGORO Anda?
                 </p>
 
-                <div class="grid mt-6 gap-y-2">
+                <div class="grid mt-6">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit"
-                            class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
+                            class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
                             Keluar
                         </button>
                     </form>
                     <button type="button"
-                        class="py-2.5 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                        class="py-2.5 px-4 w-full inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-300 bg-gray-100 text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
                         data-hs-overlay="#hs-sign-out-alert">
                         Batal
                     </button>
