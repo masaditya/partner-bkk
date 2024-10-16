@@ -43,7 +43,7 @@
                                 d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
                         </svg>
                     </span>
-                    Simpan
+                    Perbarui Artikel
                 </button>
             </div>
 
@@ -72,9 +72,9 @@
                                 placeholder="Masukkan thumbnail artikel" required
                                 class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 id="thumbnail" onchange="previewImage()" />
-                            <div class="w-full h-64 p-4 overflow-hidden">
+                            <div class="flex items-center justify-center w-full p-4">
                                 <img id="previewImage" src="{{ $article->thumbnail }}" alt="Preview Thumbnail"
-                                    class="object-cover rounded" />
+                                    class="object-cover w-10/12 rounded h-96" />
                             </div>
                         </div>
 

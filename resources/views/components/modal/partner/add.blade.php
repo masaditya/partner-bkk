@@ -30,14 +30,14 @@
                             
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Nama Perusahaan<span class="text-red-500 text-sm">*</span>
+                                    Nama Perusahaan<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input name="company_name" type="text" placeholder="Masukkan nomor telepon" class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                             </div>
                             <!-- Email Field -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Alamat Email<span class="text-red-500 text-sm">*</span>
+                                    Alamat Email<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="email" name="email" placeholder="Masukkan alamat email" class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
                             </div>
@@ -45,7 +45,7 @@
                             <!-- Phone Field -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    No Telepon(WA Aktif)<span class="text-red-500 text-sm">*</span>
+                                    No Telepon(WA Aktif)<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input name="phone" type="text" placeholder="Masukkan nomor telepon" maxlength="15"
                                     minlength="10" class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
@@ -54,7 +54,7 @@
                             <!-- Company Industry (Bidang Perusahaan) -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Bidang Perusahaan<span class="text-red-500 text-sm">*</span>
+                                    Bidang Perusahaan<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <select name="company_industry_id"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
@@ -68,7 +68,7 @@
                             <!-- Password Field -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Kata Sandi<span class="text-red-500 text-sm">*</span>
+                                    Kata Sandi<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="password" name="password" placeholder="Masukkan kata sandi"
                                     autocomplete="password" minlength="8"
@@ -78,7 +78,7 @@
                             <!-- Password Confirmation Field -->
                             <div>
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Ketik Ulang Kata Sandi<span class="text-red-500 text-sm">*</span>
+                                    Ketik Ulang Kata Sandi<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="password" name="password_confirmation"
                                     placeholder="Masukkan kembali kata sandi" autocomplete="re-enter-password"
@@ -89,7 +89,7 @@
                             <!-- Company City (Asal Kota Perusahaan) -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Asal Kota Perusahaan<span class="text-red-500 text-sm">*</span>
+                                    Asal Kota Perusahaan<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <select name="company_city"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
@@ -134,14 +134,18 @@
                             </div>
 
                             <div class="mb-4.5">
-                            <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Logo Perusahaan
                                 </label>
-                            <label class="block">
-                            <span class="sr-only">Pilih logo Perusahaan</span>
-                            <input type="file" accept="image/*" name="logo" class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
-                            </label>
-                        </div>
+                                <div class="block">
+                                    <img id="previewLogoCreate" src="https://placehold.co/80x80" alt="Logo Perusahaan" class="object-cover w-20 h-20 mb-4 rounded" />
+                                </div>
+                                <label class="block">
+                                    <span class="sr-only">Pilih logo Perusahaan</span>
+                                    <input id="logoInput" type="file" accept="image/*" name="logo"
+                                        class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
+                                </label>
+                            </div>
                         </div>
                     </div>
 
@@ -153,7 +157,7 @@
                             Tutup
                         </button>
                         <button type="submit"
-                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-blue-600 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
+                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
                             Simpan
                         </button>
                     </div>
@@ -162,3 +166,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('logoInput').addEventListener('change', function(event) {
+        const previewLogoCreate = document.getElementById('previewLogoCreate');
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewLogoCreate.src = e.target.result;
+            };
+
+        reader.readAsDataURL(file);
+        }
+    });
+</script>

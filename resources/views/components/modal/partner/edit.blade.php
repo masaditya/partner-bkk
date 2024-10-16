@@ -32,7 +32,7 @@
                             <!-- Company Name Field -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Nama Perusahaan<span class="text-red-500 text-sm">*</span>
+                                    Nama Perusahaan<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input name="company_name" type="text"
                                     value="{{ old('company_name', $partner->company_name) }}"
@@ -41,8 +41,8 @@
                             </div>
 
                             <div class="mb-4.5">
-                                <label class="mb-3 block text-sm font-medium text-gray-700 dark:text-white">
-                                    Alamat Email<span class="text-red-500 text-sm">*</span>
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                    Alamat Email<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="email" name="email" placeholder="Masukkan nomer induk siswa"
                                     value="{{ old('email', $partner->email) }}" required
@@ -52,7 +52,7 @@
                             <!-- Phone Field -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    No Telp<span class="text-red-500 text-sm">*</span>
+                                    No Telp<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input name="phone" type="text" value="{{ old('phone', $partner->phone) }}"
                                     placeholder="Masukkan nomor telepon" maxlength="15" minlength="10"
@@ -62,7 +62,7 @@
                             <!-- Company Industry -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Bidang Perusahaan<span class="text-red-500 text-sm">*</span>
+                                    Bidang Perusahaan<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <select name="company_industry_id"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
@@ -79,7 +79,7 @@
                             <!-- Company City -->
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Asal Kota Perusahaan<span class="text-red-500 text-sm">*</span>
+                                    Asal Kota Perusahaan<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <select name="company_city"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
@@ -168,7 +168,7 @@
 
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Status Verifikasi Mitra<span class="text-red-500 text-sm">*</span>
+                                    Status Verifikasi Mitra<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <select name="is_verified"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
@@ -180,9 +180,32 @@
                                 </select>
                             </div>
 
+                            <div class="mb-4.5 flex items-center justify-start gap-3 px-4">
+                                <div class="block">
+                                    @if($partner->logo)
+                                    <div class="w-20 h-20">
+                                        <img id="previewLogo{{ $partner->id }}" src="{{ $partner->logo }}" alt="Logo {{ $partner->name }}" class="object-cover w-full h-full rounded">
+                                    </div>
+                                    @else
+                                    <div class="w-20 h-20">
+                                        <img id="previewLogo{{ $partner->id }}" src="https://placehold.co/160x160" alt="Default Logo" class="object-cover w-full h-full rounded">
+                                    </div>
+                                    @endif
+                                </div>
+                                <div>
+                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                        Logo Perusahaan
+                                    </label>
+                                    <label class="block">
+                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max 1mb)</span>
+                                        <input id="logoInput{{ $partner->id }}" type="file" accept="image/*" name="logo"
+                                            class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
+                                    </label>
+                                </div>
+                            </div>
                             <div class="mb-4.5">
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                    Tampilkan Logo<span class="text-red-500 text-sm">*</span>
+                                    Tampilkan Logo<span class="text-sm text-red-500">*</span>
                                 </label>
                                 <select name="is_show"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
@@ -192,34 +215,6 @@
                                     <option value="1" {{ $partner->is_show == '1' ? 'selected' : '' }}>
                                         Tampilkan</option>
                                 </select>
-                            </div>
-
-                            <div class="mb-4.5 flex items-center justify-start gap-3 px-4">
-                                <div class="block">
-                                    @if($partner->logo)
-                                    <div class="w-20 h-20">
-                                        <img src="{{ $partner->logo }}" alt="Logo {{ $partner->name }}" class="object-cover w-full h-full rounded">
-                                    </div>
-                                    @else
-                                    <div
-                                        class="flex items-center justify-center w-20 h-20 bg-gray-200 rounded dark:bg-gray-700">
-                                        <span class="font-medium text-gray-700 dark:text-gray-300">
-                                            {{ Str::upper(Str::substr($partner->name, 0, 1)) }}
-                                        </span>
-                                    </div>
-                                    @endif
-                                </div>
-                                <div>
-                                    <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
-                                        Logo Perusahaan
-                                    </label>
-                                    <label class="block">
-                                        <span class="sr-only">Pilih logo Perusahaan (Kosongkan jika tidak diganti, max
-                                            1mb)</span>
-                                        <input type="file" accept="image/*" name="logo"
-                                            class="block w-full text-sm text-gray-500 file:me-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-900 file:text-white hover:file:bg-blue-700 file:disabled:opacity-50 file:disabled:pointer-events-none dark:text-neutral-500 dark:file:bg-blue-500 dark:hover:file:bg-blue-400">
-                                    </label>
-                                </div>
                             </div>
 
                         </div>
@@ -232,7 +227,7 @@
                                 Tutup
                             </button>
                             <button type="submit"
-                                class="inline-flex items-center px-3 py-2 text-base font-medium text-white border border-transparent rounded-lg gap-x-2 bg-blue-600 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
+                                class="inline-flex items-center px-3 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
                                 Perbarui
                             </button>
                         </div>
@@ -242,3 +237,17 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById('logoInput{{ $partner->id }}').addEventListener('change', function(event) {
+        const previewLogo = document.getElementById('previewLogo{{ $partner->id }}');
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewLogo.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
