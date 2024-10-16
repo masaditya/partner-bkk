@@ -172,7 +172,7 @@
                                 </label>
                                 <select name="is_verified"
                                     class="w-full rounded border-[1.5px] border-stroke bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary">
-                                    <option value="">Pilih status verifikasi</option>
+                                    <option value="" selected disabled>Pilih status verifikasi</option>
                                     <option value="0" {{ $partner->is_verified == '0' ? 'selected' : '' }}>
                                         Belum Verifikasi</option>
                                     <option value="1" {{ $partner->is_verified == '1' ? 'selected' : '' }}>

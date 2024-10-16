@@ -62,6 +62,7 @@ use Illuminate\Support\Facades\Route;
         Route::delete('/partner/{id}', [PartnerController::class, 'destroy'])->name('partner.destroy');
         Route::get('partners/export-excel', [PartnerController::class, 'exportExcel'])->name('partners.export.excel');
         Route::get('partners/export-pdf', [PartnerController::class, 'exportPDF'])->name('partners.export.pdf');
+        Route::patch('/partner/{admin}/verify', [PartnerController::class, 'verify'])->name('partner.verify');
         // 
 
         // 

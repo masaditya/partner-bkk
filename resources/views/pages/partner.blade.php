@@ -87,7 +87,7 @@
                                     Kontak
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
-                                    Verifikasi Mitra
+                                    Verifikasi Kemitraan
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
                                     Aksi
@@ -112,12 +112,20 @@
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">{{ $partner->phone }}</p>
                                 </td>
-                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
+                                
+                                <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark text-center">
+                                    @if($partner->is_verified)
                                     <span
                                         class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium {{ $partner->is_verified ? 'bg-teal-100 text-teal-800 dark:bg-teal-800/30 dark:text-teal-500' : 'bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500' }}">
-                                        {{ $partner->is_verified ? 'Terverifikasi' : 'Belum Terverifikasi' }}
+                                            Verified
                                     </span>
+                                    @else
+                                        <button type="button" class="inline-flex items-center px-2 py-1.5 text-xs font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-danger-alert-{{ $partner->id }}" data-hs-overlay="#hs-danger-alert-{{ $partner->id }}">
+                                                Unverified
+                                        </button>
+                                        @endif
                                 </td>
+                                
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">
                                         <button class="hover:text-primary dark:text-gray-100"
@@ -162,6 +170,7 @@
                                 </td>
                             </tr>
                             
+                            @include('components.modal.partner.verified')
                             @include('components.modal.partner.delete')
                             @include('components.modal.partner.edit')
                             @include('components.modal.partner.update-password')

@@ -166,4 +166,17 @@ class PartnerController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan saat mengunduh data partner ke PDF: ' . $e->getMessage());
         }
     }
+
+    public function verify($id)
+    {
+        // Cari admin berdasarkan ID
+        $admin = Admin::findOrFail($id);
+        
+        // Update is_verified menjadi 1
+        $admin->is_verified = 1;
+        $admin->save();
+
+        // Redirect atau response sukses
+        return redirect()->route('partner.index')->with('success', 'Akun Mitra industri berhasil diverifikasi.');
+    }
 }
