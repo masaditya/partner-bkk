@@ -230,7 +230,7 @@
                     Apakah Anda yakin ingin keluar dari akun BKK SIGMA SMKN 1 BOJONEGORO Anda?
                 </p>
 
-                <div class="grid mt-6">
+                <div class="grid gap-2 mt-6">
                     <form action="{{ route('logout') }}" method="POST">
                         @csrf
                         <button type="submit"

@@ -174,12 +174,11 @@
                                     Logo Perusahaan <span class="text-sm text-red-500">*</span>
                                 </label>
                                 <input type="file" name="thumbnail" accept="image/*"
-                                    placeholder="Masukkan logo perusahaan" required
+                                    placeholder="Masukkan logo perusahaan"
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                     id="logo" onchange="previewImage()" />
                                 <div class="w-40 h-40 p-4 overflow-hidden">
-                                    <img id="previewImage" src="https://placehold.co/400" alt="Preview Logo"
-                                        class="object-cover rounded" />
+                                    <img id="previewImage" src="https://placehold.co/400" alt="Preview Logo" class="object-cover rounded" />
                                 </div>
                             </div>
                         </div>

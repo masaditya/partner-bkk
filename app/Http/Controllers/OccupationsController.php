@@ -88,7 +88,7 @@ class OccupationsController extends Controller
                 'deadline' => $request->deadline,
                 'location' => $request->location,
                 'company' => $request->company,
-                'thumbnail' => $thumbnail_url,
+                'thumbnail' => $thumbnail_url ?? 'https://placehold.co/160/blue/white?text=Company',
                 'job_type' => $request->job_type,
                 'company_industry_id' => $request->company_industry_id,
                 'publisher_id' => Auth::id(),
