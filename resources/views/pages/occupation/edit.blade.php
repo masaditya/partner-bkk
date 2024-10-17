@@ -179,7 +179,7 @@
                             </div>
                             <div class="w-full xl:w-1/2">
                                 <label class="block mb-3 text-base font-medium text-gray-700 dark:text-white">
-                                    Logo Perusahaan <span class="text-sm text-red-500">*</span>
+                                    Logo Perusahaan(max 1mb)
                                 </label>
                                 <input type="file" name="thumbnail" accept="image/*"
                                     placeholder="Masukkan logo perusahaan"
