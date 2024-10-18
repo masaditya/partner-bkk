@@ -29,7 +29,7 @@
 
         {{-- Button add start --}}
         <div class="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between">
-            <div class="flex justify-end text-sm">
+            <div class="flex justify-start text-sm">
                 <a href="{{ route('user.export.excel') }}" class="flex items-center gap-2 px-4 py-2 text-white bg-green-300 rounded hover:bg-green-400">
                     <span class="text-[#14532D] font-medium">Export</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#14532D" viewBox="0 0 256 256"><path d="M200,24H72A16,16,0,0,0,56,40V64H40A16,16,0,0,0,24,80v96a16,16,0,0,0,16,16H56v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM72,160a8,8,0,0,1-6.15-13.12L81.59,128,65.85,109.12a8,8,0,0,1,12.3-10.24L92,115.5l13.85-16.62a8,8,0,1,1,12.3,10.24L102.41,128l15.74,18.88a8,8,0,0,1-12.3,10.24L92,140.5,78.15,157.12A8,8,0,0,1,72,160Zm56,56H72V192h56Zm0-152H72V40h56Zm72,152H144V192a16,16,0,0,0,16-16v-8h40Zm0-64H160V104h40Zm0-64H160V80a16,16,0,0,0-16-16V40h56Z"></path></svg>
@@ -38,6 +38,13 @@
                     <span class="text-[#7F1D1D] font-medium">Export</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#7F1D1D" viewBox="0 0 256 256"><path d="M44,120H212a4,4,0,0,0,4-4V88a8,8,0,0,0-2.34-5.66l-56-56A8,8,0,0,0,152,24H56A16,16,0,0,0,40,40v76A4,4,0,0,0,44,120ZM152,44l44,44H152Zm72,108.53a8.18,8.18,0,0,1-8.25,7.47H192v16h15.73a8.17,8.17,0,0,1,8.25,7.47,8,8,0,0,1-8,8.53H192v15.73a8.17,8.17,0,0,1-7.47,8.25,8,8,0,0,1-8.53-8V152a8,8,0,0,1,8-8h32A8,8,0,0,1,224,152.53ZM64,144H48a8,8,0,0,0-8,8v55.73A8.17,8.17,0,0,0,47.47,216,8,8,0,0,0,56,208v-8h7.4c15.24,0,28.14-11.92,28.59-27.15A28,28,0,0,0,64,144Zm-.35,40H56V160h8a12,12,0,0,1,12,13.16A12.25,12.25,0,0,1,63.65,184ZM128,144H112a8,8,0,0,0-8,8v56a8,8,0,0,0,8,8h15.32c19.66,0,36.21-15.48,36.67-35.13A36,36,0,0,0,128,144Zm-.49,56H120V160h8a20,20,0,0,1,20,20.77C147.58,191.59,138.34,200,127.51,200Z"></path></svg>
                 </a>
+                <button type="button"
+                class="flex items-center gap-2 px-4 py-2 ml-2 text-white bg-green-300 rounded hover:bg-green-400"
+                aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-add-data-import-modal"
+                data-hs-overlay="#hs-add-data-import-modal">
+                    <span class="text-[#14532D] font-medium">Import</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#14532D" viewBox="0 0 256 256"><path d="M200,24H72A16,16,0,0,0,56,40V64H40A16,16,0,0,0,24,80v96a16,16,0,0,0,16,16H56v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24ZM72,160a8,8,0,0,1-6.15-13.12L81.59,128,65.85,109.12a8,8,0,0,1,12.3-10.24L92,115.5l13.85-16.62a8,8,0,1,1,12.3,10.24L102.41,128l15.74,18.88a8,8,0,0,1-12.3,10.24L92,140.5,78.15,157.12A8,8,0,0,1,72,160Zm56,56H72V192h56Zm0-152H72V40h56Zm72,152H144V192a16,16,0,0,0,16-16v-8h40Zm0-64H160V104h40Zm0-64H160V80a16,16,0,0,0-16-16V40h56Z"></path></svg>
+            </button>
             </div>
             <button type="button"
                 class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-md hover:bg-opacity-90"
@@ -168,5 +175,56 @@
 </main>
 @include('components.datatables')
 @include('components.modal.user.add')
+<div id="hs-add-data-import-modal"
+    class="hs-overlay hidden size-full fixed top-0 start-0 z-[2000] overflow-x-hidden overflow-y-auto pointer-events-none"
+    role="dialog" tabindex="-1" aria-labelledby="hs-add-data-import-modal-label">
+    <div
+        class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
+        <div
+            class="flex flex-col w-full bg-white border shadow-sm pointer-events-auto rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
+                <h1 id="hs-add-data-import-modal-label" class="text-xl font-bold text-gray-700 dark:text-white">
+                    Import Data User
+                </h1>
+                <button type="button"
+                    class="inline-flex items-center justify-center text-gray-800 bg-gray-100 border border-transparent rounded-full size-8 gap-x-2 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                    aria-label="Close" data-hs-overlay="#hs-add-data-import-modal">
+                    <span class="sr-only">Close</span>
+                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-4 overflow-y-auto">
+                <form action="{{ route('users.import') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="p-2">
+                        <div class="mb-4.5">
+                                <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
+                                    Pilih file excel
+                                </label>
+                                <input type="file" name="file" required
+                                    class="w-full rounded border-[1.5px] border-stroke border-gray-200 bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary" />
+                            </div>
+                    </div>
+                    <div class="flex items-center justify-end px-4 py-3 gap-x-2">
+                        <button type="button"
+                            class="inline-flex items-center px-3 py-2 text-base font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            data-hs-overlay="#hs-add-data-import-modal">
+                            Tutup
+                        </button>
+                        <button type="submit"
+                            class="inline-flex items-center px-3 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-opacity-90 focus:outline-none focus:bg-opacity-100">
+                            Import Data
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 

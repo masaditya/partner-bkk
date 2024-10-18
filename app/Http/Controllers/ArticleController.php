@@ -58,6 +58,7 @@ class ArticleController extends Controller
             'title' => 'required|string|max:255|unique:articles,title',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
+            'publish_date' => 'nullable|date',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024'
         ]);
 
@@ -79,6 +80,7 @@ class ArticleController extends Controller
                 'title' => $request->title,
                 'content' => $request->content,
                 'category_id' => $request->category_id,
+                'publish_date' => $request->publish_date,
                 'thumbnail' => $thumbnail_url ?? null
             ]);
 
@@ -120,6 +122,7 @@ class ArticleController extends Controller
             'title' => 'required|string|max:255|unique:articles,title,' . $id,
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
+            'publish_date' => 'nullable|date',
             'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:1024'
         ]);
 
@@ -140,6 +143,7 @@ class ArticleController extends Controller
 
             $article->title = $request->title;
             $article->content = $request->content;
+            $article->publish_date = $request->publish_date;
             $article->category_id = $request->category_id;
             $article->save();
 

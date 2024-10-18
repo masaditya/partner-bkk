@@ -74,6 +74,7 @@ use Illuminate\Support\Facades\Route;
         Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
         Route::get('user/export-excel', [UserController::class, 'exportExcel'])->name('user.export.excel');
         Route::get('user/export-pdf', [UserController::class, 'exportPDF'])->name('user.export.pdf');
+        Route::post('/import-users', [UserController::class, 'import'])->name('users.import');
         // 
 
         // 

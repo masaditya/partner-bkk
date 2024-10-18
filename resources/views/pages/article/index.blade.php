@@ -92,8 +92,7 @@
                                 </td>
                                  <td class="border-b border-[#eee] dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">
-                                        {{ \Carbon\Carbon::parse($article->created_at)->locale('id_ID')->translatedFormat('d M Y') }}
-
+                                        {{ \Carbon\Carbon::parse($article->publish_date)->locale('id_ID')->translatedFormat('d M Y') }}
                                     </p>
                                 </td>
 

@@ -29,6 +29,11 @@
                 lengthMenu: '<span class="dark:text-gray-400">Tampilkan _MENU_ entri</span>'
             },
         });
+
+        table.on('draw.dt', function () {
+            window.HSStaticMethods.autoInit();
+        });
+        
         $('#customSearchInput').on('keyup', function () {
             table.search(this.value).draw();
         });

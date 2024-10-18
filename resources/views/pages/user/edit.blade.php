@@ -261,7 +261,7 @@
                                     <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Nama Perusahaan
                                     </label>
-                                    <input type="text" name="company " placeholder="Masukkan nama universitas" value="{{ old('company ', $user->company ) }}"
+                                    <input type="text" name="company" placeholder="Masukkan nama perusahaan Anda bekerja" value="{{ old('company', $user->company ) }}"
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                 </div>
                                 
@@ -288,7 +288,7 @@
                                     <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Posisi
                                     </label>
-                                    <input type="text" name="position" placeholder="Masukkan nama fakultas" value="{{ old('position', $user->position) }}"
+                                    <input type="text" name="position" placeholder="Masukkan posisi Anda bekerja" value="{{ old('position', $user->position) }}"
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                 </div>
                             </div>

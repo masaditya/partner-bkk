@@ -13,7 +13,7 @@ class Article extends Model
     public $incrementing = false;
 
     protected $fillable = [
-        'id', 'title', 'content', 'category_id', 'thumbnail', 'author_id'
+        'id', 'title', 'content', 'category_id', 'thumbnail', 'author_id', 'publish_date'
     ];
 
     public function author()

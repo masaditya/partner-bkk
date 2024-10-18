@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Exports\UserExport;
+use App\Imports\UsersImport;
 use App\Models\CompanyIndustry;
 use App\Models\EmploymentStatuses;
 use App\Models\Major;
@@ -208,6 +209,21 @@ class UserController extends Controller
             return $pdf->download('data_user_BKK_SIGMA.pdf');
         } catch (Exception $e) {
             return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat mengunduh data user ke PDF: ' . $e->getMessage()]);
+        }
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls',
+        ]);
+
+        try {
+            Excel::import(new UsersImport, $request->file('file'));
+
+            return redirect()->back()->with('success', 'Import user berasil!');
+        } catch (Exception $e) {
+            return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat mengimport data user: ' . $e->getMessage()]);
         }
     }
 }
