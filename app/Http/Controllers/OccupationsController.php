@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\NewOccupationEvent;
 use App\Exports\OccupationExport;
 use App\Models\CompanyIndustry;
 use App\Models\Occupations;
+use App\Models\User;
+use App\Notifications\NewOccupationNotification;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -59,7 +62,7 @@ class OccupationsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|max:255|unique:occupations,title',
+            'title' => 'required|string|max:255',
             'description' => 'required',
             'deadline' => 'required|date',
             'location' => 'required|string|max:255',
@@ -93,6 +96,13 @@ class OccupationsController extends Controller
                 'company_industry_id' => $request->company_industry_id,
                 'publisher_id' => Auth::id(),
             ]);
+
+            $users = User::all();  // Anda bisa menyesuaikan query untuk mengambil user yang sesuai
+            foreach ($users as $user) {
+                $user->notify(new NewOccupationNotification($occupation));
+            }
+
+            broadcast(new NewOccupationEvent($occupation))->toOthers();
 
             return redirect()->route('occupation.index')->with('success', 'Lowongan pekerjaan berhasil dibuat');
         } catch (Exception $e) {
@@ -130,7 +140,7 @@ class OccupationsController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'title' => 'required|string|max:255|unique:occupations,title,' . $id,
+            'title' => 'required|string|max:255',
             'description' => 'required',
             'deadline' => 'required|date',
             'location' => 'required|string|max:255',

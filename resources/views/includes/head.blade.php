@@ -26,11 +26,11 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
- @vite('resources/css/app.css')
- @vite('resources/js/app.js')
+ {{-- @vite('resources/css/app.css')
+ @vite('resources/js/app.js') --}}
 
- {{-- <link href="{{ asset('build/assets/app-C3NsWgPQ.css') }}" rel="stylesheet">
- <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script> --}}
+ <link href="{{ asset('build/assets/app-C3NsWgPQ.css') }}" rel="stylesheet">
+ <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

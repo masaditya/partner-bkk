@@ -28,10 +28,10 @@
     <meta name="msapplication-TileImage" content="{{ asset('favicon/ms-icon-144x144.png') }}">
     <meta name="theme-color" content="#ffffff">
 
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-    {{-- <link href="{{ asset('build/assets/app-C3NsWgPQ.css') }}" rel="stylesheet">
-    <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script> --}}
+    {{-- @vite('resources/css/app.css')
+    @vite('resources/js/app.js') --}}
+    <link href="{{ asset('build/assets/app-C3NsWgPQ.css') }}" rel="stylesheet">
+    <script defer src="{{ asset('build/assets/app-CyR8iH0W.js') }}"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
