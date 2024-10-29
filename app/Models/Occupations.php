@@ -30,7 +30,7 @@ class Occupations extends Model
     
     public function applicants()
     {
-        return $this->hasMany(Applicant::class);
+        return $this->hasMany(Applicant::class, 'id_occupation');
     }
     
 }

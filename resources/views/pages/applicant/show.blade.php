@@ -82,7 +82,7 @@
                                     Status Alumni
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
-                                    Nama Pekerjaan
+                                    Pendidikan Terakhir
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
                                     Tanggal Lamar
@@ -108,7 +108,7 @@
                                     </span>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                    <p class="text-gray-700 dark:text-white">{{ $applicant->occupation->title }}</p>
+                                    <p class="text-gray-700 dark:text-white">{{ $applicant->user->latest_degree }}</p>
                                 </td>
                                 <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">

@@ -134,7 +134,7 @@
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Alamat<span class="text-sm text-red-500">*</span>
                                 </label>
-                                <textarea name="address" rows="3" placeholder="Masukikan alamat"
+                                <textarea name="address" rows="3" placeholder="Masukkan alamat"
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{ old('mail', $user->address) }}</textarea>
                             </div>
                         </div>
@@ -214,7 +214,7 @@
                                     <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                         Universitas
                                     </label>
-                                    <input type="text" name="university " placeholder="Masukkan nama universitas" value="{{ old('university ', $user->university ) }}"
+                                    <input type="text" name="university" placeholder="Masukkan nama universitas" value="{{ old('university ', $user->university ) }}"
                                         class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                                 </div>
 

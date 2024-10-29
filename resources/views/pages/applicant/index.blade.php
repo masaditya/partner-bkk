@@ -68,6 +68,9 @@
                                     Publisher
                                 </th>
                                 <th class="px-4 py-4 font-medium ">
+                                    Jumlah Pelamar
+                                </th>
+                                <th class="px-4 py-4 font-medium ">
                                     Aksi
                                 </th>
                             </tr>
@@ -86,7 +89,12 @@
                                 </td>
                                  <td class="border-b border-[#eee] dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">
-                                        {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}
+                                        @if(\Carbon\Carbon::parse($occupation->deadline) < \Carbon\Carbon::now())
+                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500 text-center">
+                                            {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}</span>
+                                        @else
+                                            {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}
+                                        @endif
                                     </p>
                                 </td>
                                  <td class="border-b border-[#eee] dark:border-strokedark">
@@ -99,9 +107,13 @@
                                         @if($occupation->admin->is_partner == 0)
                                             Admin
                                         @else
-                                            {{ $occupation->admin->name }}
+                                            {{ $occupation->admin->company_name }}
                                         @endif
                                     </p>
+                                </td>
+                                <td class="border-b border-[#eee] dark:border-strokedark text-center">
+                                   <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-blue-700 text-white">
+                                    {{ $occupation->applicants_count }}
                                 </td>
                                 <td class="border-b border-[#eee] dark:border-strokedark">
                                     <div class="flex items-center space-x-3.5">

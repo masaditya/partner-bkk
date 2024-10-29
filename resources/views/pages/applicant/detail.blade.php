@@ -174,8 +174,8 @@
                                 <label class="block mb-3 text-sm font-medium text-gray-700 dark:text-white">
                                     Status User
                                 </label>
-                                <input type="number" name="graduation_year" disabled
-                                    value="{{ $applicant->user->is_alumni }}" required
+                                <input type="text" name="graduation_year" disabled
+                                    value="{{ $applicant->user->is_alumni ? 'Alumni' : 'Umum' }}" required
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
@@ -193,7 +193,7 @@
                                     Jurusan
                                 </label>
                                 <input type="text" disabled
-                                    value="{{ $applicant->user->major_id }}" required
+                                    value="{{ $applicant->user->major->name }}" required
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
                         </div>
@@ -250,7 +250,7 @@
                                     Status
                                 </label>
                                 <input type="text" disabled
-                                    value="{{ old('company ', $applicant->user->status_id ) }}"
+                                    value="{{ $applicant->user->employmentStatus->name }}"
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>                       
 
@@ -272,7 +272,7 @@
                                     Perusahaan Industri
                                 </label>
                                 <input type="text" disabled
-                                    value="{{ old('company ', $applicant->user->company_industry_id ) }}"
+                                    value="{{ $applicant->user->companyIndustry->name }}"
                                     class="w-full rounded border-[1.5px] border-stroke border-gray-200  bg-transparent px-5 py-3 font-normal text-gray-700 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:disabled:bg-gray-700" />
                             </div>
 
@@ -302,7 +302,7 @@
 
                         <div class="my-8">
                                 @if($applicant->user->document)
-                                <a href="{{ $applicant->user->document }}"
+                                <a target="_blank" rel="noopener noreferrer" href="{{ $applicant->user->document }}"
                                     class="inline-flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-center text-white bg-blue-600 rounded-md hover:bg-opacity-90">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

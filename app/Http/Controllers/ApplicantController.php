@@ -23,7 +23,7 @@ class ApplicantController extends Controller
     public function index()
     {
         try {
-            $occupations = Occupations::get();
+            $occupations = Occupations::withCount('applicants')->orderBy('deadline', 'desc')->get();
             return view('pages.applicant.index', compact('occupations'));
         } catch (Exception $e) {
             return redirect()->back()->withErrors([

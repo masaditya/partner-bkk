@@ -108,7 +108,8 @@
                                  <td class="border-b border-[#eee] dark:border-strokedark">
                                     <p class="text-gray-700 dark:text-white">
                                         @if(\Carbon\Carbon::parse($occupation->deadline) < \Carbon\Carbon::now())
-                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">Sudah Lewat</span>
+                                            <span class="inline-flex items-center gap-x-1.5 py-1.5 px-3 rounded-full text-xs font-medium bg-red-100 text-red-800 dark:bg-red-800/30 dark:text-red-500">
+                                            {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}</span>
                                         @else
                                             {{ \Carbon\Carbon::parse($occupation->deadline)->locale('id_ID')->translatedFormat('d M Y') }}
                                         @endif
@@ -124,7 +125,7 @@
                                         @if($occupation->admin->is_partner == 0)
                                             Admin
                                         @else
-                                            {{ $occupation->admin->name }}
+                                            {{ $occupation->admin->company_name }}
                                         @endif
                                     </p>
                                 </td>
