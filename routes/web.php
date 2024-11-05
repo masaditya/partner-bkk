@@ -9,6 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyIndustryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DefaultController;
+use App\Http\Controllers\DocumentationController;
 use App\Http\Controllers\EmploymentStatusesController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\MajorController;
@@ -142,4 +143,8 @@ use Illuminate\Support\Facades\Route;
         // 
         Route::resource('testimoni', TestimoniController::class);
         // 
+
+        Route::get('/documentation', [DocumentationController::class, 'index'])->name('documentation.index');
+        Route::get('/documentation/{id}/edit', [DocumentationController::class, 'edit'])->name('documentation.edit');
+        Route::patch('/documentation/{id}', [DocumentationController::class, 'update'])->name('documentation.update');
     });
